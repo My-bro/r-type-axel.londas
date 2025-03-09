@@ -5,6 +5,11 @@ R-Type is a networked video game development project designed to implement a mul
 
 ---
 
+![Game Screenshot](asset/screen1.png)
+![Game Screenshot](asset/screen2.png)
+![Game Screenshot](asset/screen3.png)
+![Game Screenshot](asset/screen4.png)
+
 ## Project Overview
 
 ### Objective
