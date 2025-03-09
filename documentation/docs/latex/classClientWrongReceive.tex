@@ -1,0 +1,121 @@
+\doxysection{Client\+Wrong\+Receive Class Reference}
+\hypertarget{classClientWrongReceive}{}\label{classClientWrongReceive}\index{ClientWrongReceive@{ClientWrongReceive}}
+
+
+Exception for handling errors during client receive operations.  
+
+
+
+
+{\ttfamily \#include $<$Error.\+hpp$>$}
+
+Inheritance diagram for Client\+Wrong\+Receive\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classClientWrongReceive}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClientWrongReceive_a08754d0311467548233d8e7756ed237c}{Client\+Wrong\+Receive}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classClientWrongReceive_a838c529e005c77dc6f9673b3277c78b3}{\texorpdfstring{$\sim$}{\string~}\+Client\+Wrong\+Receive}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classClientWrongReceive_a46c3c075ec885a93fa0450372f22d401}{what}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em Returns the error message for the receive error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classError}{Error}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classError_a1a45d42a3a035d510333cdfeb36a0e93}{\texorpdfstring{$\sim$}{\string~}\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classError_aadd4b7cb712e1322ec3da4a4d9af6460}{\texorpdfstring{$\sim$}{\string~}\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Exception for handling errors during client receive operations. 
+
+This class is derived from the \doxylink{classError}{Error} base class and represents an error occurring when there is an issue receiving data on the client. 
+
+Definition at line \mbox{\hyperlink{client_2src_2Error_2Error_8hpp_source_l00120}{120}} of file \mbox{\hyperlink{client_2src_2Error_2Error_8hpp_source}{Error.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classClientWrongReceive_a08754d0311467548233d8e7756ed237c}\index{ClientWrongReceive@{ClientWrongReceive}!ClientWrongReceive@{ClientWrongReceive}}
+\index{ClientWrongReceive@{ClientWrongReceive}!ClientWrongReceive@{ClientWrongReceive}}
+\doxysubsubsection{\texorpdfstring{ClientWrongReceive()}{ClientWrongReceive()}}
+{\footnotesize\ttfamily \label{classClientWrongReceive_a08754d0311467548233d8e7756ed237c} 
+Client\+Wrong\+Receive\+::\+Client\+Wrong\+Receive (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Constructor for the \doxylink{classClientWrongReceive}{Client\+Wrong\+Receive} class.
+
+This exception is thrown when the client cannot receive a message. 
+
+Definition at line \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source}{Error.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ :\ \mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}}()\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classClientWrongReceive_a838c529e005c77dc6f9673b3277c78b3}\index{ClientWrongReceive@{ClientWrongReceive}!````~ClientWrongReceive@{\texorpdfstring{$\sim$}{\string~}ClientWrongReceive}}
+\index{````~ClientWrongReceive@{\texorpdfstring{$\sim$}{\string~}ClientWrongReceive}!ClientWrongReceive@{ClientWrongReceive}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ClientWrongReceive()}{\string~ClientWrongReceive()}}
+{\footnotesize\ttfamily \label{classClientWrongReceive_a838c529e005c77dc6f9673b3277c78b3} 
+Client\+Wrong\+Receive\+::\texorpdfstring{$\sim$}{\string~}\+Client\+Wrong\+Receive (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+Destructor for the \doxylink{classClientWrongReceive}{Client\+Wrong\+Receive} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classClientWrongReceive_a46c3c075ec885a93fa0450372f22d401}\index{ClientWrongReceive@{ClientWrongReceive}!what@{what}}
+\index{what@{what}!ClientWrongReceive@{ClientWrongReceive}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily \label{classClientWrongReceive_a46c3c075ec885a93fa0450372f22d401} 
+const char \texorpdfstring{$\ast$}{*} Client\+Wrong\+Receive\+::what (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the error message for the receive error. 
+
+Returns an error message indicating the message receive failure.
+
+\begin{DoxyReturn}{Returns}
+A C-\/style string describing the receive error.
+
+A C-\/string describing the error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{Error}}.
+
+
+
+Definition at line \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source}{Error.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Couldn't\ receive\ a\ message\ from\ the\ Server."{}};}
+\DoxyCodeLine{00097\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/client/src/\+Error/\mbox{\hyperlink{client_2src_2Error_2Error_8hpp}{Error.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/client/src/\+Error/\mbox{\hyperlink{client_2src_2Error_2Error_8cpp}{Error.\+cpp}}\end{DoxyCompactItemize}

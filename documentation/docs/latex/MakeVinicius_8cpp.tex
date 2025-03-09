@@ -1,0 +1,51 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/\+ECS/src/\+System/\+Make\+Vinicius.cpp File Reference}
+\hypertarget{MakeVinicius_8cpp}{}\label{MakeVinicius_8cpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/MakeVinicius.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/MakeVinicius.cpp}}
+{\ttfamily \#include "{}Registry.\+hpp"{}}\newline
+{\ttfamily \#include "{}Position.\+hpp"{}}\newline
+{\ttfamily \#include "{}Velocity.\+hpp"{}}\newline
+{\ttfamily \#include "{}Drawable.\+hpp"{}}\newline
+{\ttfamily \#include "{}Controllable.\+hpp"{}}\newline
+{\ttfamily \#include "{}Entity.\+hpp"{}}\newline
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{MakeVinicius_8cpp_a90b3a752aa47bbc6943103d03222f310}{Make\+Vinicius}} (\mbox{\hyperlink{classRegistry}{Registry}} \&r, sf\+::\+Vector2f \&position, sf\+::\+Vector2f \&size, sf\+::\+Vector2f \&velocity, sf\+::\+Texture \&texture)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{MakeVinicius_8cpp_a90b3a752aa47bbc6943103d03222f310}\index{MakeVinicius.cpp@{MakeVinicius.cpp}!MakeVinicius@{MakeVinicius}}
+\index{MakeVinicius@{MakeVinicius}!MakeVinicius.cpp@{MakeVinicius.cpp}}
+\doxysubsubsection{\texorpdfstring{MakeVinicius()}{MakeVinicius()}}
+{\footnotesize\ttfamily \label{MakeVinicius_8cpp_a90b3a752aa47bbc6943103d03222f310} 
+\mbox{\hyperlink{classEntity}{Entity}} Make\+Vinicius (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{r}{, }\item[{sf\+::\+Vector2f \&}]{position}{, }\item[{sf\+::\+Vector2f \&}]{size}{, }\item[{sf\+::\+Vector2f \&}]{velocity}{, }\item[{sf\+::\+Texture \&}]{texture}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MakeVinicius_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{MakeVinicius_8cpp_source}{Make\+Vinicius.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classEntity}{Entity}}\ Vinicius\ =\ r.\mbox{\hyperlink{classRegistry_a3d6e1501dab60caa62a8511245f0b0b3}{spawn\_entity}}();}
+\DoxyCodeLine{00019\ \ \ \ \ r.\mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\_component}}(Vinicius,\ \mbox{\hyperlink{classDrawable}{Drawable}}(\{size.x,\ size.y\}));}
+\DoxyCodeLine{00020\ \ \ \ \ r.\mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\_component}}(Vinicius,\ \mbox{\hyperlink{classControllable}{Controllable}}());}
+\DoxyCodeLine{00021\ \ \ \ \ r.\mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\_component}}(Vinicius,\ \mbox{\hyperlink{classPosition}{Position}}(position.x,\ position.y));}
+\DoxyCodeLine{00022\ \ \ \ \ r.\mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\_component}}(Vinicius,\ \mbox{\hyperlink{classVelocity}{Velocity}}(velocity.x,\ velocity.y));}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classDrawable}{Drawable}}\ \&drawable\ =\ r.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classDrawable}{Drawable}}>(Vinicius);}
+\DoxyCodeLine{00025\ \ \ \ \ drawable.\mbox{\hyperlink{classDrawable_ad1c9d246eaac9a607b11167f75f238bc}{set\_texture}}(texture);}
+\DoxyCodeLine{00026\ \ \ \ \ drawable.\mbox{\hyperlink{classDrawable_aba579f0300600cbfa004b5f89ba8903d}{set\_scale}}(\{size.x,\ size.y\});}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{return}\ Vinicius;}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{Registry\+::add\+\_\+component()}}, \mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{Registry\+::get\+\_\+component()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00020}{Drawable\+::set\+\_\+scale()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00026}{Drawable\+::set\+\_\+texture()}}, and \mbox{\hyperlink{Registry_8cpp_source_l00010}{Registry\+::spawn\+\_\+entity()}}.
+
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+

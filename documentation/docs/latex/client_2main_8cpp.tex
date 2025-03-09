@@ -1,0 +1,59 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/client/main.cpp File Reference}
+\hypertarget{client_2main_8cpp}{}\label{client_2main_8cpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/client/main.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/client/main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}src/network/\+Network\+Client.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Parsing/\+Parsing.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{client_2main_8cpp_a0c99d968a34e803d378692bde2e3f18f}{main}} (int ac, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}av)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{client_2main_8cpp_a0c99d968a34e803d378692bde2e3f18f}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{client_2main_8cpp_a0c99d968a34e803d378692bde2e3f18f} 
+int main (\begin{DoxyParamCaption}\item[{int}]{ac}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{av}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{client_2main_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{client_2main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classParsing}{Parsing}}\ parser(ac,\ av);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{auto}\ clientSettings\ =\ parser.getClientSettings();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port\ =\ std::stoi(clientSettings[\textcolor{stringliteral}{"{}port"{}}]);}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ host\ =\ clientSettings[\textcolor{stringliteral}{"{}host"{}}];}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classNetworkClient}{NetworkClient}}\ client(port,\ host);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ connecté\ à\ "{}}\ <<\ host\ <<\ \textcolor{stringliteral}{"{}:"{}}\ <<\ port\ <<\ std::endl;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::string\ message;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Entrez\ un\ message\ à\ envoyer\ au\ serveur\ :\ "{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::getline(std::cin,\ message);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (message.empty())\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \mbox{\hyperlink{classClientWrongSend}{ClientWrongSend}}()\ <<\ std::endl;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Entrez\ un\ message\ à\ envoyer\ au\ serveur\ :\ "{}};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(std::cin,\ message);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (message\ ==\ \textcolor{stringliteral}{"{}exit"{}})\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ client.sendMessage(message);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ std::string\ response\ =\ client.receiveMessage();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!response.empty())\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Réponse\ du\ serveur\ :\ "{}}\ <<\ response\ <<\ std::endl;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Parsing_8cpp_source_l00139}{Parsing\+::get\+Client\+Settings()}}, \mbox{\hyperlink{NetworkClient_8cpp_source_l00091}{Network\+Client\+::receive\+Message()}}, and \mbox{\hyperlink{NetworkClient_8cpp_source_l00073}{Network\+Client\+::send\+Message()}}.
+

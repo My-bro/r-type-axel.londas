@@ -1,0 +1,77 @@
+\doxysection{Protocol.\+hpp}
+\hypertarget{Protocol_8hpp_source}{}\label{Protocol_8hpp_source}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/protocol/Protocol.hpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/protocol/Protocol.hpp}}
+\mbox{\hyperlink{Protocol_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00001}00001\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00003}00003\ \textcolor{comment}{\ *\ EPITECH\ PROJECT\ -\/\ Sun,\ Nov,\ 2024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00004}00004\ \textcolor{comment}{\ *\ Title\ \ \ \ \ \ \ \ \ \ \ -\/\ R-\/type\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00005}00005\ \textcolor{comment}{\ *\ Description\ \ \ \ \ -\/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ Protocol\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00008}00008\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\_|\_|\_|\ \ \_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \_|\_|\_|\_|\_|\ \ \_|\_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\_|\_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\_|\_|\_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\_|\_|\_|\ \ \_|\ \ \ \ \ \ \ \ \_|\_|\_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00016}00016\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#ifndef\ INCLUDED\_PROTOCOL\_HPP}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\ \ \ \ \#define\ INCLUDED\_PROTOCOL\_HPP}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00020}\mbox{\hyperlink{Protocol_8hpp_a54061e5993a5517320d425f44408cc86}{00020}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ MAGIC\_NUMBER\ 0xABCD1234}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00032}\mbox{\hyperlink{structMessage}{00032}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMessage}{Message}}\ \{}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00036}\mbox{\hyperlink{structMessage_ae850e2a375a24c10dd92ed3878770062}{00036}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structMessage_ae850e2a375a24c10dd92ed3878770062}{header}};}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00041}\mbox{\hyperlink{structMessage_ac8b1191961ca0372ffe5e35cc8d0ace5}{00041}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structMessage_ac8b1191961ca0372ffe5e35cc8d0ace5}{type}};}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00046}\mbox{\hyperlink{structMessage_ae61f86cd0691a3f02faa414da330a780}{00046}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structMessage_ae61f86cd0691a3f02faa414da330a780}{id}};}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00051}\mbox{\hyperlink{structMessage_a5106e7d601f1b8e71b9f4e15a4187299}{00051}}\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structMessage_a5106e7d601f1b8e71b9f4e15a4187299}{length}};}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00056}\mbox{\hyperlink{structMessage_adbe98f7e813775fe7e809f1a08899733}{00056}}\ \ \ \ \ std::string\ \mbox{\hyperlink{structMessage_adbe98f7e813775fe7e809f1a08899733}{msg}};}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00057}00057\ \};}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00063}\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}{00063}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}{Type}}\ \{}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00064}\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a883e4c63ec87687e6b2847bfd99c601e}{00064}}\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a883e4c63ec87687e6b2847bfd99c601e}{CONNECTION}},\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00065}\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a7802358d536aca383dfa7919ab6ffd9c}{00065}}\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a7802358d536aca383dfa7919ab6ffd9c}{DECONNECTION}},\ \ \ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00066}\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7aed3ef32890b6da0919b57254c5206c62}{00066}}\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7aed3ef32890b6da0919b57254c5206c62}{MOVE}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00067}\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a38317998d0db1f65b5a5d3f9990c02f3}{00067}}\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a38317998d0db1f65b5a5d3f9990c02f3}{SHOOT}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00068}\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7accab244294e0e1bcded736405b2db375}{00068}}\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7accab244294e0e1bcded736405b2db375}{START\_GAME}},\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00069}\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7af0edf2076b2ae1b318e5e1ebf78c64db}{00069}}\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7af0edf2076b2ae1b318e5e1ebf78c64db}{QUIT\_GAME}},\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a56b36d0d0bb01b339cf1041adc08e262}{PAUSE}}\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00071}\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a56b36d0d0bb01b339cf1041adc08e262}{00071}}\ \};}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00077}\mbox{\hyperlink{classProtocol}{00077}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProtocol}{Protocol}}}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00078}00078\ \{}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00079}00079\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00083}\mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{00083}}\ \ \ \ \ \mbox{\hyperlink{structMessage}{Message}}\ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}};}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00088}\mbox{\hyperlink{classProtocol_aafce3c846ef8e7ce0d323e82c48a3db2}{00088}}\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}{Type}}\ \mbox{\hyperlink{classProtocol_aafce3c846ef8e7ce0d323e82c48a3db2}{type}};}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00090}00090\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00092}00092\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{classProtocol_a5a5359f9566fc47d5758dd247e71668a}{Protocol}}();}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{classProtocol_ae78a2bc284f521aa47f3fd7718e23ead}{\string~Protocol}}();}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00109}00109\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{classProtocol_a8a3626f6be1e08df89e68335bb336766}{encode}}(std::string\&\ message,\ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}{Type}}\ type\_);}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProtocol_aba86f5ab2fd4472d539bea1b1ee6f350}{decode}}(std::vector<uint8\_t>\ message\_);}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classProtocol_a6950cc5263470428ad236fd48f8af2fb}{displayDecodedMessage}}();}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00121}00121\ \};}
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{Protocol_8hpp_source_l00123}00123\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

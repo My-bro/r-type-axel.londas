@@ -1,0 +1,110 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/protocol/\+Protocol.hpp File Reference}
+\hypertarget{Protocol_8hpp}{}\label{Protocol_8hpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/protocol/Protocol.hpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/protocol/Protocol.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structMessage}{Message}}
+\begin{DoxyCompactList}\small\item\em Represents the structure of a message to be converted to binary. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classProtocol}{Protocol}}
+\begin{DoxyCompactList}\small\item\em Handles the transfer of messages using the defined protocol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Protocol_8hpp_a54061e5993a5517320d425f44408cc86}{MAGIC\+\_\+\+NUMBER}}~0x\+ABCD1234
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}{Type}} \{ \newline
+\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a883e4c63ec87687e6b2847bfd99c601e}{CONNECTION}}
+, \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a7802358d536aca383dfa7919ab6ffd9c}{DECONNECTION}}
+, \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7aed3ef32890b6da0919b57254c5206c62}{MOVE}}
+, \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a38317998d0db1f65b5a5d3f9990c02f3}{SHOOT}}
+, \newline
+\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7accab244294e0e1bcded736405b2db375}{START\+\_\+\+GAME}}
+, \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7af0edf2076b2ae1b318e5e1ebf78c64db}{QUIT\+\_\+\+GAME}}
+, \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a56b36d0d0bb01b339cf1041adc08e262}{PAUSE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the type of operation to be transferred via the protocol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Protocol_8hpp_a54061e5993a5517320d425f44408cc86}\index{Protocol.hpp@{Protocol.hpp}!MAGIC\_NUMBER@{MAGIC\_NUMBER}}
+\index{MAGIC\_NUMBER@{MAGIC\_NUMBER}!Protocol.hpp@{Protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{MAGIC\_NUMBER}{MAGIC\_NUMBER}}
+{\footnotesize\ttfamily \label{Protocol_8hpp_a54061e5993a5517320d425f44408cc86} 
+\#define MAGIC\+\_\+\+NUMBER~0x\+ABCD1234}
+
+
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Protocol_8cpp_source_l00055}{Protocol\+::encode()}}, and \mbox{\hyperlink{Protocol_8cpp_source_l00030}{Protocol\+::\+Protocol()}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}\index{Protocol.hpp@{Protocol.hpp}!Type@{Type}}
+\index{Type@{Type}!Protocol.hpp@{Protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7} 
+enum \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}{Type}}}
+
+
+
+Represents the type of operation to be transferred via the protocol. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONNECTION@{CONNECTION}!Protocol.hpp@{Protocol.hpp}}\index{Protocol.hpp@{Protocol.hpp}!CONNECTION@{CONNECTION}}}\Hypertarget{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a883e4c63ec87687e6b2847bfd99c601e}\label{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7} 
+CONNECTION&Represents a connection request. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DECONNECTION@{DECONNECTION}!Protocol.hpp@{Protocol.hpp}}\index{Protocol.hpp@{Protocol.hpp}!DECONNECTION@{DECONNECTION}}}\Hypertarget{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a7802358d536aca383dfa7919ab6ffd9c}\label{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7} 
+DECONNECTION&Represents a disconnection request. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVE@{MOVE}!Protocol.hpp@{Protocol.hpp}}\index{Protocol.hpp@{Protocol.hpp}!MOVE@{MOVE}}}\Hypertarget{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7aed3ef32890b6da0919b57254c5206c62}\label{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7} 
+MOVE&Represents a move operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHOOT@{SHOOT}!Protocol.hpp@{Protocol.hpp}}\index{Protocol.hpp@{Protocol.hpp}!SHOOT@{SHOOT}}}\Hypertarget{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a38317998d0db1f65b5a5d3f9990c02f3}\label{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7} 
+SHOOT&Represents a shoot operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{START\_GAME@{START\_GAME}!Protocol.hpp@{Protocol.hpp}}\index{Protocol.hpp@{Protocol.hpp}!START\_GAME@{START\_GAME}}}\Hypertarget{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7accab244294e0e1bcded736405b2db375}\label{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7} 
+START\+\_\+\+GAME&Represents a start game request. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QUIT\_GAME@{QUIT\_GAME}!Protocol.hpp@{Protocol.hpp}}\index{Protocol.hpp@{Protocol.hpp}!QUIT\_GAME@{QUIT\_GAME}}}\Hypertarget{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7af0edf2076b2ae1b318e5e1ebf78c64db}\label{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7} 
+QUIT\+\_\+\+GAME&Represents a quit game request. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAUSE@{PAUSE}!Protocol.hpp@{Protocol.hpp}}\index{Protocol.hpp@{Protocol.hpp}!PAUSE@{PAUSE}}}\Hypertarget{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a56b36d0d0bb01b339cf1041adc08e262}\label{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7} 
+PAUSE&Represents a pause request. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00063}{63}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a883e4c63ec87687e6b2847bfd99c601e}{CONNECTION}},\ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a7802358d536aca383dfa7919ab6ffd9c}{DECONNECTION}},\ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7aed3ef32890b6da0919b57254c5206c62}{MOVE}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a38317998d0db1f65b5a5d3f9990c02f3}{SHOOT}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7accab244294e0e1bcded736405b2db375}{START\_GAME}},\ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7af0edf2076b2ae1b318e5e1ebf78c64db}{QUIT\_GAME}},\ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7a56b36d0d0bb01b339cf1041adc08e262}{PAUSE}}\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,121 @@
+\doxysection{Server\+Wrong\+Socket Class Reference}
+\hypertarget{classServerWrongSocket}{}\label{classServerWrongSocket}\index{ServerWrongSocket@{ServerWrongSocket}}
+
+
+Exception for handling socket-\/related server errors.  
+
+
+
+
+{\ttfamily \#include $<$Error.\+hpp$>$}
+
+Inheritance diagram for Server\+Wrong\+Socket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classServerWrongSocket}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServerWrongSocket_a4c8d5b4d92688b98dfd27b22b955de6b}{Server\+Wrong\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classServerWrongSocket_ac1602fe0f98be1b9f548d3e1de96b7db}{\texorpdfstring{$\sim$}{\string~}\+Server\+Wrong\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classServerWrongSocket_a289276698691544bfd538a6d8205ca95}{what}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em Returns the error message for the socket error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classError}{Error}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classError_a1a45d42a3a035d510333cdfeb36a0e93}{\texorpdfstring{$\sim$}{\string~}\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classError_aadd4b7cb712e1322ec3da4a4d9af6460}{\texorpdfstring{$\sim$}{\string~}\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Exception for handling socket-\/related server errors. 
+
+This class is derived from the \doxylink{classError}{Error} base class and represents an error occurring when there is a problem with the server socket. 
+
+Definition at line \mbox{\hyperlink{server_2src_2Error_2Error_8hpp_source_l00060}{60}} of file \mbox{\hyperlink{server_2src_2Error_2Error_8hpp_source}{Error.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classServerWrongSocket_a4c8d5b4d92688b98dfd27b22b955de6b}\index{ServerWrongSocket@{ServerWrongSocket}!ServerWrongSocket@{ServerWrongSocket}}
+\index{ServerWrongSocket@{ServerWrongSocket}!ServerWrongSocket@{ServerWrongSocket}}
+\doxysubsubsection{\texorpdfstring{ServerWrongSocket()}{ServerWrongSocket()}}
+{\footnotesize\ttfamily \label{classServerWrongSocket_a4c8d5b4d92688b98dfd27b22b955de6b} 
+Server\+Wrong\+Socket\+::\+Server\+Wrong\+Socket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Constructor for the \doxylink{classServerWrongSocket}{Server\+Wrong\+Socket} class.
+
+This exception is thrown when the server cannot connect to a socket. 
+
+Definition at line \mbox{\hyperlink{server_2src_2Error_2Error_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{server_2src_2Error_2Error_8cpp_source}{Error.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ :\ \mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}}()\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classServerWrongSocket_ac1602fe0f98be1b9f548d3e1de96b7db}\index{ServerWrongSocket@{ServerWrongSocket}!````~ServerWrongSocket@{\texorpdfstring{$\sim$}{\string~}ServerWrongSocket}}
+\index{````~ServerWrongSocket@{\texorpdfstring{$\sim$}{\string~}ServerWrongSocket}!ServerWrongSocket@{ServerWrongSocket}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ServerWrongSocket()}{\string~ServerWrongSocket()}}
+{\footnotesize\ttfamily \label{classServerWrongSocket_ac1602fe0f98be1b9f548d3e1de96b7db} 
+Server\+Wrong\+Socket\+::\texorpdfstring{$\sim$}{\string~}\+Server\+Wrong\+Socket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+Destructor for the \doxylink{classServerWrongSocket}{Server\+Wrong\+Socket} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classServerWrongSocket_a289276698691544bfd538a6d8205ca95}\index{ServerWrongSocket@{ServerWrongSocket}!what@{what}}
+\index{what@{what}!ServerWrongSocket@{ServerWrongSocket}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily \label{classServerWrongSocket_a289276698691544bfd538a6d8205ca95} 
+const char \texorpdfstring{$\ast$}{*} Server\+Wrong\+Socket\+::what (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the error message for the socket error. 
+
+Returns an error message indicating the socket connection failure.
+
+\begin{DoxyReturn}{Returns}
+A C-\/style string describing the socket error.
+
+A C-\/string describing the error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{Error}}.
+
+
+
+Definition at line \mbox{\hyperlink{server_2src_2Error_2Error_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{server_2src_2Error_2Error_8cpp_source}{Error.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Couldn't\ connect\ to\ the\ socket."{}};}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+Error/\mbox{\hyperlink{server_2src_2Error_2Error_8hpp}{Error.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+Error/\mbox{\hyperlink{server_2src_2Error_2Error_8cpp}{Error.\+cpp}}\end{DoxyCompactItemize}

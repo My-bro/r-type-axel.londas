@@ -1,0 +1,357 @@
+\doxysection{Network\+Server Class Reference}
+\hypertarget{classNetworkServer}{}\label{classNetworkServer}\index{NetworkServer@{NetworkServer}}
+
+
+A class to handle UDP networking functionalities.  
+
+
+
+
+{\ttfamily \#include $<$Network\+Server.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNetworkServer_a85505408fe29e753c393e52677e54df1}{Network\+Server}} (unsigned short port\+\_\+)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the server with a specified port. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNetworkServer_a450382ee444f54b8d238f161d1514cff}{\texorpdfstring{$\sim$}{\string~}\+Network\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for cleaning up resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNetworkServer_add20d924524eccdca7e55fc346d47b59}{send\+Message}} (std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Sends a message to the destination endpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNetworkServer_a14bfb4eca7b11cf210f15a0cd0e29cb3}{start\+Async\+Receive}} (std\+::function$<$ void(const std\+::string \&)$>$ callback)
+\begin{DoxyCompactList}\small\item\em Starts an asynchronous receive operation. \end{DoxyCompactList}\item 
+asio\+::io\+\_\+context \& \mbox{\hyperlink{classNetworkServer_a4ab0264f502ecf63bdca081fe1d69a1a}{get\+Io\+Context}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the ASIO I/O context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+asio\+::io\+\_\+context \mbox{\hyperlink{classNetworkServer_a4447c5300328eebcf7e0a6ae4c685d22}{io\+\_\+context}}
+\begin{DoxyCompactList}\small\item\em ASIO I/O context for managing asynchronous operations. \end{DoxyCompactList}\item 
+asio\+::ip\+::udp\+::socket \mbox{\hyperlink{classNetworkServer_a166678757d98450fe076f9e4a560747a}{socket}}
+\begin{DoxyCompactList}\small\item\em UDP socket used for communication. \end{DoxyCompactList}\item 
+asio\+::ip\+::udp\+::endpoint \mbox{\hyperlink{classNetworkServer_a933dcd43a03184c032d8662cfb6bf571}{destination}}
+\begin{DoxyCompactList}\small\item\em Destination endpoint for sending messages. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{classNetworkServer_a909ff8bfc8261bea3a289331dd96dfee}{port}}
+\begin{DoxyCompactList}\small\item\em Port number on which the server listens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to handle UDP networking functionalities. 
+
+This class manages sending and receiving messages over a UDP socket using ASIO. 
+
+Definition at line \mbox{\hyperlink{NetworkServer_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{NetworkServer_8hpp_source}{Network\+Server.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classNetworkServer_a85505408fe29e753c393e52677e54df1}\index{NetworkServer@{NetworkServer}!NetworkServer@{NetworkServer}}
+\index{NetworkServer@{NetworkServer}!NetworkServer@{NetworkServer}}
+\doxysubsubsection{\texorpdfstring{NetworkServer()}{NetworkServer()}}
+{\footnotesize\ttfamily \label{classNetworkServer_a85505408fe29e753c393e52677e54df1} 
+Network\+Server\+::\+Network\+Server (\begin{DoxyParamCaption}\item[{unsigned short}]{port\+\_\+}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes the server with a specified port. 
+
+Construct a new \doxylink{classNetworkServer}{Network\+Server} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+\_\+} & The port number to bind the server.\\
+\hline
+\end{DoxyParams}
+Opens and binds a UDP socket to the specified port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+\_\+} & The port to bind the server to. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classServerWrongSocket}{Server\+Wrong\+Socket}} & Thrown if the socket cannot be opened or bound. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{NetworkServer_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{NetworkServer_8cpp_source}{Network\+Server.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classNetworkServer_a4447c5300328eebcf7e0a6ae4c685d22}{io\_context}}(),\ \mbox{\hyperlink{classNetworkServer_a166678757d98450fe076f9e4a560747a}{socket}}(\mbox{\hyperlink{classNetworkServer_a4447c5300328eebcf7e0a6ae4c685d22}{io\_context}}),\ \mbox{\hyperlink{classNetworkServer_a909ff8bfc8261bea3a289331dd96dfee}{port}}(port\_)}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetworkServer_a166678757d98450fe076f9e4a560747a}{socket}}.open(asio::ip::udp::v4());}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetworkServer_a166678757d98450fe076f9e4a560747a}{socket}}.bind(asio::ip::udp::endpoint(asio::ip::udp::v4(),\ \mbox{\hyperlink{classNetworkServer_a909ff8bfc8261bea3a289331dd96dfee}{port}}));}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{catch}(\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classServerWrongSocket}{ServerWrongSocket}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{NetworkServer_8hpp_source_l00055}{port}}, and \mbox{\hyperlink{NetworkServer_8hpp_source_l00045}{socket}}.
+
+\Hypertarget{classNetworkServer_a450382ee444f54b8d238f161d1514cff}\index{NetworkServer@{NetworkServer}!````~NetworkServer@{\texorpdfstring{$\sim$}{\string~}NetworkServer}}
+\index{````~NetworkServer@{\texorpdfstring{$\sim$}{\string~}NetworkServer}!NetworkServer@{NetworkServer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}NetworkServer()}{\string~NetworkServer()}}
+{\footnotesize\ttfamily \label{classNetworkServer_a450382ee444f54b8d238f161d1514cff} 
+Network\+Server\+::\texorpdfstring{$\sim$}{\string~}\+Network\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for cleaning up resources. 
+
+Destroy the \doxylink{classNetworkServer}{Network\+Server} object.
+
+Closes the socket if it is open and outputs a shutdown message. 
+
+Definition at line \mbox{\hyperlink{NetworkServer_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{NetworkServer_8cpp_source}{Network\+Server.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classNetworkServer_a166678757d98450fe076f9e4a560747a}{socket}}.is\_open())\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetworkServer_a166678757d98450fe076f9e4a560747a}{socket}}.close();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Fermeture\ du\ serveur."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{catch}(\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \mbox{\hyperlink{classServerWrongSocket}{ServerWrongSocket}}()\ <<\ std::endl;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Fermeture\ du\ serveur"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{NetworkServer_8hpp_source_l00045}{socket}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classNetworkServer_a4ab0264f502ecf63bdca081fe1d69a1a}\index{NetworkServer@{NetworkServer}!getIoContext@{getIoContext}}
+\index{getIoContext@{getIoContext}!NetworkServer@{NetworkServer}}
+\doxysubsubsection{\texorpdfstring{getIoContext()}{getIoContext()}}
+{\footnotesize\ttfamily \label{classNetworkServer_a4ab0264f502ecf63bdca081fe1d69a1a} 
+asio\+::io\+\_\+context \& Network\+Server\+::get\+Io\+Context (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the ASIO I/O context. 
+
+Get the io\+\_\+context associated with the server.
+
+\begin{DoxyReturn}{Returns}
+Reference to the ASIO I/O context.
+
+A reference to the server\textquotesingle{}s asio\+::io\+\_\+context. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{NetworkServer_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{NetworkServer_8cpp_source}{Network\+Server.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classNetworkServer_a4447c5300328eebcf7e0a6ae4c685d22}{io\_context}};}
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{NetworkServer_8hpp_source_l00040}{io\+\_\+context}}.
+
+
+
+Referenced by \mbox{\hyperlink{server_2main_8cpp_source_l00033}{main()}}.
+
+\Hypertarget{classNetworkServer_add20d924524eccdca7e55fc346d47b59}\index{NetworkServer@{NetworkServer}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!NetworkServer@{NetworkServer}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily \label{classNetworkServer_add20d924524eccdca7e55fc346d47b59} 
+void Network\+Server\+::send\+Message (\begin{DoxyParamCaption}\item[{std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Sends a message to the destination endpoint. 
+
+Sends a message to the configured destination.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be sent.\\
+\hline
+{\em message} & The message to send as a string. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classServerWrongSend}{Server\+Wrong\+Send}} & Thrown if the message cannot be sent. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{NetworkServer_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{NetworkServer_8cpp_source}{Network\+Server.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetworkServer_a166678757d98450fe076f9e4a560747a}{socket}}.send\_to(asio::buffer(message),\ \mbox{\hyperlink{classNetworkServer_a933dcd43a03184c032d8662cfb6bf571}{destination}});}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{catch}(\textcolor{keyword}{const}\ std::exception\&\ e)}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \mbox{\hyperlink{classServerWrongSend}{ServerWrongSend}}()\ <<\ std::endl;}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{NetworkServer_8hpp_source_l00050}{destination}}, and \mbox{\hyperlink{NetworkServer_8hpp_source_l00045}{socket}}.
+
+
+
+Referenced by \mbox{\hyperlink{server_2main_8cpp_source_l00025}{handle\+Received\+Message()}}.
+
+\Hypertarget{classNetworkServer_a14bfb4eca7b11cf210f15a0cd0e29cb3}\index{NetworkServer@{NetworkServer}!startAsyncReceive@{startAsyncReceive}}
+\index{startAsyncReceive@{startAsyncReceive}!NetworkServer@{NetworkServer}}
+\doxysubsubsection{\texorpdfstring{startAsyncReceive()}{startAsyncReceive()}}
+{\footnotesize\ttfamily \label{classNetworkServer_a14bfb4eca7b11cf210f15a0cd0e29cb3} 
+void Network\+Server\+::start\+Async\+Receive (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(const std\+::string \&)$>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Starts an asynchronous receive operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & Function to handle the received message.\\
+\hline
+\end{DoxyParams}
+This function sets up a callback to handle incoming messages asynchronously.
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & A function to call when a message is received. The function takes a string containing the received message. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{NetworkServer_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{NetworkServer_8cpp_source}{Network\+Server.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{auto}\ buffer\ =\ std::make\_shared<std::vector<char>>(\mbox{\hyperlink{NetworkServer_8hpp_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}});}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classNetworkServer_a166678757d98450fe076f9e4a560747a}{socket}}.async\_receive\_from(asio::buffer(*buffer),\ \mbox{\hyperlink{classNetworkServer_a933dcd43a03184c032d8662cfb6bf571}{destination}},\ [\textcolor{keyword}{this},\ buffer,\ callback](std::error\_code\ ec,\ std::size\_t\ bytes\_received)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!ec\ \&\&\ bytes\_received\ >\ 0)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback(std::string(buffer-\/>data(),\ bytes\_received));}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Erreur\ lors\ de\ la\ réception\ :\ "{}}\ <<\ ec.message()\ <<\ std::endl;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetworkServer_a14bfb4eca7b11cf210f15a0cd0e29cb3}{startAsyncReceive}}(callback);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00103\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{NetworkServer_8hpp_source_l00021}{BUFFER\+\_\+\+SIZE}}, \mbox{\hyperlink{NetworkServer_8hpp_source_l00050}{destination}}, \mbox{\hyperlink{NetworkServer_8hpp_source_l00045}{socket}}, and \mbox{\hyperlink{NetworkServer_8cpp_source_l00093}{start\+Async\+Receive()}}.
+
+
+
+Referenced by \mbox{\hyperlink{server_2main_8cpp_source_l00033}{main()}}, and \mbox{\hyperlink{NetworkServer_8cpp_source_l00093}{start\+Async\+Receive()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classNetworkServer_a933dcd43a03184c032d8662cfb6bf571}\index{NetworkServer@{NetworkServer}!destination@{destination}}
+\index{destination@{destination}!NetworkServer@{NetworkServer}}
+\doxysubsubsection{\texorpdfstring{destination}{destination}}
+{\footnotesize\ttfamily \label{classNetworkServer_a933dcd43a03184c032d8662cfb6bf571} 
+asio\+::ip\+::udp\+::endpoint Network\+Server\+::destination\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Destination endpoint for sending messages. 
+
+
+
+Definition at line \mbox{\hyperlink{NetworkServer_8hpp_source_l00050}{50}} of file \mbox{\hyperlink{NetworkServer_8hpp_source}{Network\+Server.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{NetworkServer_8cpp_source_l00074}{send\+Message()}}, and \mbox{\hyperlink{NetworkServer_8cpp_source_l00093}{start\+Async\+Receive()}}.
+
+\Hypertarget{classNetworkServer_a4447c5300328eebcf7e0a6ae4c685d22}\index{NetworkServer@{NetworkServer}!io\_context@{io\_context}}
+\index{io\_context@{io\_context}!NetworkServer@{NetworkServer}}
+\doxysubsubsection{\texorpdfstring{io\_context}{io\_context}}
+{\footnotesize\ttfamily \label{classNetworkServer_a4447c5300328eebcf7e0a6ae4c685d22} 
+asio\+::io\+\_\+context Network\+Server\+::io\+\_\+context\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ASIO I/O context for managing asynchronous operations. 
+
+
+
+Definition at line \mbox{\hyperlink{NetworkServer_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{NetworkServer_8hpp_source}{Network\+Server.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{NetworkServer_8cpp_source_l00110}{get\+Io\+Context()}}.
+
+\Hypertarget{classNetworkServer_a909ff8bfc8261bea3a289331dd96dfee}\index{NetworkServer@{NetworkServer}!port@{port}}
+\index{port@{port}!NetworkServer@{NetworkServer}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily \label{classNetworkServer_a909ff8bfc8261bea3a289331dd96dfee} 
+unsigned short Network\+Server\+::port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Port number on which the server listens. 
+
+
+
+Definition at line \mbox{\hyperlink{NetworkServer_8hpp_source_l00055}{55}} of file \mbox{\hyperlink{NetworkServer_8hpp_source}{Network\+Server.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{NetworkServer_8cpp_source_l00034}{Network\+Server()}}.
+
+\Hypertarget{classNetworkServer_a166678757d98450fe076f9e4a560747a}\index{NetworkServer@{NetworkServer}!socket@{socket}}
+\index{socket@{socket}!NetworkServer@{NetworkServer}}
+\doxysubsubsection{\texorpdfstring{socket}{socket}}
+{\footnotesize\ttfamily \label{classNetworkServer_a166678757d98450fe076f9e4a560747a} 
+asio\+::ip\+::udp\+::socket Network\+Server\+::socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+UDP socket used for communication. 
+
+
+
+Definition at line \mbox{\hyperlink{NetworkServer_8hpp_source_l00045}{45}} of file \mbox{\hyperlink{NetworkServer_8hpp_source}{Network\+Server.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{NetworkServer_8cpp_source_l00034}{Network\+Server()}}, \mbox{\hyperlink{NetworkServer_8cpp_source_l00074}{send\+Message()}}, \mbox{\hyperlink{NetworkServer_8cpp_source_l00093}{start\+Async\+Receive()}}, and \mbox{\hyperlink{NetworkServer_8cpp_source_l00052}{\texorpdfstring{$\sim$}{\string~}\+Network\+Server()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/network/\mbox{\hyperlink{NetworkServer_8hpp}{Network\+Server.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/network/\mbox{\hyperlink{NetworkServer_8cpp}{Network\+Server.\+cpp}}\end{DoxyCompactItemize}

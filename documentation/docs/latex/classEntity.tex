@@ -1,0 +1,141 @@
+\doxysection{Entity Class Reference}
+\hypertarget{classEntity}{}\label{classEntity}\index{Entity@{Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classEntity_ae5ff2e126e483168afd9519837f767c8}{get\+\_\+id}} () const
+\item 
+\mbox{\hyperlink{classEntity_aa6ecb9c57b29b60cc49fe44ad4088ecf}{\texorpdfstring{$\sim$}{\string~}\+Entity}} ()=default
+\item 
+\mbox{\hyperlink{classEntity_a15adfa5c02b836a2e0b9ea31c0a90e26}{operator size\+\_\+t}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEntity_a0d81cc16ca853f5105fbf6aa5b807a89}{Entity}} (size\+\_\+t id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classEntity_a16bd4a98d9c793184d77788d8793e15a}{id\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEntity_ac7b716e6d41ff508ad2d8e5dad655d72}{Registry}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Entity_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{Entity_8hpp_source}{Entity.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEntity_aa6ecb9c57b29b60cc49fe44ad4088ecf}\index{Entity@{Entity}!````~Entity@{\texorpdfstring{$\sim$}{\string~}Entity}}
+\index{````~Entity@{\texorpdfstring{$\sim$}{\string~}Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Entity()}{\string~Entity()}}
+{\footnotesize\ttfamily \label{classEntity_aa6ecb9c57b29b60cc49fe44ad4088ecf} 
+Entity\+::\texorpdfstring{$\sim$}{\string~}\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classEntity_a0d81cc16ca853f5105fbf6aa5b807a89}\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily \label{classEntity_a0d81cc16ca853f5105fbf6aa5b807a89} 
+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Entity_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{Entity_8hpp_source}{Entity.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ :\ \mbox{\hyperlink{classEntity_a16bd4a98d9c793184d77788d8793e15a}{id\_}}(\textcolor{keywordtype}{id})\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEntity_ae5ff2e126e483168afd9519837f767c8}\index{Entity@{Entity}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily \label{classEntity_ae5ff2e126e483168afd9519837f767c8} 
+size\+\_\+t Entity\+::get\+\_\+id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Entity_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{Entity_8hpp_source}{Entity.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEntity_a16bd4a98d9c793184d77788d8793e15a}{id\_}};\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Entity_8hpp_source_l00022}{id\+\_\+}}.
+
+
+
+Referenced by \mbox{\hyperlink{Registry_8cpp_source_l00022}{Registry\+::kill\+\_\+entity()}}.
+
+\Hypertarget{classEntity_a15adfa5c02b836a2e0b9ea31c0a90e26}\index{Entity@{Entity}!operator size\_t@{operator size\_t}}
+\index{operator size\_t@{operator size\_t}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{operator size\_t()}{operator size\_t()}}
+{\footnotesize\ttfamily \label{classEntity_a15adfa5c02b836a2e0b9ea31c0a90e26} 
+Entity\+::operator size\+\_\+t (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Entity_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{Entity_8hpp_source}{Entity.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEntity_a16bd4a98d9c793184d77788d8793e15a}{id\_}};\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Entity_8hpp_source_l00022}{id\+\_\+}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classEntity_ac7b716e6d41ff508ad2d8e5dad655d72}\index{Entity@{Entity}!Registry@{Registry}}
+\index{Registry@{Registry}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Registry}{Registry}}
+{\footnotesize\ttfamily \label{classEntity_ac7b716e6d41ff508ad2d8e5dad655d72} 
+friend class \mbox{\hyperlink{classRegistry}{Registry}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{Entity_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{Entity_8hpp_source}{Entity.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classEntity_a16bd4a98d9c793184d77788d8793e15a}\index{Entity@{Entity}!id\_@{id\_}}
+\index{id\_@{id\_}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{id\_}{id\_}}
+{\footnotesize\ttfamily \label{classEntity_a16bd4a98d9c793184d77788d8793e15a} 
+size\+\_\+t Entity\+::id\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Entity_8hpp_source_l00022}{22}} of file \mbox{\hyperlink{Entity_8hpp_source}{Entity.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Entity_8hpp_source_l00015}{get\+\_\+id()}}, and \mbox{\hyperlink{Entity_8hpp_source_l00018}{operator size\+\_\+t()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+ECS/src/\+Entity/\mbox{\hyperlink{Entity_8hpp}{Entity.\+hpp}}\end{DoxyCompactItemize}

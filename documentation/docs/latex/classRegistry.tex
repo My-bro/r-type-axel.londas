@@ -1,0 +1,353 @@
+\doxysection{Registry Class Reference}
+\hypertarget{classRegistry}{}\label{classRegistry}\index{Registry@{Registry}}
+
+
+{\ttfamily \#include $<$Registry.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Component $>$ }\\\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$ \& \mbox{\hyperlink{classRegistry_a5397b38d1643c5dee4114d20190baf50}{register\+\_\+component}} ()
+\item 
+{\footnotesize template$<$class Component $>$ }\\\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$ \& \mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\+\_\+component}} ()
+\item 
+{\footnotesize template$<$class Component $>$ }\\\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$ const \& \mbox{\hyperlink{classRegistry_a68470342a2bf94f6eb1aafb1cb253b49}{get\+\_\+component}} () const
+\item 
+\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classRegistry_a3d6e1501dab60caa62a8511245f0b0b3}{spawn\+\_\+entity}} ()
+\item 
+\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{classRegistry_a7778dcec4a60f3d6c5fcfc28f225e996}{entity\+\_\+from\+\_\+index}} (std\+::size\+\_\+t index)
+\item 
+void \mbox{\hyperlink{classRegistry_a9f8e76e4f67a4e33dd7273d065d6be7a}{kill\+\_\+entity}} (\mbox{\hyperlink{classEntity}{Entity}} const \&e)
+\item 
+{\footnotesize template$<$typename Component $>$ }\\void \mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\+\_\+component}} (\mbox{\hyperlink{classEntity}{Entity}} const \&to, Component \&\&c)
+\item 
+{\footnotesize template$<$typename Component , typename... Params$>$ }\\void \mbox{\hyperlink{classRegistry_ae5d9751f77af09aa715e86af5a1b441f}{emplace\+\_\+component}} (\mbox{\hyperlink{classEntity}{Entity}} const \&to, Params \&\&...p)
+\item 
+{\footnotesize template$<$typename Component $>$ }\\void \mbox{\hyperlink{classRegistry_ae83c694e0e30125b850edcc343406b76}{remove\+\_\+component}} (\mbox{\hyperlink{classEntity}{Entity}} const \&from)
+\item 
+{\footnotesize template$<$typename Component $>$ }\\Component \& \mbox{\hyperlink{classRegistry_a260c60b69801a45af32d22a9d87361c6}{get\+\_\+component}} (\mbox{\hyperlink{classEntity}{Entity}} const \&from)
+\item 
+{\footnotesize template$<$typename Component $>$ }\\Component const \& \mbox{\hyperlink{classRegistry_aefd6da273d50bb3ed68784a35d2520a7}{get\+\_\+component}} (\mbox{\hyperlink{classEntity}{Entity}} const \&from) const
+\item 
+{\footnotesize template$<$typename Component $>$ }\\std\+::vector$<$ Component $>$ const \& \mbox{\hyperlink{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f}{get\+\_\+component\+\_\+list}} () const
+\item 
+{\footnotesize template$<$class... Components, typename Function $>$ }\\void \mbox{\hyperlink{classRegistry_a9c58e66fce8160965de26356ef3a23e1}{add\+\_\+system}} (Function \&\&f)
+\item 
+{\footnotesize template$<$class... Components, typename Function $>$ }\\void \mbox{\hyperlink{classRegistry_a6bfa499a088443fe3c87511cdf60fbe6}{add\+\_\+system}} (Function const \&f)
+\item 
+void \mbox{\hyperlink{classRegistry_a15a6de78dc2259220850e60b540148aa}{run\+\_\+systems}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRegistry_a474c6910d18dd8a2b482a65adf75795d}{erase\+\_\+components}} (\mbox{\hyperlink{classEntity}{Entity}} const \&e)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, std\+::any $>$ \mbox{\hyperlink{classRegistry_a3125d6a89a2474702c4d6b4ae9c6cd69}{\+\_\+components\+\_\+arrays}}
+\item 
+std\+::vector$<$ std\+::function$<$ void(\mbox{\hyperlink{classRegistry}{Registry}} \&, \mbox{\hyperlink{classEntity}{Entity}} const \&)$>$ $>$ \mbox{\hyperlink{classRegistry_a6c0d502f2f9a46777e3889109ad8de41}{\+\_\+erase\+\_\+functions}}
+\item 
+std\+::vector$<$ std\+::function$<$ void(\mbox{\hyperlink{classRegistry}{Registry}} \&)$>$ $>$ \mbox{\hyperlink{classRegistry_aa719d95133cb133a0fe93b91d192719a}{\+\_\+systems}}
+\item 
+std\+::queue$<$ std\+::size\+\_\+t $>$ \mbox{\hyperlink{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405}{\+\_\+free\+\_\+ids}}
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classRegistry_ad38560b7217b982f420349c7ba334561}{\+\_\+next\+\_\+id}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Registry_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{Registry_8hpp_source}{Registry.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRegistry_adbfdfba30a1d93037e75c96ef417d652}\index{Registry@{Registry}!add\_component@{add\_component}}
+\index{add\_component@{add\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{add\_component()}{add\_component()}}
+{\footnotesize\ttfamily \label{classRegistry_adbfdfba30a1d93037e75c96ef417d652} 
+template$<$typename Component $>$ \\
+void Registry\+::add\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}} const \&}]{to}{, }\item[{Component \&\&}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Referenced by \mbox{\hyperlink{MakeVinicius_8cpp_source_l00016}{Make\+Vinicius()}}, and \mbox{\hyperlink{TestRegistry_8cpp_source_l00013}{Test\+Registry()}}.
+
+\Hypertarget{classRegistry_a9c58e66fce8160965de26356ef3a23e1}\index{Registry@{Registry}!add\_system@{add\_system}}
+\index{add\_system@{add\_system}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{add\_system()}{add\_system()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classRegistry_a9c58e66fce8160965de26356ef3a23e1} 
+template$<$class... Components, typename Function $>$ \\
+void Registry\+::add\+\_\+system (\begin{DoxyParamCaption}\item[{Function \&\&}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+
+\Hypertarget{classRegistry_a6bfa499a088443fe3c87511cdf60fbe6}\index{Registry@{Registry}!add\_system@{add\_system}}
+\index{add\_system@{add\_system}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{add\_system()}{add\_system()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classRegistry_a6bfa499a088443fe3c87511cdf60fbe6} 
+template$<$class... Components, typename Function $>$ \\
+void Registry\+::add\+\_\+system (\begin{DoxyParamCaption}\item[{Function const \&}]{f}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classRegistry_ae5d9751f77af09aa715e86af5a1b441f}\index{Registry@{Registry}!emplace\_component@{emplace\_component}}
+\index{emplace\_component@{emplace\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{emplace\_component()}{emplace\_component()}}
+{\footnotesize\ttfamily \label{classRegistry_ae5d9751f77af09aa715e86af5a1b441f} 
+template$<$typename Component , typename... Params$>$ \\
+void Registry\+::emplace\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}} const \&}]{to}{, }\item[{Params \&\&...}]{p}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classRegistry_a7778dcec4a60f3d6c5fcfc28f225e996}\index{Registry@{Registry}!entity\_from\_index@{entity\_from\_index}}
+\index{entity\_from\_index@{entity\_from\_index}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{entity\_from\_index()}{entity\_from\_index()}}
+{\footnotesize\ttfamily \label{classRegistry_a7778dcec4a60f3d6c5fcfc28f225e996} 
+\mbox{\hyperlink{classEntity}{Entity}} Registry\+::entity\+\_\+from\+\_\+index (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classRegistry_a474c6910d18dd8a2b482a65adf75795d}\index{Registry@{Registry}!erase\_components@{erase\_components}}
+\index{erase\_components@{erase\_components}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{erase\_components()}{erase\_components()}}
+{\footnotesize\ttfamily \label{classRegistry_a474c6910d18dd8a2b482a65adf75795d} 
+void Registry\+::erase\+\_\+components (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}} const \&}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Registry_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{Registry_8cpp_source}{Registry.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&erase\_function\ :\ \mbox{\hyperlink{classRegistry_a6c0d502f2f9a46777e3889109ad8de41}{\_erase\_functions}})\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ erase\_function(*\textcolor{keyword}{this},\ e);}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Registry_8hpp_source_l00068}{\+\_\+erase\+\_\+functions}}.
+
+
+
+Referenced by \mbox{\hyperlink{Registry_8cpp_source_l00022}{kill\+\_\+entity()}}.
+
+\Hypertarget{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}\index{Registry@{Registry}!get\_component@{get\_component}}
+\index{get\_component@{get\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{get\_component()}{get\_component()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8} 
+template$<$class Component $>$ \\
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$ \& Registry\+::get\+\_\+component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Referenced by \mbox{\hyperlink{ActualiseDrawable_8cpp_source_l00015}{Actualise\+Drawable()}}, \mbox{\hyperlink{control__system_8cpp_source_l00011}{control\+\_\+system()}}, \mbox{\hyperlink{draw__system_8cpp_source_l00014}{draw\+\_\+system()}}, \mbox{\hyperlink{MakeVinicius_8cpp_source_l00016}{Make\+Vinicius()}}, and \mbox{\hyperlink{TestRegistry_8cpp_source_l00013}{Test\+Registry()}}.
+
+\Hypertarget{classRegistry_a68470342a2bf94f6eb1aafb1cb253b49}\index{Registry@{Registry}!get\_component@{get\_component}}
+\index{get\_component@{get\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{get\_component()}{get\_component()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{classRegistry_a68470342a2bf94f6eb1aafb1cb253b49} 
+template$<$class Component $>$ \\
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$ const  \& Registry\+::get\+\_\+component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classRegistry_a260c60b69801a45af32d22a9d87361c6}\index{Registry@{Registry}!get\_component@{get\_component}}
+\index{get\_component@{get\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{get\_component()}{get\_component()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{classRegistry_a260c60b69801a45af32d22a9d87361c6} 
+template$<$typename Component $>$ \\
+Component \& Registry\+::get\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}} const \&}]{from}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classRegistry_aefd6da273d50bb3ed68784a35d2520a7}\index{Registry@{Registry}!get\_component@{get\_component}}
+\index{get\_component@{get\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{get\_component()}{get\_component()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{classRegistry_aefd6da273d50bb3ed68784a35d2520a7} 
+template$<$typename Component $>$ \\
+Component const  \& Registry\+::get\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}} const \&}]{from}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f}\index{Registry@{Registry}!get\_component\_list@{get\_component\_list}}
+\index{get\_component\_list@{get\_component\_list}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{get\_component\_list()}{get\_component\_list()}}
+{\footnotesize\ttfamily \label{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f} 
+template$<$typename Component $>$ \\
+std\+::vector$<$ Component $>$ const  \& Registry\+::get\+\_\+component\+\_\+list (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Referenced by \mbox{\hyperlink{logging__system_8cpp_source_l00014}{logging\+\_\+system()}}.
+
+\Hypertarget{classRegistry_a9f8e76e4f67a4e33dd7273d065d6be7a}\index{Registry@{Registry}!kill\_entity@{kill\_entity}}
+\index{kill\_entity@{kill\_entity}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{kill\_entity()}{kill\_entity()}}
+{\footnotesize\ttfamily \label{classRegistry_a9f8e76e4f67a4e33dd7273d065d6be7a} 
+void Registry\+::kill\+\_\+entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}} const \&}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Registry_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{Registry_8cpp_source}{Registry.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classRegistry_a474c6910d18dd8a2b482a65adf75795d}{erase\_components}}(e);}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405}{\_free\_ids}}.push(e.get\_id());}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Registry_8hpp_source_l00070}{\+\_\+free\+\_\+ids}}, \mbox{\hyperlink{Registry_8cpp_source_l00028}{erase\+\_\+components()}}, and \mbox{\hyperlink{Entity_8hpp_source_l00015}{Entity\+::get\+\_\+id()}}.
+
+\Hypertarget{classRegistry_a5397b38d1643c5dee4114d20190baf50}\index{Registry@{Registry}!register\_component@{register\_component}}
+\index{register\_component@{register\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{register\_component()}{register\_component()}}
+{\footnotesize\ttfamily \label{classRegistry_a5397b38d1643c5dee4114d20190baf50} 
+template$<$class Component $>$ \\
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$ \& Registry\+::register\+\_\+component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}, and \mbox{\hyperlink{TestRegistry_8cpp_source_l00013}{Test\+Registry()}}.
+
+\Hypertarget{classRegistry_ae83c694e0e30125b850edcc343406b76}\index{Registry@{Registry}!remove\_component@{remove\_component}}
+\index{remove\_component@{remove\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{remove\_component()}{remove\_component()}}
+{\footnotesize\ttfamily \label{classRegistry_ae83c694e0e30125b850edcc343406b76} 
+template$<$typename Component $>$ \\
+void Registry\+::remove\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEntity}{Entity}} const \&}]{from}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classRegistry_a15a6de78dc2259220850e60b540148aa}\index{Registry@{Registry}!run\_systems@{run\_systems}}
+\index{run\_systems@{run\_systems}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{run\_systems()}{run\_systems()}}
+{\footnotesize\ttfamily \label{classRegistry_a15a6de78dc2259220850e60b540148aa} 
+void Registry\+::run\+\_\+systems (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Registry_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{Registry_8cpp_source}{Registry.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&system\ :\ \mbox{\hyperlink{classRegistry_aa719d95133cb133a0fe93b91d192719a}{\_systems}})\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ system(*\textcolor{keyword}{this});}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Registry_8hpp_source_l00069}{\+\_\+systems}}.
+
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+
+\Hypertarget{classRegistry_a3d6e1501dab60caa62a8511245f0b0b3}\index{Registry@{Registry}!spawn\_entity@{spawn\_entity}}
+\index{spawn\_entity@{spawn\_entity}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{spawn\_entity()}{spawn\_entity()}}
+{\footnotesize\ttfamily \label{classRegistry_a3d6e1501dab60caa62a8511245f0b0b3} 
+\mbox{\hyperlink{classEntity}{Entity}} Registry\+::spawn\+\_\+entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Registry_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{Registry_8cpp_source}{Registry.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ std::size\_t\ id;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405}{\_free\_ids}}.empty())\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405}{\_free\_ids}}.front();}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405}{\_free\_ids}}.pop();}
+\DoxyCodeLine{00016\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classRegistry_ad38560b7217b982f420349c7ba334561}{\_next\_id}}++;}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEntity}{Entity}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Registry_8hpp_source_l00070}{\+\_\+free\+\_\+ids}}, and \mbox{\hyperlink{Registry_8hpp_source_l00071}{\+\_\+next\+\_\+id}}.
+
+
+
+Referenced by \mbox{\hyperlink{MakeVinicius_8cpp_source_l00016}{Make\+Vinicius()}}, and \mbox{\hyperlink{TestRegistry_8cpp_source_l00013}{Test\+Registry()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classRegistry_a3125d6a89a2474702c4d6b4ae9c6cd69}\index{Registry@{Registry}!\_components\_arrays@{\_components\_arrays}}
+\index{\_components\_arrays@{\_components\_arrays}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{\_components\_arrays}{\_components\_arrays}}
+{\footnotesize\ttfamily \label{classRegistry_a3125d6a89a2474702c4d6b4ae9c6cd69} 
+std\+::unordered\+\_\+map$<$std\+::type\+\_\+index, std\+::any$>$ Registry\+::\+\_\+components\+\_\+arrays\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Registry_8hpp_source_l00067}{67}} of file \mbox{\hyperlink{Registry_8hpp_source}{Registry.\+hpp}}.
+
+\Hypertarget{classRegistry_a6c0d502f2f9a46777e3889109ad8de41}\index{Registry@{Registry}!\_erase\_functions@{\_erase\_functions}}
+\index{\_erase\_functions@{\_erase\_functions}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{\_erase\_functions}{\_erase\_functions}}
+{\footnotesize\ttfamily \label{classRegistry_a6c0d502f2f9a46777e3889109ad8de41} 
+std\+::vector$<$std\+::function$<$void(\mbox{\hyperlink{classRegistry}{Registry}} \&, \mbox{\hyperlink{classEntity}{Entity}} const \&)$>$ $>$ Registry\+::\+\_\+erase\+\_\+functions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Registry_8hpp_source_l00068}{68}} of file \mbox{\hyperlink{Registry_8hpp_source}{Registry.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Registry_8cpp_source_l00028}{erase\+\_\+components()}}.
+
+\Hypertarget{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405}\index{Registry@{Registry}!\_free\_ids@{\_free\_ids}}
+\index{\_free\_ids@{\_free\_ids}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{\_free\_ids}{\_free\_ids}}
+{\footnotesize\ttfamily \label{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405} 
+std\+::queue$<$std\+::size\+\_\+t$>$ Registry\+::\+\_\+free\+\_\+ids\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Registry_8hpp_source_l00070}{70}} of file \mbox{\hyperlink{Registry_8hpp_source}{Registry.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Registry_8cpp_source_l00022}{kill\+\_\+entity()}}, and \mbox{\hyperlink{Registry_8cpp_source_l00010}{spawn\+\_\+entity()}}.
+
+\Hypertarget{classRegistry_ad38560b7217b982f420349c7ba334561}\index{Registry@{Registry}!\_next\_id@{\_next\_id}}
+\index{\_next\_id@{\_next\_id}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{\_next\_id}{\_next\_id}}
+{\footnotesize\ttfamily \label{classRegistry_ad38560b7217b982f420349c7ba334561} 
+std\+::size\+\_\+t Registry\+::\+\_\+next\+\_\+id = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Registry_8hpp_source_l00071}{71}} of file \mbox{\hyperlink{Registry_8hpp_source}{Registry.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Registry_8cpp_source_l00010}{spawn\+\_\+entity()}}.
+
+\Hypertarget{classRegistry_aa719d95133cb133a0fe93b91d192719a}\index{Registry@{Registry}!\_systems@{\_systems}}
+\index{\_systems@{\_systems}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{\_systems}{\_systems}}
+{\footnotesize\ttfamily \label{classRegistry_aa719d95133cb133a0fe93b91d192719a} 
+std\+::vector$<$std\+::function$<$void(\mbox{\hyperlink{classRegistry}{Registry}} \&)$>$ $>$ Registry\+::\+\_\+systems\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Registry_8hpp_source_l00069}{69}} of file \mbox{\hyperlink{Registry_8hpp_source}{Registry.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Registry_8cpp_source_l00035}{run\+\_\+systems()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+ECS/src/\+Registry/\mbox{\hyperlink{Registry_8hpp}{Registry.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+ECS/src/\+Registry/\mbox{\hyperlink{Registry_8cpp}{Registry.\+cpp}}\end{DoxyCompactItemize}

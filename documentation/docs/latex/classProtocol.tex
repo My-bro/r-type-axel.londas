@@ -1,0 +1,270 @@
+\doxysection{Protocol Class Reference}
+\hypertarget{classProtocol}{}\label{classProtocol}\index{Protocol@{Protocol}}
+
+
+Handles the transfer of messages using the defined protocol.  
+
+
+
+
+{\ttfamily \#include $<$Protocol.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProtocol_a5a5359f9566fc47d5758dd247e71668a}{Protocol}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classProtocol_ae78a2bc284f521aa47f3fd7718e23ead}{\texorpdfstring{$\sim$}{\string~}\+Protocol}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classProtocol_a8a3626f6be1e08df89e68335bb336766}{encode}} (std\+::string \&message, \mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}{Type}} type\+\_\+)
+\begin{DoxyCompactList}\small\item\em Encodes a message into a binary format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProtocol_aba86f5ab2fd4472d539bea1b1ee6f350}{decode}} (std\+::vector$<$ uint8\+\_\+t $>$ message\+\_\+)
+\begin{DoxyCompactList}\small\item\em Decodes a binary message into a readable format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProtocol_a6950cc5263470428ad236fd48f8af2fb}{display\+Decoded\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Displays the decoded message in a human-\/readable format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structMessage}{Message}} \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}
+\begin{DoxyCompactList}\small\item\em The message being processed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}{Type}} \mbox{\hyperlink{classProtocol_aafce3c846ef8e7ce0d323e82c48a3db2}{type}}
+\begin{DoxyCompactList}\small\item\em The type of the operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the transfer of messages using the defined protocol. 
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classProtocol_a5a5359f9566fc47d5758dd247e71668a}\index{Protocol@{Protocol}!Protocol@{Protocol}}
+\index{Protocol@{Protocol}!Protocol@{Protocol}}
+\doxysubsubsection{\texorpdfstring{Protocol()}{Protocol()}}
+{\footnotesize\ttfamily \label{classProtocol_a5a5359f9566fc47d5758dd247e71668a} 
+Protocol\+::\+Protocol (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Construct a new \doxylink{classProtocol}{Protocol} object.
+
+Initializes default values for the \doxylink{classProtocol}{Protocol} message. 
+
+Definition at line \mbox{\hyperlink{Protocol_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{Protocol_8cpp_source}{Protocol.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_ae850e2a375a24c10dd92ed3878770062}{header}}\ =\ \mbox{\hyperlink{Protocol_8hpp_a54061e5993a5517320d425f44408cc86}{MAGIC\_NUMBER}};}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_ac8b1191961ca0372ffe5e35cc8d0ace5}{type}}\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_a5106e7d601f1b8e71b9f4e15a4187299}{length}}\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_adbe98f7e813775fe7e809f1a08899733}{msg}}.clear();}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Protocol_8hpp_source_l00036}{Message\+::header}}, \mbox{\hyperlink{Protocol_8hpp_source_l00051}{Message\+::length}}, \mbox{\hyperlink{Protocol_8hpp_source_l00020}{MAGIC\+\_\+\+NUMBER}}, \mbox{\hyperlink{Protocol_8hpp_source_l00056}{Message\+::msg}}, \mbox{\hyperlink{Protocol_8hpp_source_l00083}{msg}}, and \mbox{\hyperlink{Protocol_8hpp_source_l00041}{Message\+::type}}.
+
+\Hypertarget{classProtocol_ae78a2bc284f521aa47f3fd7718e23ead}\index{Protocol@{Protocol}!````~Protocol@{\texorpdfstring{$\sim$}{\string~}Protocol}}
+\index{````~Protocol@{\texorpdfstring{$\sim$}{\string~}Protocol}!Protocol@{Protocol}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Protocol()}{\string~Protocol()}}
+{\footnotesize\ttfamily \label{classProtocol_ae78a2bc284f521aa47f3fd7718e23ead} 
+Protocol\+::\texorpdfstring{$\sim$}{\string~}\+Protocol (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Destroy the \doxylink{classProtocol}{Protocol} object.
+
+Clears any allocated message data. 
+
+Definition at line \mbox{\hyperlink{Protocol_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{Protocol_8cpp_source}{Protocol.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_adbe98f7e813775fe7e809f1a08899733}{msg}}.clear();\ }
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Protocol_8hpp_source_l00056}{Message\+::msg}}, and \mbox{\hyperlink{Protocol_8hpp_source_l00083}{msg}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classProtocol_aba86f5ab2fd4472d539bea1b1ee6f350}\index{Protocol@{Protocol}!decode@{decode}}
+\index{decode@{decode}!Protocol@{Protocol}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily \label{classProtocol_aba86f5ab2fd4472d539bea1b1ee6f350} 
+void Protocol\+::decode (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$}]{message\+\_\+}{}\end{DoxyParamCaption})}
+
+
+
+Decodes a binary message into a readable format. 
+
+Decode a message from a vector of bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message\+\_\+} & The binary message to decode.\\
+\hline
+{\em message\+\_\+} & The encoded message as a vector of uint8\+\_\+t. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Protocol_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{Protocol_8cpp_source}{Protocol.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_ae850e2a375a24c10dd92ed3878770062}{header}}\ =\ (\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(message\_[0])\ <<\ 24)\ |\ (\textcolor{keyword}{static\_cast<}uint16\_t\textcolor{keyword}{>}(message\_[1])\ <<\ 16)\ |\ (\textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(message\_[2])\ <<\ 8)\ |\ message\_[3];}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_ac8b1191961ca0372ffe5e35cc8d0ace5}{type}}\ =\ message\_[4];}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_a5106e7d601f1b8e71b9f4e15a4187299}{length}}\ =\ (message\_[5]\ <<\ 8)\ |\ message\_[6];}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_adbe98f7e813775fe7e809f1a08899733}{msg}}\ =\ std::string(message\_.begin()\ +\ 7,\ message\_.end());}
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Protocol_8hpp_source_l00036}{Message\+::header}}, \mbox{\hyperlink{Protocol_8hpp_source_l00051}{Message\+::length}}, \mbox{\hyperlink{Protocol_8hpp_source_l00056}{Message\+::msg}}, \mbox{\hyperlink{Protocol_8hpp_source_l00083}{msg}}, and \mbox{\hyperlink{Protocol_8hpp_source_l00041}{Message\+::type}}.
+
+\Hypertarget{classProtocol_a6950cc5263470428ad236fd48f8af2fb}\index{Protocol@{Protocol}!displayDecodedMessage@{displayDecodedMessage}}
+\index{displayDecodedMessage@{displayDecodedMessage}!Protocol@{Protocol}}
+\doxysubsubsection{\texorpdfstring{displayDecodedMessage()}{displayDecodedMessage()}}
+{\footnotesize\ttfamily \label{classProtocol_a6950cc5263470428ad236fd48f8af2fb} 
+void Protocol\+::display\+Decoded\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the decoded message in a human-\/readable format. 
+
+Display the decoded message.
+
+Outputs the decoded message in a human-\/readable format. 
+
+Definition at line \mbox{\hyperlink{Protocol_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{Protocol_8cpp_source}{Protocol.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Header:\ 0x"{}}\ <<\ std::hex\ <<\ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_ae850e2a375a24c10dd92ed3878770062}{header}}\ <<\ std::dec\ <<\ std::endl;}
+\DoxyCodeLine{00095\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Type:\ "{}}\ <<\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_ac8b1191961ca0372ffe5e35cc8d0ace5}{type}})\ <<\ std::endl;}
+\DoxyCodeLine{00096\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Length:\ "{}}\ <<\ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_a5106e7d601f1b8e71b9f4e15a4187299}{length}}\ <<\ std::endl;}
+\DoxyCodeLine{00097\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Message:\ "{}}\ <<\ \mbox{\hyperlink{classProtocol_a650444f006e67a5533ed6fa9b951c434}{msg}}.\mbox{\hyperlink{structMessage_adbe98f7e813775fe7e809f1a08899733}{msg}}\ <<\ std::endl;}
+\DoxyCodeLine{00098\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Protocol_8hpp_source_l00036}{Message\+::header}}, \mbox{\hyperlink{Protocol_8hpp_source_l00051}{Message\+::length}}, \mbox{\hyperlink{Protocol_8hpp_source_l00056}{Message\+::msg}}, \mbox{\hyperlink{Protocol_8hpp_source_l00083}{msg}}, and \mbox{\hyperlink{Protocol_8hpp_source_l00041}{Message\+::type}}.
+
+\Hypertarget{classProtocol_a8a3626f6be1e08df89e68335bb336766}\index{Protocol@{Protocol}!encode@{encode}}
+\index{encode@{encode}!Protocol@{Protocol}}
+\doxysubsubsection{\texorpdfstring{encode()}{encode()}}
+{\footnotesize\ttfamily \label{classProtocol_a8a3626f6be1e08df89e68335bb336766} 
+std\+::vector$<$ uint8\+\_\+t $>$ Protocol\+::encode (\begin{DoxyParamCaption}\item[{std\+::string \&}]{message}{, }\item[{\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}{Type}}}]{type\+\_\+}{}\end{DoxyParamCaption})}
+
+
+
+Encodes a message into a binary format. 
+
+Encode a message into a vector of bytes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message content to encode. \\
+\hline
+{\em type\+\_\+} & The type of the operation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of bytes representing the encoded message.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to encode as a string. \\
+\hline
+{\em type\+\_\+} & The type of the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$uint8\+\_\+t$>$ A vector representing the encoded message. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Protocol_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{Protocol_8cpp_source}{Protocol.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ std::vector<uint8\_t>\ messageVector;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ length\ =\ message.length();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ messageVector.push\_back((\mbox{\hyperlink{Protocol_8hpp_a54061e5993a5517320d425f44408cc86}{MAGIC\_NUMBER}}\ >>\ 24)\ \&\ 0xFF);}
+\DoxyCodeLine{00061\ \ \ \ \ messageVector.push\_back((\mbox{\hyperlink{Protocol_8hpp_a54061e5993a5517320d425f44408cc86}{MAGIC\_NUMBER}}\ >>\ 16)\ \&\ 0xFF);}
+\DoxyCodeLine{00062\ \ \ \ \ messageVector.push\_back((\mbox{\hyperlink{Protocol_8hpp_a54061e5993a5517320d425f44408cc86}{MAGIC\_NUMBER}}\ >>\ 8)\ \&\ 0xFF);}
+\DoxyCodeLine{00063\ \ \ \ \ messageVector.push\_back(\mbox{\hyperlink{Protocol_8hpp_a54061e5993a5517320d425f44408cc86}{MAGIC\_NUMBER}}\ \&\ 0xFF);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ messageVector.push\_back(type\_);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ messageVector.push\_back((length\ >>\ 8)\ \&\ 0xFF);}
+\DoxyCodeLine{00068\ \ \ \ \ messageVector.push\_back(length\ \&\ 0xFF);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ messageVector.insert(messageVector.end(),\ message.begin(),\ message.end());}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{return}\ messageVector;}
+\DoxyCodeLine{00072\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Protocol_8hpp_source_l00020}{MAGIC\+\_\+\+NUMBER}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classProtocol_a650444f006e67a5533ed6fa9b951c434}\index{Protocol@{Protocol}!msg@{msg}}
+\index{msg@{msg}!Protocol@{Protocol}}
+\doxysubsubsection{\texorpdfstring{msg}{msg}}
+{\footnotesize\ttfamily \label{classProtocol_a650444f006e67a5533ed6fa9b951c434} 
+\mbox{\hyperlink{structMessage}{Message}} Protocol\+::msg\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The message being processed. 
+
+
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00083}{83}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Protocol_8cpp_source_l00079}{decode()}}, \mbox{\hyperlink{Protocol_8cpp_source_l00092}{display\+Decoded\+Message()}}, \mbox{\hyperlink{Protocol_8cpp_source_l00030}{Protocol()}}, and \mbox{\hyperlink{Protocol_8cpp_source_l00043}{\texorpdfstring{$\sim$}{\string~}\+Protocol()}}.
+
+\Hypertarget{classProtocol_aafce3c846ef8e7ce0d323e82c48a3db2}\index{Protocol@{Protocol}!type@{type}}
+\index{type@{type}!Protocol@{Protocol}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{classProtocol_aafce3c846ef8e7ce0d323e82c48a3db2} 
+\mbox{\hyperlink{Protocol_8hpp_a1d1cfd8ffb84e947f82999c682b666a7}{Type}} Protocol\+::type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The type of the operation. 
+
+
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00088}{88}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/protocol/\mbox{\hyperlink{Protocol_8hpp}{Protocol.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/protocol/\mbox{\hyperlink{Protocol_8cpp}{Protocol.\+cpp}}\end{DoxyCompactItemize}

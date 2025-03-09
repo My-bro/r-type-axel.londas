@@ -1,0 +1,44 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/\+ECS/src/\+System/\+Actualise\+Drawable.cpp File Reference}
+\hypertarget{ActualiseDrawable_8cpp}{}\label{ActualiseDrawable_8cpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/ActualiseDrawable.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/ActualiseDrawable.cpp}}
+{\ttfamily \#include "{}Registry.\+hpp"{}}\newline
+{\ttfamily \#include "{}Position.\+hpp"{}}\newline
+{\ttfamily \#include "{}Drawable.\+hpp"{}}\newline
+{\ttfamily \#include "{}Controllable.\+hpp"{}}\newline
+{\ttfamily \#include "{}Entity.\+hpp"{}}\newline
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ActualiseDrawable_8cpp_ac1507dea69a2c91f207f6858326cce2c}{Actualise\+Drawable}} (\mbox{\hyperlink{classRegistry}{Registry}} \&reg, \mbox{\hyperlink{classEntity}{Entity}} \&e, sf\+::\+Render\+Window \&window)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ActualiseDrawable_8cpp_ac1507dea69a2c91f207f6858326cce2c}\index{ActualiseDrawable.cpp@{ActualiseDrawable.cpp}!ActualiseDrawable@{ActualiseDrawable}}
+\index{ActualiseDrawable@{ActualiseDrawable}!ActualiseDrawable.cpp@{ActualiseDrawable.cpp}}
+\doxysubsubsection{\texorpdfstring{ActualiseDrawable()}{ActualiseDrawable()}}
+{\footnotesize\ttfamily \label{ActualiseDrawable_8cpp_ac1507dea69a2c91f207f6858326cce2c} 
+void Actualise\+Drawable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{reg}{, }\item[{\mbox{\hyperlink{classEntity}{Entity}} \&}]{e}{, }\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ActualiseDrawable_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{ActualiseDrawable_8cpp_source}{Actualise\+Drawable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classDrawable}{Drawable}}\ \&drawable\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classDrawable}{Drawable}}>(e);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classPosition}{Position}}\ \&position\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classPosition}{Position}}>(e);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Velocity\ \&velocity\ =\ reg.get\_component<Velocity>(e);}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classControllable}{Controllable}}\ \&controllable\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classControllable}{Controllable}}>(e);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ controllable.\mbox{\hyperlink{classControllable_a7d5578bb578655725ac00ebf42dbf907}{check\_input}}();}
+\DoxyCodeLine{00023\ \ \ \ \ position.move(controllable);}
+\DoxyCodeLine{00024\ \ \ \ \ drawable.\mbox{\hyperlink{classDrawable_abf326782344db26ff4448fa375ecbc40}{display}}(window,\ position);}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Controllable_8cpp_source_l00011}{Controllable\+::check\+\_\+input()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00031}{Drawable\+::display()}}, and \mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{Registry\+::get\+\_\+component()}}.
+

@@ -1,0 +1,175 @@
+\chapter{R-\/\+Type Game Project}
+\hypertarget{index}{}\label{index}\index{R-\/Type Game Project@{R-\/Type Game Project}}
+\label{index_md__2home_2ben_2B-CPP-500-PAR-5-2-rtype-axel_8londas_2README}%
+\Hypertarget{index_md__2home_2ben_2B-CPP-500-PAR-5-2-rtype-axel_8londas_2README}%
+
+
+R-\/\+Type is a networked video game development project designed to implement a multi-\/threaded server and a graphical client for the classic R-\/\+Type game. This project showcases advanced C++ development techniques, good software engineering practices, and a custom-\/designed game engine.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Project Overview}{Project Overview}}\label{index_autotoc_md2}
+\hypertarget{index_autotoc_md3}{}\doxysubsection{\texorpdfstring{Objective}{Objective}}\label{index_autotoc_md3}
+The goal of this project is to\+:
+\begin{DoxyItemize}
+\item Develop a {\bfseries{networked multiplayer game}} based on the R-\/\+Type legacy game.
+\item Create a {\bfseries{game engine}} with visible and decoupled subsystems for rendering, networking, and game logic.
+\item Implement advanced features such as multi-\/threading, protocol design, and modular architecture.
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{\texorpdfstring{Key Deliverables}{Key Deliverables}}\label{index_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Game Prototype}}\+:
+\begin{DoxyItemize}
+\item A playable R-\/\+Type game with core features.
+\item Multiplayer support using a client-\/server architecture.
+\item Core game engine implementation.
+\end{DoxyItemize}
+\item {\bfseries{Advanced Features}}\+:
+\begin{DoxyItemize}
+\item Enhanced software architecture.
+\item Advanced networking and gameplay design.
+\item Tools for content creation and management.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{index_autotoc_md6}
+\hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Software Requirements}{Software Requirements}}\label{index_autotoc_md7}
+
+\begin{DoxyItemize}
+\item {\bfseries{Build System}}\+: CMake
+\item {\bfseries{Package Manager}}\+: CPM
+\item {\bfseries{Languages}}\+: C++, CMake, Docker
+\item {\bfseries{Target Platforms}}\+: Linux, Windows
+\item {\bfseries{Rendering/\+Audio/\+Inputs Libraries}}\+: SFML
+\end{DoxyItemize}\hypertarget{index_autotoc_md8}{}\doxysubsection{\texorpdfstring{Installation}{Installation}}\label{index_autotoc_md8}
+To install necessary dependencies, use the package manager specified in the repository and build the project using CMake\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{cmake\ ..}
+\DoxyCodeLine{cd\ ..}
+\DoxyCodeLine{cmake\ -\/-\/build\ build}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md10}{}\doxysection{\texorpdfstring{Architecture}{Architecture}}\label{index_autotoc_md10}
+\hypertarget{index_autotoc_md11}{}\doxysubsection{\texorpdfstring{Server}{Server}}\label{index_autotoc_md11}
+
+\begin{DoxyItemize}
+\item Implements all game logic.
+\item Handles multiplayer synchronization using UDP communication.
+\item {\bfseries{Features}}\+:
+\begin{DoxyItemize}
+\item Multi-\/threading for client handling.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md12}{}\doxysubsection{\texorpdfstring{Client}{Client}}\label{index_autotoc_md12}
+
+\begin{DoxyItemize}
+\item Responsible for graphical rendering and user inputs.
+\item Communicates with the server to sync game states.
+\item {\bfseries{Features}}\+:
+\begin{DoxyItemize}
+\item Smooth rendering of game entities and effects.
+\item Input handling for player interactions.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md13}{}\doxysubsection{\texorpdfstring{Protocol}{Protocol}}\label{index_autotoc_md13}
+
+\begin{DoxyItemize}
+\item Binary protocol for communication between server and client.
+\item {\bfseries{Key Attributes}}\+:
+\begin{DoxyItemize}
+\item UDP-\/based communication for real-\/time performance.
+\item \doxylink{classError}{Error} handling for message drops, duplication, and reordering.
+\item Extensible design for future updates.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md15}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{index_autotoc_md15}
+\hypertarget{index_autotoc_md16}{}\doxysubsection{\texorpdfstring{Clone the Repository}{Clone the Repository}}\label{index_autotoc_md16}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/EpitechPromo2027/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas.git\ R-\/type\_Project}
+\DoxyCodeLine{cd\ R-\/type\_Project}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md17}{}\doxysubsection{\texorpdfstring{Build the Project}{Build the Project}}\label{index_autotoc_md17}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/build\ build}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md18}{}\doxysubsection{\texorpdfstring{Running the Server}{Running the Server}}\label{index_autotoc_md18}
+If there is no argument, default values are taken from \doxysectlink{md_configuration}{configuration\+\_\+files/info.ini}{0} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./r-\/type\_server\ "{}[-\/-\/port\ <server\ port>]"{}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md19}{}\doxysubsection{\texorpdfstring{Running the Client}{Running the Client}}\label{index_autotoc_md19}
+If there is no argument, default values are taken from \doxysectlink{md_configuration}{configuration\+\_\+files/info.ini}{0} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./r-\/type\_client\ "{}[-\/-\/host\ <server\_ip>]\ [-\/-\/port\ <server\ port>]"{}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md21}{}\doxysection{\texorpdfstring{Testing}{Testing}}\label{index_autotoc_md21}
+Unit tests are provided to validate core functionalities\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ build}
+\DoxyCodeLine{ctest}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md23}{}\doxysection{\texorpdfstring{Documentation}{Documentation}}\label{index_autotoc_md23}
+\hypertarget{index_autotoc_md24}{}\doxysubsection{\texorpdfstring{Developer Documentation}{Developer Documentation}}\label{index_autotoc_md24}
+
+\begin{DoxyItemize}
+\item Includes architectural diagrams and system overviews.
+\item Provides a high-\/level explanation of the game engine and subsystems using Doxygen (documentation/docs/html/index.\+html).
+\item Available in the {\ttfamily documentation/} directory.
+\item To add a feature \doxysectlink{md_add__features}{documentation/add\+\_\+features.md}{0}.
+\end{DoxyItemize}\hypertarget{index_autotoc_md25}{}\doxysubsection{\texorpdfstring{Protocol Documentation}{Protocol Documentation}}\label{index_autotoc_md25}
+
+\begin{DoxyItemize}
+\item Detailed binary protocol documentation is available in \doxysectlink{md_protocol}{documentation/protocol.md}{0}.
+\item Describes all message types, formats, and use cases.
+\end{DoxyItemize}\hypertarget{index_autotoc_md26}{}\doxysubsection{\texorpdfstring{Tools}{Tools}}\label{index_autotoc_md26}
+
+\begin{DoxyItemize}
+\item CI/\+CD Workflow\+: Automated testing and builds for continuous integration.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md28}{}\doxysection{\texorpdfstring{Contribution}{Contribution}}\label{index_autotoc_md28}
+\hypertarget{index_autotoc_md29}{}\doxysubsection{\texorpdfstring{Guidelines}{Guidelines}}\label{index_autotoc_md29}
+
+\begin{DoxyEnumerate}
+\item Follow the provided coding conventions \doxysectlink{md_coding__guidelines}{documentation/coding\+\_\+guidelines.md}{0}.
+\item Use feature branches for new development.
+\item Submit merge requests with detailed descriptions.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md31}{}\doxysection{\texorpdfstring{Contact}{Contact}}\label{index_autotoc_md31}
+For any inquiries or contributions, contact the development team at\+:
+\begin{DoxyItemize}
+\item {\bfseries{Dev}}\+: \href{https://github.com/BenjaminLavallee}{\texttt{ Benjamin LAVALLEE}}
+\item {\bfseries{Dev}}\+: \href{email@example.com}{\texttt{ Axel LONDAS}}
+\item {\bfseries{Dev}}\+: \href{email@example.com}{\texttt{ Abdallah}}
+\item {\bfseries{Dev}}\+: \href{email@example.com}{\texttt{ Reno}}
+\item {\bfseries{Dev}}\+: \href{email@example.com}{\texttt{ Armod}}
+\item {\bfseries{Repository}}\+: \href{https://github.com/EpitechPromo2027/B-CPP-500-PAR-5-2-rtype-axel.londas.git}{\texttt{ Git\+Hub Link}}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ 

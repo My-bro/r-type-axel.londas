@@ -1,0 +1,241 @@
+\doxysection{Drawable Class Reference}
+\hypertarget{classDrawable}{}\label{classDrawable}\index{Drawable@{Drawable}}
+
+
+{\ttfamily \#include $<$Drawable.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDrawable_a611d8615c65f4c7422db5f50941cd545}{Drawable}} ()=default
+\item 
+\mbox{\hyperlink{classDrawable_a690e993f02783fa4d7538a7e5e0a86db}{Drawable}} (const sf\+::\+Vector2f \&scale)
+\item 
+void \mbox{\hyperlink{classDrawable_abf326782344db26ff4448fa375ecbc40}{display}} (sf\+::\+Render\+Window \&window, \mbox{\hyperlink{classPosition}{Position}} \&\+\_\+position)
+\item 
+void \mbox{\hyperlink{classDrawable_a70ba5b5be076216a253868f67280cc84}{set\+\_\+position}} (const \mbox{\hyperlink{classPosition}{Position}} \&position)
+\item 
+void \mbox{\hyperlink{classDrawable_aba579f0300600cbfa004b5f89ba8903d}{set\+\_\+scale}} (const sf\+::\+Vector2f \&scale)
+\item 
+void \mbox{\hyperlink{classDrawable_ad1c9d246eaac9a607b11167f75f238bc}{set\+\_\+texture}} (sf\+::\+Texture \&texture)
+\item 
+void \mbox{\hyperlink{classDrawable_a3a8e89bebab845c78020799028d36930}{draw}} (sf\+::\+Render\+Window \&window, \mbox{\hyperlink{classPosition}{Position}} \&pos)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{classDrawable_a1ea7e8e316211fa7b2a7bd8c180c4a01}{\+\_\+scale}} = \{1, 1\}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\+\_\+sprite}} = sf\+::\+Sprite()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Drawable_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{Drawable_8hpp_source}{Drawable.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDrawable_a611d8615c65f4c7422db5f50941cd545}\index{Drawable@{Drawable}!Drawable@{Drawable}}
+\index{Drawable@{Drawable}!Drawable@{Drawable}}
+\doxysubsubsection{\texorpdfstring{Drawable()}{Drawable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classDrawable_a611d8615c65f4c7422db5f50941cd545} 
+Drawable\+::\+Drawable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classDrawable_a690e993f02783fa4d7538a7e5e0a86db}\index{Drawable@{Drawable}!Drawable@{Drawable}}
+\index{Drawable@{Drawable}!Drawable@{Drawable}}
+\doxysubsubsection{\texorpdfstring{Drawable()}{Drawable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classDrawable_a690e993f02783fa4d7538a7e5e0a86db} 
+Drawable\+::\+Drawable (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{scale}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Drawable_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{Drawable_8cpp_source}{Drawable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{classDrawable_a1ea7e8e316211fa7b2a7bd8c180c4a01}{\_scale}}\ =\ scale;}
+\DoxyCodeLine{00013\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Drawable_8hpp_source_l00033}{\+\_\+scale}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDrawable_abf326782344db26ff4448fa375ecbc40}\index{Drawable@{Drawable}!display@{display}}
+\index{display@{display}!Drawable@{Drawable}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily \label{classDrawable_abf326782344db26ff4448fa375ecbc40} 
+void Drawable\+::display (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{, }\item[{\mbox{\hyperlink{classPosition}{Position}} \&}]{\+\_\+position}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Drawable_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{Drawable_8cpp_source}{Drawable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}}.setPosition(\_position.\mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}},\ \_position.\mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}});}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}}.setScale(\mbox{\hyperlink{classDrawable_a1ea7e8e316211fa7b2a7bd8c180c4a01}{\_scale}});}
+\DoxyCodeLine{00035\ \ \ \ \ window.draw(\mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}});}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Drawable_8hpp_source_l00033}{\+\_\+scale}}, \mbox{\hyperlink{Drawable_8hpp_source_l00034}{\+\_\+sprite}}, \mbox{\hyperlink{Position_8hpp_source_l00039}{Position\+::x}}, and \mbox{\hyperlink{Position_8hpp_source_l00040}{Position\+::y}}.
+
+
+
+Referenced by \mbox{\hyperlink{ActualiseDrawable_8cpp_source_l00015}{Actualise\+Drawable()}}.
+
+\Hypertarget{classDrawable_a3a8e89bebab845c78020799028d36930}\index{Drawable@{Drawable}!draw@{draw}}
+\index{draw@{draw}!Drawable@{Drawable}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{classDrawable_a3a8e89bebab845c78020799028d36930} 
+void Drawable\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window}{, }\item[{\mbox{\hyperlink{classPosition}{Position}} \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Drawable_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{Drawable_8hpp_source}{Drawable.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}}.setPosition(pos.\mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}},\ pos.\mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ window.draw(\mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Drawable_8hpp_source_l00034}{\+\_\+sprite}}, \mbox{\hyperlink{Position_8hpp_source_l00039}{Position\+::x}}, and \mbox{\hyperlink{Position_8hpp_source_l00040}{Position\+::y}}.
+
+
+
+Referenced by \mbox{\hyperlink{draw__system_8cpp_source_l00014}{draw\+\_\+system()}}.
+
+\Hypertarget{classDrawable_a70ba5b5be076216a253868f67280cc84}\index{Drawable@{Drawable}!set\_position@{set\_position}}
+\index{set\_position@{set\_position}!Drawable@{Drawable}}
+\doxysubsubsection{\texorpdfstring{set\_position()}{set\_position()}}
+{\footnotesize\ttfamily \label{classDrawable_a70ba5b5be076216a253868f67280cc84} 
+void Drawable\+::set\+\_\+position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPosition}{Position}} \&}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Drawable_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{Drawable_8cpp_source}{Drawable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}}.setPosition(position.\mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}},\ position.\mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}});}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Drawable_8hpp_source_l00034}{\+\_\+sprite}}, \mbox{\hyperlink{Position_8hpp_source_l00039}{Position\+::x}}, and \mbox{\hyperlink{Position_8hpp_source_l00040}{Position\+::y}}.
+
+
+
+Referenced by \mbox{\hyperlink{draw__system_8cpp_source_l00014}{draw\+\_\+system()}}, and \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+
+\Hypertarget{classDrawable_aba579f0300600cbfa004b5f89ba8903d}\index{Drawable@{Drawable}!set\_scale@{set\_scale}}
+\index{set\_scale@{set\_scale}!Drawable@{Drawable}}
+\doxysubsubsection{\texorpdfstring{set\_scale()}{set\_scale()}}
+{\footnotesize\ttfamily \label{classDrawable_aba579f0300600cbfa004b5f89ba8903d} 
+void Drawable\+::set\+\_\+scale (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{scale}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Drawable_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{Drawable_8cpp_source}{Drawable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classDrawable_a1ea7e8e316211fa7b2a7bd8c180c4a01}{\_scale}}\ =\ scale;}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}}.setScale(\mbox{\hyperlink{classDrawable_a1ea7e8e316211fa7b2a7bd8c180c4a01}{\_scale}});}
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Drawable_8hpp_source_l00033}{\+\_\+scale}}, and \mbox{\hyperlink{Drawable_8hpp_source_l00034}{\+\_\+sprite}}.
+
+
+
+Referenced by \mbox{\hyperlink{MakeVinicius_8cpp_source_l00016}{Make\+Vinicius()}}.
+
+\Hypertarget{classDrawable_ad1c9d246eaac9a607b11167f75f238bc}\index{Drawable@{Drawable}!set\_texture@{set\_texture}}
+\index{set\_texture@{set\_texture}!Drawable@{Drawable}}
+\doxysubsubsection{\texorpdfstring{set\_texture()}{set\_texture()}}
+{\footnotesize\ttfamily \label{classDrawable_ad1c9d246eaac9a607b11167f75f238bc} 
+void Drawable\+::set\+\_\+texture (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{texture}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Drawable_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{Drawable_8cpp_source}{Drawable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}}.setTexture(texture);}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Drawable_8hpp_source_l00034}{\+\_\+sprite}}.
+
+
+
+Referenced by \mbox{\hyperlink{MakeVinicius_8cpp_source_l00016}{Make\+Vinicius()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDrawable_a1ea7e8e316211fa7b2a7bd8c180c4a01}\index{Drawable@{Drawable}!\_scale@{\_scale}}
+\index{\_scale@{\_scale}!Drawable@{Drawable}}
+\doxysubsubsection{\texorpdfstring{\_scale}{\_scale}}
+{\footnotesize\ttfamily \label{classDrawable_a1ea7e8e316211fa7b2a7bd8c180c4a01} 
+sf\+::\+Vector2f Drawable\+::\+\_\+scale = \{1, 1\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Drawable_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{Drawable_8hpp_source}{Drawable.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{1,\ 1\};}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{Drawable_8cpp_source_l00031}{display()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00010}{Drawable()}}, and \mbox{\hyperlink{Drawable_8cpp_source_l00020}{set\+\_\+scale()}}.
+
+\Hypertarget{classDrawable_a66862b659af4d75c1755694da4bb85db}\index{Drawable@{Drawable}!\_sprite@{\_sprite}}
+\index{\_sprite@{\_sprite}!Drawable@{Drawable}}
+\doxysubsubsection{\texorpdfstring{\_sprite}{\_sprite}}
+{\footnotesize\ttfamily \label{classDrawable_a66862b659af4d75c1755694da4bb85db} 
+sf\+::\+Sprite Drawable\+::\+\_\+sprite = sf\+::\+Sprite()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Drawable_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{Drawable_8hpp_source}{Drawable.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Drawable_8cpp_source_l00031}{display()}}, \mbox{\hyperlink{Drawable_8hpp_source_l00026}{draw()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00015}{set\+\_\+position()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00020}{set\+\_\+scale()}}, and \mbox{\hyperlink{Drawable_8cpp_source_l00026}{set\+\_\+texture()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+ECS/src/\+Data/\mbox{\hyperlink{Drawable_8hpp}{Drawable.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+ECS/src/\+Data/\mbox{\hyperlink{Drawable_8cpp}{Drawable.\+cpp}}\end{DoxyCompactItemize}

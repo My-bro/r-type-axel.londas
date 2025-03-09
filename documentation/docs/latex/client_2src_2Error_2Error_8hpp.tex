@@ -1,0 +1,69 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/client/src/\+Error/\+Error.hpp File Reference}
+\hypertarget{client_2src_2Error_2Error_8hpp}{}\label{client_2src_2Error_2Error_8hpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/client/src/Error/Error.hpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/client/src/Error/Error.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classError}{Error}}
+\begin{DoxyCompactList}\small\item\em Base class for custom exception handling. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classClientWrongSocket}{Client\+Wrong\+Socket}}
+\begin{DoxyCompactList}\small\item\em Exception for handling socket-\/related client errors. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classClientWrongSend}{Client\+Wrong\+Send}}
+\begin{DoxyCompactList}\small\item\em Exception for handling errors during client send operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classClientWrongReceive}{Client\+Wrong\+Receive}}
+\begin{DoxyCompactList}\small\item\em Exception for handling errors during client receive operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{client_2src_2Error_2Error_8hpp_a0acc6113c172eded4c0d97d1093447dd}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classError}{Error}} \&error)
+\begin{DoxyCompactList}\small\item\em Overload of the stream insertion operator for \doxylink{classError}{Error}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{client_2src_2Error_2Error_8hpp_a0acc6113c172eded4c0d97d1093447dd}\index{Error.hpp@{Error.hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Error.hpp@{Error.hpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{client_2src_2Error_2Error_8hpp_a0acc6113c172eded4c0d97d1093447dd} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{classError}{Error}} \&}]{error}{}\end{DoxyParamCaption})}
+
+
+
+Overload of the stream insertion operator for \doxylink{classError}{Error}. 
+
+Allows printing the error message of an \doxylink{classError}{Error} or derived class using an output stream. 
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream. \\
+\hline
+{\em error} & The \doxylink{classError}{Error} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output stream.
+\end{DoxyReturn}
+Overload of the stream insertion operator for \doxylink{classError}{Error}.
+
+Writes the error message to the provided output stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream to write to. \\
+\hline
+{\em error} & The \doxylink{classError}{Error} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the output stream. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source}{Error.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ os\ <<\ error.\mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{what}}();}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,46 @@
+\doxysection{Registry.\+cpp}
+\hypertarget{Registry_8cpp_source}{}\label{Registry_8cpp_source}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/Registry/Registry.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/Registry/Registry.cpp}}
+\mbox{\hyperlink{Registry_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00005}00005\ \textcolor{comment}{**\ Registry}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Registry_8hpp}{Registry.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00010}\mbox{\hyperlink{classRegistry_a3d6e1501dab60caa62a8511245f0b0b3}{00010}}\ \mbox{\hyperlink{classEntity}{Entity}}\ \mbox{\hyperlink{classRegistry_a3d6e1501dab60caa62a8511245f0b0b3}{Registry::spawn\_entity}}()}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00012}00012\ \ \ \ \ std::size\_t\ id;}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405}{\_free\_ids}}.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405}{\_free\_ids}}.front();}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405}{\_free\_ids}}.pop();}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00016}00016\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classRegistry_ad38560b7217b982f420349c7ba334561}{\_next\_id}}++;}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEntity}{Entity}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00022}\mbox{\hyperlink{classRegistry_a9f8e76e4f67a4e33dd7273d065d6be7a}{00022}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRegistry_a9f8e76e4f67a4e33dd7273d065d6be7a}{Registry::kill\_entity}}(\mbox{\hyperlink{classEntity}{Entity}}\ \textcolor{keyword}{const}\ \&e)}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{classRegistry_a474c6910d18dd8a2b482a65adf75795d}{erase\_components}}(e);}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{classRegistry_a3fdeb60db025d0a7b8ad5db82a6bd405}{\_free\_ids}}.push(e.\mbox{\hyperlink{classEntity_ae5ff2e126e483168afd9519837f767c8}{get\_id}}());}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00028}\mbox{\hyperlink{classRegistry_a474c6910d18dd8a2b482a65adf75795d}{00028}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRegistry_a474c6910d18dd8a2b482a65adf75795d}{Registry::erase\_components}}(\mbox{\hyperlink{classEntity}{Entity}}\ \textcolor{keyword}{const}\ \&e)}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&erase\_function\ :\ \mbox{\hyperlink{classRegistry_a6c0d502f2f9a46777e3889109ad8de41}{\_erase\_functions}})\ \{}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ erase\_function(*\textcolor{keyword}{this},\ e);}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00035}\mbox{\hyperlink{classRegistry_a15a6de78dc2259220850e60b540148aa}{00035}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRegistry_a15a6de78dc2259220850e60b540148aa}{Registry::run\_systems}}()}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&system\ :\ \mbox{\hyperlink{classRegistry_aa719d95133cb133a0fe93b91d192719a}{\_systems}})\ \{}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ system(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Registry_8cpp_source_l00040}00040\ \}}
+
+\end{DoxyCode}

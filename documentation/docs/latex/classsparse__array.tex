@@ -1,0 +1,356 @@
+\doxysection{sparse\+\_\+array\texorpdfstring{$<$}{<} Component \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classsparse__array}{}\label{classsparse__array}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+
+
+{\ttfamily \#include $<$Sparse\+Array.\+hpp$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} = Component
+\item 
+using \mbox{\hyperlink{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d}{reference\+\_\+type}} = \mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} \&
+\item 
+using \mbox{\hyperlink{classsparse__array_a373bf1a871a33e79a21da15acf3652f8}{const\+\_\+reference\+\_\+type}} = \mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} const \&
+\item 
+using \mbox{\hyperlink{classsparse__array_a5f747e93a9406474b106bde9c66f01b7}{container\+\_\+t}} = std\+::vector$<$\mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}}$>$
+\item 
+using \mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} = typename container\+\_\+t\+::size\+\_\+type
+\item 
+using \mbox{\hyperlink{classsparse__array_a1293c5b64d77bb97ed87e57c6276925e}{iterator}} = typename container\+\_\+t\+::iterator
+\item 
+using \mbox{\hyperlink{classsparse__array_a9beecc69673481f79844336194dfc1a2}{const\+\_\+iterator}} = typename container\+\_\+t\+::const\+\_\+iterator
+\item 
+using \mbox{\hyperlink{classsparse__array_a2a2deb5584ce41d298a3184d7a87d9ec}{allocator\+\_\+type}} = typename container\+\_\+t\+::allocator\+\_\+type
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsparse__array_a34c792f0a28f90cffd87e58c52f20017}{sparse\+\_\+array}} ()
+\item 
+\mbox{\hyperlink{classsparse__array_ae5a7b7e95b19f6fab70de90609e6c812}{sparse\+\_\+array}} (\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}} const \&)
+\item 
+\mbox{\hyperlink{classsparse__array_a26a69cf89e1a2a2553b73b19e5eb6337}{sparse\+\_\+array}} (\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classsparse__array_a4fcfd9065975ddcb90f2a84c91313867}{\texorpdfstring{$\sim$}{\string~}sparse\+\_\+array}} ()
+\item 
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}} \& \mbox{\hyperlink{classsparse__array_a7ef594b28d5a04d4cb9c5cb06edae7b2}{operator=}} (\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}} const \&)
+\item 
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}} \& \mbox{\hyperlink{classsparse__array_a5c899516f3e0e3400eacc7185fef499c}{operator=}} (\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d}{reference\+\_\+type}} \mbox{\hyperlink{classsparse__array_a31ee64edfd303c576f5704898c9a644f}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} idx)
+\item 
+\mbox{\hyperlink{classsparse__array_a373bf1a871a33e79a21da15acf3652f8}{const\+\_\+reference\+\_\+type}} \mbox{\hyperlink{classsparse__array_a113f5228ae1f099295ad88dfd9333b83}{operator\mbox{[}$\,$\mbox{]}}} (\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} idx) const
+\item 
+\mbox{\hyperlink{classsparse__array_a1293c5b64d77bb97ed87e57c6276925e}{iterator}} \mbox{\hyperlink{classsparse__array_a1cdf824b5897fb3ffc857843b37453b2}{begin}} ()
+\item 
+\mbox{\hyperlink{classsparse__array_a9beecc69673481f79844336194dfc1a2}{const\+\_\+iterator}} \mbox{\hyperlink{classsparse__array_a25c3a93f84f860ee55bb25f8da67e358}{begin}} () const
+\item 
+\mbox{\hyperlink{classsparse__array_a9beecc69673481f79844336194dfc1a2}{const\+\_\+iterator}} \mbox{\hyperlink{classsparse__array_a8f6e23b67ea783baf53129f8907e297a}{cbegin}} () const
+\item 
+\mbox{\hyperlink{classsparse__array_a1293c5b64d77bb97ed87e57c6276925e}{iterator}} \mbox{\hyperlink{classsparse__array_af6749bdfbdc5200a77549f52594107eb}{end}} ()
+\item 
+\mbox{\hyperlink{classsparse__array_a9beecc69673481f79844336194dfc1a2}{const\+\_\+iterator}} \mbox{\hyperlink{classsparse__array_a094425cbf56a592e130b67ecda68cd3d}{end}} () const
+\item 
+\mbox{\hyperlink{classsparse__array_a9beecc69673481f79844336194dfc1a2}{const\+\_\+iterator}} \mbox{\hyperlink{classsparse__array_adb95eba3fb7e88207a4374c04950d167}{cend}} () const
+\item 
+\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} \mbox{\hyperlink{classsparse__array_a6679a2315be266da4c01ad97f00e51fd}{size}} () const
+\item 
+\mbox{\hyperlink{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d}{reference\+\_\+type}} \mbox{\hyperlink{classsparse__array_a7823d89e3359c98adce6ae9b8a549b3b}{insert\+\_\+at}} (\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} idx, \mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} const \&value)
+\item 
+\mbox{\hyperlink{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d}{reference\+\_\+type}} \mbox{\hyperlink{classsparse__array_aa5aba34b8653a339220c4d3f5596091e}{insert\+\_\+at}} (\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} idx, \mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} \&\&value)
+\item 
+{\footnotesize template$<$class... Params$>$ }\\\mbox{\hyperlink{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d}{reference\+\_\+type}} \mbox{\hyperlink{classsparse__array_a78ae384ec525a66653af0cc3df3df34b}{emplace\+\_\+at}} (\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} pos, Params \&\&...)
+\item 
+void \mbox{\hyperlink{classsparse__array_ac0bea77704ce39c1a731dc69de8d9d2d}{erase}} (\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} pos)
+\item 
+\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} \mbox{\hyperlink{classsparse__array_a67e3ada4da4286c0a6a0971d40d7f9c3}{get\+\_\+index}} (\mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} const \&) const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} $>$ const \& \mbox{\hyperlink{classsparse__array_acea001f9cf0aa3034d927f6147cf6a3d}{get\+\_\+storage}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsparse__array_a5f747e93a9406474b106bde9c66f01b7}{container\+\_\+t}} \mbox{\hyperlink{classsparse__array_af112878e0e1b449f263d4bb8f6ef758b}{\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Component$>$\newline
+class sparse\+\_\+array$<$ Component $>$}
+
+
+Definition at line \mbox{\hyperlink{SparseArray_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{SparseArray_8hpp_source}{Sparse\+Array.\+hpp}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{classsparse__array_a2a2deb5584ce41d298a3184d7a87d9ec}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!allocator\_type@{allocator\_type}}
+\index{allocator\_type@{allocator\_type}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{allocator\_type}{allocator\_type}}
+{\footnotesize\ttfamily \label{classsparse__array_a2a2deb5584ce41d298a3184d7a87d9ec} 
+template$<$typename Component $>$ \\
+using \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::allocator\+\_\+type = typename container\+\_\+t\+::allocator\+\_\+type}
+
+
+
+Definition at line \mbox{\hyperlink{SparseArray_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{SparseArray_8hpp_source}{Sparse\+Array.\+hpp}}.
+
+\Hypertarget{classsparse__array_a9beecc69673481f79844336194dfc1a2}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily \label{classsparse__array_a9beecc69673481f79844336194dfc1a2} 
+template$<$typename Component $>$ \\
+using \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::const\+\_\+iterator = typename container\+\_\+t\+::const\+\_\+iterator}
+
+
+
+Definition at line \mbox{\hyperlink{SparseArray_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{SparseArray_8hpp_source}{Sparse\+Array.\+hpp}}.
+
+\Hypertarget{classsparse__array_a373bf1a871a33e79a21da15acf3652f8}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!const\_reference\_type@{const\_reference\_type}}
+\index{const\_reference\_type@{const\_reference\_type}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{const\_reference\_type}{const\_reference\_type}}
+{\footnotesize\ttfamily \label{classsparse__array_a373bf1a871a33e79a21da15acf3652f8} 
+template$<$typename Component $>$ \\
+using \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::const\+\_\+reference\+\_\+type = \mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} const \&}
+
+
+
+Definition at line \mbox{\hyperlink{SparseArray_8hpp_source_l00025}{25}} of file \mbox{\hyperlink{SparseArray_8hpp_source}{Sparse\+Array.\+hpp}}.
+
+\Hypertarget{classsparse__array_a5f747e93a9406474b106bde9c66f01b7}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!container\_t@{container\_t}}
+\index{container\_t@{container\_t}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{container\_t}{container\_t}}
+{\footnotesize\ttfamily \label{classsparse__array_a5f747e93a9406474b106bde9c66f01b7} 
+template$<$typename Component $>$ \\
+using \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::container\+\_\+t = std\+::vector$<$\mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}}$>$}
+
+
+
+Definition at line \mbox{\hyperlink{SparseArray_8hpp_source_l00026}{26}} of file \mbox{\hyperlink{SparseArray_8hpp_source}{Sparse\+Array.\+hpp}}.
+
+\Hypertarget{classsparse__array_a1293c5b64d77bb97ed87e57c6276925e}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily \label{classsparse__array_a1293c5b64d77bb97ed87e57c6276925e} 
+template$<$typename Component $>$ \\
+using \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::iterator = typename container\+\_\+t\+::iterator}
+
+
+
+Definition at line \mbox{\hyperlink{SparseArray_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{SparseArray_8hpp_source}{Sparse\+Array.\+hpp}}.
+
+\Hypertarget{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!reference\_type@{reference\_type}}
+\index{reference\_type@{reference\_type}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{reference\_type}{reference\_type}}
+{\footnotesize\ttfamily \label{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d} 
+template$<$typename Component $>$ \\
+using \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::reference\+\_\+type = \mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} \&}
+
+
+
+Definition at line \mbox{\hyperlink{SparseArray_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{SparseArray_8hpp_source}{Sparse\+Array.\+hpp}}.
+
+\Hypertarget{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!size\_type@{size\_type}}
+\index{size\_type@{size\_type}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{size\_type}{size\_type}}
+{\footnotesize\ttfamily \label{classsparse__array_af1468a11a30a58090580d1fb399e3cc0} 
+template$<$typename Component $>$ \\
+using \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::size\+\_\+type = typename container\+\_\+t\+::size\+\_\+type}
+
+
+
+Definition at line \mbox{\hyperlink{SparseArray_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{SparseArray_8hpp_source}{Sparse\+Array.\+hpp}}.
+
+\Hypertarget{classsparse__array_a462c1342e8ab476b569c915e0807333a}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily \label{classsparse__array_a462c1342e8ab476b569c915e0807333a} 
+template$<$typename Component $>$ \\
+using \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::value\+\_\+type = Component}
+
+
+
+Definition at line \mbox{\hyperlink{SparseArray_8hpp_source_l00023}{23}} of file \mbox{\hyperlink{SparseArray_8hpp_source}{Sparse\+Array.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classsparse__array_a34c792f0a28f90cffd87e58c52f20017}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!sparse\_array@{sparse\_array}}
+\index{sparse\_array@{sparse\_array}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{sparse\_array()}{sparse\_array()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classsparse__array_a34c792f0a28f90cffd87e58c52f20017} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\mbox{\hyperlink{classsparse__array}{\+::sparse\+\_\+array}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classsparse__array_ae5a7b7e95b19f6fab70de90609e6c812}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!sparse\_array@{sparse\_array}}
+\index{sparse\_array@{sparse\_array}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{sparse\_array()}{sparse\_array()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classsparse__array_ae5a7b7e95b19f6fab70de90609e6c812} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\mbox{\hyperlink{classsparse__array}{\+::sparse\+\_\+array}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$ const \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classsparse__array_a26a69cf89e1a2a2553b73b19e5eb6337}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!sparse\_array@{sparse\_array}}
+\index{sparse\_array@{sparse\_array}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{sparse\_array()}{sparse\_array()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classsparse__array_a26a69cf89e1a2a2553b73b19e5eb6337} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\mbox{\hyperlink{classsparse__array}{\+::sparse\+\_\+array}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$ \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+\Hypertarget{classsparse__array_a4fcfd9065975ddcb90f2a84c91313867}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!````~sparse\_array@{\texorpdfstring{$\sim$}{\string~}sparse\_array}}
+\index{````~sparse\_array@{\texorpdfstring{$\sim$}{\string~}sparse\_array}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}sparse\_array()}{\string~sparse\_array()}}
+{\footnotesize\ttfamily \label{classsparse__array_a4fcfd9065975ddcb90f2a84c91313867} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classsparse__array_a1cdf824b5897fb3ffc857843b37453b2}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!begin@{begin}}
+\index{begin@{begin}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classsparse__array_a1cdf824b5897fb3ffc857843b37453b2} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_a1293c5b64d77bb97ed87e57c6276925e}{iterator}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classsparse__array_a25c3a93f84f860ee55bb25f8da67e358}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!begin@{begin}}
+\index{begin@{begin}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classsparse__array_a25c3a93f84f860ee55bb25f8da67e358} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_a9beecc69673481f79844336194dfc1a2}{const\+\_\+iterator}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classsparse__array_a8f6e23b67ea783baf53129f8907e297a}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily \label{classsparse__array_a8f6e23b67ea783baf53129f8907e297a} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_a9beecc69673481f79844336194dfc1a2}{const\+\_\+iterator}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::cbegin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classsparse__array_adb95eba3fb7e88207a4374c04950d167}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!cend@{cend}}
+\index{cend@{cend}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily \label{classsparse__array_adb95eba3fb7e88207a4374c04950d167} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_a9beecc69673481f79844336194dfc1a2}{const\+\_\+iterator}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::cend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classsparse__array_a78ae384ec525a66653af0cc3df3df34b}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!emplace\_at@{emplace\_at}}
+\index{emplace\_at@{emplace\_at}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{emplace\_at()}{emplace\_at()}}
+{\footnotesize\ttfamily \label{classsparse__array_a78ae384ec525a66653af0cc3df3df34b} 
+template$<$typename Component $>$ \\
+template$<$class... Params$>$ \\
+\mbox{\hyperlink{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d}{reference\+\_\+type}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::emplace\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}}}]{pos}{, }\item[{Params \&\&}]{...}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classsparse__array_af6749bdfbdc5200a77549f52594107eb}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!end@{end}}
+\index{end@{end}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classsparse__array_af6749bdfbdc5200a77549f52594107eb} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_a1293c5b64d77bb97ed87e57c6276925e}{iterator}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classsparse__array_a094425cbf56a592e130b67ecda68cd3d}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!end@{end}}
+\index{end@{end}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classsparse__array_a094425cbf56a592e130b67ecda68cd3d} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_a9beecc69673481f79844336194dfc1a2}{const\+\_\+iterator}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classsparse__array_ac0bea77704ce39c1a731dc69de8d9d2d}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!erase@{erase}}
+\index{erase@{erase}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \label{classsparse__array_ac0bea77704ce39c1a731dc69de8d9d2d} 
+template$<$typename Component $>$ \\
+void \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}}}]{pos}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classsparse__array_a67e3ada4da4286c0a6a0971d40d7f9c3}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!get\_index@{get\_index}}
+\index{get\_index@{get\_index}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{get\_index()}{get\_index()}}
+{\footnotesize\ttfamily \label{classsparse__array_a67e3ada4da4286c0a6a0971d40d7f9c3} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::get\+\_\+index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} const \&}]{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classsparse__array_acea001f9cf0aa3034d927f6147cf6a3d}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!get\_storage@{get\_storage}}
+\index{get\_storage@{get\_storage}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{get\_storage()}{get\_storage()}}
+{\footnotesize\ttfamily \label{classsparse__array_acea001f9cf0aa3034d927f6147cf6a3d} 
+template$<$typename Component $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} $>$ const  \& \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::get\+\_\+storage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classsparse__array_aa5aba34b8653a339220c4d3f5596091e}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!insert\_at@{insert\_at}}
+\index{insert\_at@{insert\_at}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{insert\_at()}{insert\_at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classsparse__array_aa5aba34b8653a339220c4d3f5596091e} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d}{reference\+\_\+type}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::insert\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}}}]{idx}{, }\item[{\mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} \&\&}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classsparse__array_a7823d89e3359c98adce6ae9b8a549b3b}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!insert\_at@{insert\_at}}
+\index{insert\_at@{insert\_at}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{insert\_at()}{insert\_at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classsparse__array_a7823d89e3359c98adce6ae9b8a549b3b} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d}{reference\+\_\+type}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::insert\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}}}]{idx}{, }\item[{\mbox{\hyperlink{classsparse__array_a462c1342e8ab476b569c915e0807333a}{value\+\_\+type}} const \&}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Referenced by \mbox{\hyperlink{TestSparseArrayClass_8cpp_source_l00012}{Test\+Sparse\+Array\+Class()}}, and \mbox{\hyperlink{TestSparseArrayInt_8cpp_source_l00011}{Test\+Sparse\+Array\+Int()}}.
+
+\Hypertarget{classsparse__array_a5c899516f3e0e3400eacc7185fef499c}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classsparse__array_a5c899516f3e0e3400eacc7185fef499c} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}} \& \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$ \&\&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{classsparse__array_a7ef594b28d5a04d4cb9c5cb06edae7b2}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classsparse__array_a7ef594b28d5a04d4cb9c5cb06edae7b2} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}} \& \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$ const \&}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classsparse__array_a31ee64edfd303c576f5704898c9a644f}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classsparse__array_a31ee64edfd303c576f5704898c9a644f} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_ae00c5b30838e89f0d368d55e0ba6a54d}{reference\+\_\+type}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}}}]{idx}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classsparse__array_a113f5228ae1f099295ad88dfd9333b83}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classsparse__array_a113f5228ae1f099295ad88dfd9333b83} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_a373bf1a871a33e79a21da15acf3652f8}{const\+\_\+reference\+\_\+type}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}}}]{idx}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{classsparse__array_a6679a2315be266da4c01ad97f00e51fd}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!size@{size}}
+\index{size@{size}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{classsparse__array_a6679a2315be266da4c01ad97f00e51fd} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_af1468a11a30a58090580d1fb399e3cc0}{size\+\_\+type}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Referenced by \mbox{\hyperlink{TestSparseArrayInt_8cpp_source_l00011}{Test\+Sparse\+Array\+Int()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classsparse__array_af112878e0e1b449f263d4bb8f6ef758b}\index{sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}!\_data@{\_data}}
+\index{\_data@{\_data}!sparse\_array$<$ Component $>$@{sparse\_array$<$ Component $>$}}
+\doxysubsubsection{\texorpdfstring{\_data}{\_data}}
+{\footnotesize\ttfamily \label{classsparse__array_af112878e0e1b449f263d4bb8f6ef758b} 
+template$<$typename Component $>$ \\
+\mbox{\hyperlink{classsparse__array_a5f747e93a9406474b106bde9c66f01b7}{container\+\_\+t}} \mbox{\hyperlink{classsparse__array}{sparse\+\_\+array}}$<$ Component $>$\+::\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{SparseArray_8hpp_source_l00066}{66}} of file \mbox{\hyperlink{SparseArray_8hpp_source}{Sparse\+Array.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+ECS/src/\+Sparse\+Array/\mbox{\hyperlink{SparseArray_8hpp}{Sparse\+Array.\+hpp}}\end{DoxyCompactItemize}

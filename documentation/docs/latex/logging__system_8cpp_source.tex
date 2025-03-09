@@ -1,0 +1,33 @@
+\doxysection{logging\+\_\+system.\+cpp}
+\hypertarget{logging__system_8cpp_source}{}\label{logging__system_8cpp_source}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/logging\_system.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/logging\_system.cpp}}
+\mbox{\hyperlink{logging__system_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00005}00005\ \textcolor{comment}{**\ logging\_system}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Registry_8hpp}{Registry.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Position_8hpp}{Position.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Velocity_8hpp}{Velocity.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00014}\mbox{\hyperlink{logging__system_8cpp_af9d575eaa365df5aaaedd8e470e99ea2}{00014}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{logging__system_8cpp_af9d575eaa365df5aaaedd8e470e99ea2}{logging\_system}}(\mbox{\hyperlink{classRegistry}{Registry}}\ \&r)}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00016}00016\ \ \ \ \ std::vector<Position>\ positions\ =\ r.\mbox{\hyperlink{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f}{get\_component\_list}}<\mbox{\hyperlink{classPosition}{Position}}>();}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00017}00017\ \ \ \ \ std::vector<Velocity>\ velocities\ =\ r.\mbox{\hyperlink{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f}{get\_component\_list}}<\mbox{\hyperlink{classVelocity}{Velocity}}>();}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00019}00019\ \ \ \ \ std::cout\ <<\ positions.size()\ <<\ \textcolor{stringliteral}{"{}\ positions\ and\ "{}}\ <<\ velocities.size()\ <<\ \textcolor{stringliteral}{"{}\ velocities."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ positions.size()\ \&\&\ i\ <\ velocities.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPosition}{Position}}\ pos\ =\ positions[i];}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVelocity}{Velocity}}\ vel\ =\ velocities[i];}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ std::cerr\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ pos\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ vel\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{logging__system_8cpp_source_l00027}00027\ \}}
+
+\end{DoxyCode}

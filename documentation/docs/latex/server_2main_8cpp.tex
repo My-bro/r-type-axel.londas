@@ -1,0 +1,84 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/main.cpp File Reference}
+\hypertarget{server_2main_8cpp}{}\label{server_2main_8cpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/main.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}src/network/\+Network\+Server.\+hpp"{}}\newline
+{\ttfamily \#include "{}src/thread/\+Thread\+Pool.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Parsing/\+Parsing.\+hpp"{}}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{server_2main_8cpp_a86c32012b2f53c99010e49ae763f71e7}{handle\+Received\+Message}} (\mbox{\hyperlink{classNetworkServer}{Network\+Server}} \&server, \mbox{\hyperlink{classThreadPool}{Thread\+Pool}} \&thread\+Pool, const std\+::string \&message)
+\item 
+int \mbox{\hyperlink{server_2main_8cpp_a0c99d968a34e803d378692bde2e3f18f}{main}} (int ac, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}av)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{server_2main_8cpp_a86c32012b2f53c99010e49ae763f71e7}\index{main.cpp@{main.cpp}!handleReceivedMessage@{handleReceivedMessage}}
+\index{handleReceivedMessage@{handleReceivedMessage}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{handleReceivedMessage()}{handleReceivedMessage()}}
+{\footnotesize\ttfamily \label{server_2main_8cpp_a86c32012b2f53c99010e49ae763f71e7} 
+void handle\+Received\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNetworkServer}{Network\+Server}} \&}]{server}{, }\item[{\mbox{\hyperlink{classThreadPool}{Thread\+Pool}} \&}]{thread\+Pool}{, }\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2main_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{server_2main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ threadPool.\mbox{\hyperlink{classThreadPool_a6171cb42d1c705ef840be91fda91c8bc}{enqueue}}([\&server,\ message]()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Message\ reçu\ :\ "{}}\ <<\ message\ <<\ std::endl;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::string\ response\ =\ \textcolor{stringliteral}{"{}Confirmation\ :\ Message\ reçu\ !"{}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ server.\mbox{\hyperlink{classNetworkServer_add20d924524eccdca7e55fc346d47b59}{sendMessage}}(response);}
+\DoxyCodeLine{00030\ \ \ \ \ \});}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ThreadPool_8cpp_source_l00082}{Thread\+Pool\+::enqueue()}}, and \mbox{\hyperlink{NetworkServer_8cpp_source_l00074}{Network\+Server\+::send\+Message()}}.
+
+
+
+Referenced by \mbox{\hyperlink{server_2main_8cpp_source_l00033}{main()}}.
+
+\Hypertarget{server_2main_8cpp_a0c99d968a34e803d378692bde2e3f18f}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{server_2main_8cpp_a0c99d968a34e803d378692bde2e3f18f} 
+int main (\begin{DoxyParamCaption}\item[{int}]{ac}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{av}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{server_2main_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{server_2main_8cpp_source}{main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classParsing}{Parsing}}\ parser(ac,\ av);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ serverSettings\ =\ parser.getServerSettings();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port\ =\ std::stoi(serverSettings[\textcolor{stringliteral}{"{}port"{}}]);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetworkServer}{NetworkServer}}\ server(port);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Serveur\ démarré\ sur\ le\ port\ "{}}\ <<\ port\ <<\ std::endl;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ num\_threads\ =\ std::thread::hardware\_concurrency();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classThreadPool}{ThreadPool}}\ threadPool(num\_threads);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ server.startAsyncReceive([\&server,\ \&threadPool](\textcolor{keyword}{const}\ std::string\&\ message)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{server_2main_8cpp_a86c32012b2f53c99010e49ae763f71e7}{handleReceivedMessage}}(server,\ threadPool,\ message);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ server.getIoContext().run();}
+\DoxyCodeLine{00047\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Erreur\ :\ "{}}\ <<\ e.what()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{NetworkServer_8cpp_source_l00110}{Network\+Server\+::get\+Io\+Context()}}, \mbox{\hyperlink{Parsing_8cpp_source_l00130}{Parsing\+::get\+Server\+Settings()}}, \mbox{\hyperlink{server_2main_8cpp_source_l00025}{handle\+Received\+Message()}}, and \mbox{\hyperlink{NetworkServer_8cpp_source_l00093}{Network\+Server\+::start\+Async\+Receive()}}.
+

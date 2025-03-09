@@ -1,0 +1,125 @@
+\doxysection{Message Struct Reference}
+\hypertarget{structMessage}{}\label{structMessage}\index{Message@{Message}}
+
+
+Represents the structure of a message to be converted to binary.  
+
+
+
+
+{\ttfamily \#include $<$Protocol.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structMessage_ae850e2a375a24c10dd92ed3878770062}{header}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structMessage}{Message} header. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structMessage_ac8b1191961ca0372ffe5e35cc8d0ace5}{type}}
+\begin{DoxyCompactList}\small\item\em Type of the message. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structMessage_ae61f86cd0691a3f02faa414da330a780}{id}}
+\begin{DoxyCompactList}\small\item\em ID of the player. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structMessage_a5106e7d601f1b8e71b9f4e15a4187299}{length}}
+\begin{DoxyCompactList}\small\item\em Length of the message payload. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structMessage_adbe98f7e813775fe7e809f1a08899733}{msg}}
+\begin{DoxyCompactList}\small\item\em The message content. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the structure of a message to be converted to binary. 
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structMessage_ae850e2a375a24c10dd92ed3878770062}\index{Message@{Message}!header@{header}}
+\index{header@{header}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{header}{header}}
+{\footnotesize\ttfamily \label{structMessage_ae850e2a375a24c10dd92ed3878770062} 
+uint32\+\_\+t Message\+::header}
+
+
+
+\doxylink{structMessage}{Message} header. 
+
+
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00036}{36}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Protocol_8cpp_source_l00079}{Protocol\+::decode()}}, \mbox{\hyperlink{Protocol_8cpp_source_l00092}{Protocol\+::display\+Decoded\+Message()}}, and \mbox{\hyperlink{Protocol_8cpp_source_l00030}{Protocol\+::\+Protocol()}}.
+
+\Hypertarget{structMessage_ae61f86cd0691a3f02faa414da330a780}\index{Message@{Message}!id@{id}}
+\index{id@{id}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{structMessage_ae61f86cd0691a3f02faa414da330a780} 
+uint8\+\_\+t Message\+::id}
+
+
+
+ID of the player. 
+
+
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00046}{46}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+\Hypertarget{structMessage_a5106e7d601f1b8e71b9f4e15a4187299}\index{Message@{Message}!length@{length}}
+\index{length@{length}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily \label{structMessage_a5106e7d601f1b8e71b9f4e15a4187299} 
+uint16\+\_\+t Message\+::length}
+
+
+
+Length of the message payload. 
+
+
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Protocol_8cpp_source_l00079}{Protocol\+::decode()}}, \mbox{\hyperlink{Protocol_8cpp_source_l00092}{Protocol\+::display\+Decoded\+Message()}}, and \mbox{\hyperlink{Protocol_8cpp_source_l00030}{Protocol\+::\+Protocol()}}.
+
+\Hypertarget{structMessage_adbe98f7e813775fe7e809f1a08899733}\index{Message@{Message}!msg@{msg}}
+\index{msg@{msg}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{msg}{msg}}
+{\footnotesize\ttfamily \label{structMessage_adbe98f7e813775fe7e809f1a08899733} 
+std\+::string Message\+::msg}
+
+
+
+The message content. 
+
+
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00056}{56}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Protocol_8cpp_source_l00079}{Protocol\+::decode()}}, \mbox{\hyperlink{Protocol_8cpp_source_l00092}{Protocol\+::display\+Decoded\+Message()}}, \mbox{\hyperlink{Protocol_8cpp_source_l00030}{Protocol\+::\+Protocol()}}, and \mbox{\hyperlink{Protocol_8cpp_source_l00043}{Protocol\+::\texorpdfstring{$\sim$}{\string~}\+Protocol()}}.
+
+\Hypertarget{structMessage_ac8b1191961ca0372ffe5e35cc8d0ace5}\index{Message@{Message}!type@{type}}
+\index{type@{type}!Message@{Message}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{structMessage_ac8b1191961ca0372ffe5e35cc8d0ace5} 
+uint8\+\_\+t Message\+::type}
+
+
+
+Type of the message. 
+
+
+
+Definition at line \mbox{\hyperlink{Protocol_8hpp_source_l00041}{41}} of file \mbox{\hyperlink{Protocol_8hpp_source}{Protocol.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Protocol_8cpp_source_l00079}{Protocol\+::decode()}}, \mbox{\hyperlink{Protocol_8cpp_source_l00092}{Protocol\+::display\+Decoded\+Message()}}, and \mbox{\hyperlink{Protocol_8cpp_source_l00030}{Protocol\+::\+Protocol()}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/protocol/\mbox{\hyperlink{Protocol_8hpp}{Protocol.\+hpp}}\end{DoxyCompactItemize}

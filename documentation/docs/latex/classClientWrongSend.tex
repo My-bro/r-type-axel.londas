@@ -1,0 +1,121 @@
+\doxysection{Client\+Wrong\+Send Class Reference}
+\hypertarget{classClientWrongSend}{}\label{classClientWrongSend}\index{ClientWrongSend@{ClientWrongSend}}
+
+
+Exception for handling errors during client send operations.  
+
+
+
+
+{\ttfamily \#include $<$Error.\+hpp$>$}
+
+Inheritance diagram for Client\+Wrong\+Send\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classClientWrongSend}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClientWrongSend_ad256b9de35509a8808bc8dd2a72d5aba}{Client\+Wrong\+Send}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classClientWrongSend_ab52ee4ac70d86659cca389d176e247f0}{\texorpdfstring{$\sim$}{\string~}\+Client\+Wrong\+Send}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classClientWrongSend_aa5682ead1b444fce043bcfd2003ceceb}{what}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em Returns the error message for the send error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classError}{Error}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classError_a1a45d42a3a035d510333cdfeb36a0e93}{\texorpdfstring{$\sim$}{\string~}\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classError_aadd4b7cb712e1322ec3da4a4d9af6460}{\texorpdfstring{$\sim$}{\string~}\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Exception for handling errors during client send operations. 
+
+This class is derived from the \doxylink{classError}{Error} base class and represents an error occurring when there is an issue sending data from the client. 
+
+Definition at line \mbox{\hyperlink{client_2src_2Error_2Error_8hpp_source_l00090}{90}} of file \mbox{\hyperlink{client_2src_2Error_2Error_8hpp_source}{Error.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classClientWrongSend_ad256b9de35509a8808bc8dd2a72d5aba}\index{ClientWrongSend@{ClientWrongSend}!ClientWrongSend@{ClientWrongSend}}
+\index{ClientWrongSend@{ClientWrongSend}!ClientWrongSend@{ClientWrongSend}}
+\doxysubsubsection{\texorpdfstring{ClientWrongSend()}{ClientWrongSend()}}
+{\footnotesize\ttfamily \label{classClientWrongSend_ad256b9de35509a8808bc8dd2a72d5aba} 
+Client\+Wrong\+Send\+::\+Client\+Wrong\+Send (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Constructor for the \doxylink{classClientWrongSend}{Client\+Wrong\+Send} class.
+
+This exception is thrown when the client cannot send a message. 
+
+Definition at line \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source}{Error.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ :\ \mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}}()\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classClientWrongSend_ab52ee4ac70d86659cca389d176e247f0}\index{ClientWrongSend@{ClientWrongSend}!````~ClientWrongSend@{\texorpdfstring{$\sim$}{\string~}ClientWrongSend}}
+\index{````~ClientWrongSend@{\texorpdfstring{$\sim$}{\string~}ClientWrongSend}!ClientWrongSend@{ClientWrongSend}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ClientWrongSend()}{\string~ClientWrongSend()}}
+{\footnotesize\ttfamily \label{classClientWrongSend_ab52ee4ac70d86659cca389d176e247f0} 
+Client\+Wrong\+Send\+::\texorpdfstring{$\sim$}{\string~}\+Client\+Wrong\+Send (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. 
+
+Destructor for the \doxylink{classClientWrongSend}{Client\+Wrong\+Send} class. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classClientWrongSend_aa5682ead1b444fce043bcfd2003ceceb}\index{ClientWrongSend@{ClientWrongSend}!what@{what}}
+\index{what@{what}!ClientWrongSend@{ClientWrongSend}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily \label{classClientWrongSend_aa5682ead1b444fce043bcfd2003ceceb} 
+const char \texorpdfstring{$\ast$}{*} Client\+Wrong\+Send\+::what (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the error message for the send error. 
+
+Returns an error message indicating the message send failure.
+
+\begin{DoxyReturn}{Returns}
+A C-\/style string describing the send error.
+
+A C-\/string describing the error. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{Error}}.
+
+
+
+Definition at line \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source}{Error.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Couldn't\ send\ a\ message\ to\ the\ Server."{}};}
+\DoxyCodeLine{00076\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/client/src/\+Error/\mbox{\hyperlink{client_2src_2Error_2Error_8hpp}{Error.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/client/src/\+Error/\mbox{\hyperlink{client_2src_2Error_2Error_8cpp}{Error.\+cpp}}\end{DoxyCompactItemize}

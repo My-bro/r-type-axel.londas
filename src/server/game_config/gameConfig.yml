@@ -1,0 +1,31 @@
+stages:
+  - stage: 1
+    mobs:
+      - type: typemob
+        number: 10
+        health: 50
+        damage: 5
+      - type: slime
+        number: 5
+        health: 30
+        damage: 3
+    boss: null
+
+  - stage: 2
+    mobs:
+      - type: typemob
+        number: 8
+        health: 100
+        damage: 15
+      - type: typemob
+        number: 6
+        health: 60
+        damage: 8
+    boss:
+      type: typemob
+      health: 500
+      damage: 25
+      special_abilities:
+        - name: Rage
+          effect: "Increases damage by 50% for 10 seconds"
+          cooldown: 30

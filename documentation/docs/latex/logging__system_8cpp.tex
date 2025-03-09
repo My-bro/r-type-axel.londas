@@ -1,0 +1,50 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/\+ECS/src/\+System/logging\+\_\+system.cpp File Reference}
+\hypertarget{logging__system_8cpp}{}\label{logging__system_8cpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/logging\_system.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/logging\_system.cpp}}
+{\ttfamily \#include "{}Registry.\+hpp"{}}\newline
+{\ttfamily \#include "{}Position.\+hpp"{}}\newline
+{\ttfamily \#include "{}Velocity.\+hpp"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{logging__system_8cpp_af9d575eaa365df5aaaedd8e470e99ea2}{logging\+\_\+system}} (\mbox{\hyperlink{classRegistry}{Registry}} \&r)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{logging__system_8cpp_af9d575eaa365df5aaaedd8e470e99ea2}\index{logging\_system.cpp@{logging\_system.cpp}!logging\_system@{logging\_system}}
+\index{logging\_system@{logging\_system}!logging\_system.cpp@{logging\_system.cpp}}
+\doxysubsubsection{\texorpdfstring{logging\_system()}{logging\_system()}}
+{\footnotesize\ttfamily \label{logging__system_8cpp_af9d575eaa365df5aaaedd8e470e99ea2} 
+void logging\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{logging__system_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{logging__system_8cpp_source}{logging\+\_\+system.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ std::vector<Position>\ positions\ =\ r.\mbox{\hyperlink{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f}{get\_component\_list}}<\mbox{\hyperlink{classPosition}{Position}}>();}
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<Velocity>\ velocities\ =\ r.\mbox{\hyperlink{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f}{get\_component\_list}}<\mbox{\hyperlink{classVelocity}{Velocity}}>();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ std::cout\ <<\ positions.size()\ <<\ \textcolor{stringliteral}{"{}\ positions\ and\ "{}}\ <<\ velocities.size()\ <<\ \textcolor{stringliteral}{"{}\ velocities."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ positions.size()\ \&\&\ i\ <\ velocities.size();\ ++i)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPosition}{Position}}\ pos\ =\ positions[i];}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVelocity}{Velocity}}\ vel\ =\ velocities[i];}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::cerr\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ pos\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ vel\ <<\ std::endl;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f}{Registry\+::get\+\_\+component\+\_\+list()}}.
+
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+

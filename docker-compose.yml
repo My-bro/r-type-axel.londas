@@ -1,0 +1,18 @@
+services:
+  linux-container:
+    build:
+      context: .
+      dockerfile: Dockerfile.linux
+    container_name: linux-cmake
+    platform: linux
+    volumes:
+      - .:/app/
+
+  # windows-container:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.windows
+  #   container_name: windows-cmake
+  #   platform: windows
+  #   volumes:
+  #     - .:/app/

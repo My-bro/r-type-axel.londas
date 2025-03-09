@@ -1,0 +1,57 @@
+\doxysection{Network\+Client.\+hpp}
+\hypertarget{NetworkClient_8hpp_source}{}\label{NetworkClient_8hpp_source}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/client/src/network/NetworkClient.hpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/client/src/network/NetworkClient.hpp}}
+\mbox{\hyperlink{NetworkClient_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00001}00001\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00003}00003\ \textcolor{comment}{\ *\ EPITECH\ PROJECT\ -\/\ Fri,\ Nov,\ 2024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00004}00004\ \textcolor{comment}{\ *\ Title\ \ \ \ \ \ \ \ \ \ \ -\/\ R-\/type\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00005}00005\ \textcolor{comment}{\ *\ Description\ \ \ \ \ -\/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ NetworkClient\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00008}00008\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\_|\_|\_|\ \ \_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \_|\_|\_|\_|\_|\ \ \_|\_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\_|\_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\_|\_|\_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\_|\_|\_|\ \ \_|\ \ \ \ \ \ \ \ \_|\_|\_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00016}00016\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#ifndef\ INCLUDED\_NETWORKCLIENT\_HPP}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\ \ \ \ \#define\ INCLUDED\_NETWORKCLIENT\_HPP}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00020}\mbox{\hyperlink{NetworkClient_8hpp_a6b20d41d6252e9871430c242cb1a56e7}{00020}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ BUFFER\_SIZE\ 1024}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <asio.hpp>}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{client_2src_2Error_2Error_8hpp}{../Error/Error.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00033}\mbox{\hyperlink{classNetworkClient}{00033}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNetworkClient}{NetworkClient}}\ \{}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00034}00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00038}\mbox{\hyperlink{classNetworkClient_a59538dd0d1548053c1e8c5440b12ecd7}{00038}}\ \ \ \ \ asio::io\_context\ \mbox{\hyperlink{classNetworkClient_a59538dd0d1548053c1e8c5440b12ecd7}{io\_context}};}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00043}\mbox{\hyperlink{classNetworkClient_ac8ddb79bc7635edb7b8394c79b891722}{00043}}\ \ \ \ \ asio::ip::udp::socket\ \mbox{\hyperlink{classNetworkClient_ac8ddb79bc7635edb7b8394c79b891722}{socket}};}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00048}\mbox{\hyperlink{classNetworkClient_a88110c1195f1d9a0244331dd96611fdd}{00048}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{classNetworkClient_a88110c1195f1d9a0244331dd96611fdd}{port}};}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00053}\mbox{\hyperlink{classNetworkClient_a0deff212fea227cf693d57ac55b82298}{00053}}\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classNetworkClient_a0deff212fea227cf693d57ac55b82298}{host}};}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00058}\mbox{\hyperlink{classNetworkClient_a1845fcc9079ba9070debf213f89c41a0}{00058}}\ \ \ \ \ asio::ip::udp::endpoint\ \mbox{\hyperlink{classNetworkClient_a1845fcc9079ba9070debf213f89c41a0}{destination}};}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00060}00060\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00062}00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{classNetworkClient_ab014623d9862a15c32c79cacf1d27d5b}{NetworkClient}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ port\_,\ \textcolor{keyword}{const}\ std::string\&\ host\_);}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{classNetworkClient_ab82fb597494c89b4a7ba9fd0d4b659c4}{\string~NetworkClient}}();}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetworkClient_a072986e5c827e381d7f1b3401bb84f34}{sendMessage}}(std::string\&\ message);}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00085}00085\ \ \ \ \ std::string\ \mbox{\hyperlink{classNetworkClient_a23188406a8fa32345574473f0681c1f1}{receiveMessage}}();}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00086}00086\ \};}
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{NetworkClient_8hpp_source_l00088}00088\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

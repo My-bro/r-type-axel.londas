@@ -1,0 +1,24 @@
+FROM mcr.microsoft.com/windows/servercore:ltsc2022
+
+RUN gsudo powershell -Command \
+    "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" \
+    && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+
+RUN gsudo powershell -Command \
+    "choco --version"
+
+RUN gsudo powershell -Command \
+    "choco install cmake -y"
+
+RUN gsudo powershell -Command \
+    "choco install asio -y" 
+
+WORKDIR /app
+
+RUN mkdir -p build
+
+COPY . /app
+
+RUN cd build/
+
+CMD cmake .. && cd .. && cmake --build build

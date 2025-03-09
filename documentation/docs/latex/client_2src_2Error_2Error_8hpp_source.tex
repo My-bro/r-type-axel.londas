@@ -1,0 +1,83 @@
+\doxysection{Error.\+hpp}
+\hypertarget{client_2src_2Error_2Error_8hpp_source}{}\label{client_2src_2Error_2Error_8hpp_source}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/client/src/Error/Error.hpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/client/src/Error/Error.hpp}}
+\mbox{\hyperlink{client_2src_2Error_2Error_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00001}00001\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00003}00003\ \textcolor{comment}{\ *\ EPITECH\ PROJECT\ -\/\ Thu,\ Nov,\ 2024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00004}00004\ \textcolor{comment}{\ *\ Title\ \ \ \ \ \ \ \ \ \ \ -\/\ R-\/type\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00005}00005\ \textcolor{comment}{\ *\ Description\ \ \ \ \ -\/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ Error\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00008}00008\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\_|\_|\_|\ \ \_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \_|\_|\_|\_|\_|\ \ \_|\_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\_|\_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\_|\_|\_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \ \ \ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \_|\_|\_|\_|\ \ \_|\ \ \ \ \ \ \ \ \_|\_|\_|\ \ \ \ \ \ \_|\ \ \ \ \ \ \_|\_|\_|\_|\ \ \ \ \_|\_|\_|\ \ \_|\ \ \ \ \_|\ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00016}00016\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#ifndef\ INCLUDED\_ERROR\_HPP}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\ \ \ \ \#define\ INCLUDED\_ERROR\_HPP}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\ \ \ \ \#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\ \ \ \ \#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00030}\mbox{\hyperlink{classError}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classError}{Error}}\ :\ \textcolor{keyword}{public}\ std::exception\ \{}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00031}00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00035}\mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{00035}}\ \ \ \ \ \mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}}();}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00040}\mbox{\hyperlink{classError_a1a45d42a3a035d510333cdfeb36a0e93}{00040}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classError_a1a45d42a3a035d510333cdfeb36a0e93}{\string~Error}}();}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00046}\mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{00046}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{what}}()\ const\ noexcept\ override\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00048}00048\ protected:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00050}00050\ private:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00051}00051\ \};}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00060}\mbox{\hyperlink{classClientWrongSocket}{00060}}\ class\ \mbox{\hyperlink{classClientWrongSocket}{ClientWrongSocket}}\ :\ public\ \mbox{\hyperlink{classError}{Error}}\ \{}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00061}00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{classClientWrongSocket}{ClientWrongSocket}}();}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00070}\mbox{\hyperlink{classClientWrongSocket_a68d9e9ebc65203d7e167bd6dc4e0f0f9}{00070}}\ \ \ \ \ \mbox{\hyperlink{classClientWrongSocket_a68d9e9ebc65203d7e167bd6dc4e0f0f9}{\string~ClientWrongSocket}}();}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{what}}()\ const\ noexcept\ override;}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00078}00078\ private:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00080}00080\ protected:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00081}00081\ \};}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00090}\mbox{\hyperlink{classClientWrongSend}{00090}}\ class\ \mbox{\hyperlink{classClientWrongSend}{ClientWrongSend}}\ :\ public\ \mbox{\hyperlink{classError}{Error}}\ \{}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00091}00091\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{classClientWrongSend}{ClientWrongSend}}();}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00100}\mbox{\hyperlink{classClientWrongSend_ab52ee4ac70d86659cca389d176e247f0}{00100}}\ \ \ \ \ \mbox{\hyperlink{classClientWrongSend_ab52ee4ac70d86659cca389d176e247f0}{\string~ClientWrongSend}}();}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{what}}()\ const\ noexcept\ override;}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00108}00108\ private:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00110}00110\ protected:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00111}00111\ \};}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00120}\mbox{\hyperlink{classClientWrongReceive}{00120}}\ class\ \mbox{\hyperlink{classClientWrongReceive}{ClientWrongReceive}}\ :\ public\ \mbox{\hyperlink{classError}{Error}}\ \{}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00121}00121\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00125}00125\ \ \ \ \ \mbox{\hyperlink{classClientWrongReceive}{ClientWrongReceive}}();}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00130}\mbox{\hyperlink{classClientWrongReceive_a838c529e005c77dc6f9673b3277c78b3}{00130}}\ \ \ \ \ \mbox{\hyperlink{classClientWrongReceive_a838c529e005c77dc6f9673b3277c78b3}{\string~ClientWrongReceive}}();}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{what}}()\ const\ noexcept\ override;}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00138}00138\ private:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00140}00140\ protected:}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00141}00141\ \};}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00151}00151\ std::ostream\&\ operator<<(std::ostream\&\ os,\ const\ \mbox{\hyperlink{classError}{Error}}\&\ error);}
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{client_2src_2Error_2Error_8hpp_source_l00153}00153\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

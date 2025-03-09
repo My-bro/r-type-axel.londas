@@ -1,0 +1,43 @@
+\doxysection{Drawable.\+hpp}
+\hypertarget{Drawable_8hpp_source}{}\label{Drawable_8hpp_source}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/Data/Drawable.hpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/Data/Drawable.hpp}}
+\mbox{\hyperlink{Drawable_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00005}00005\ \textcolor{comment}{**\ Drawable}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#ifndef\ DRAWABLE\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#define\ DRAWABLE\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Controllable_8hpp}{Controllable.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Position_8hpp}{Position.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00016}\mbox{\hyperlink{classDrawable}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDrawable}{Drawable}}\ \{}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00018}\mbox{\hyperlink{classDrawable_a611d8615c65f4c7422db5f50941cd545}{00018}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDrawable_a611d8615c65f4c7422db5f50941cd545}{Drawable}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDrawable_a611d8615c65f4c7422db5f50941cd545}{Drawable}}(\textcolor{keyword}{const}\ sf::Vector2f\ \&scale);}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDrawable_abf326782344db26ff4448fa375ecbc40}{display}}(sf::RenderWindow\ \&window,\ \mbox{\hyperlink{classPosition}{Position}}\ \&\_position);}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDrawable_a70ba5b5be076216a253868f67280cc84}{set\_position}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPosition}{Position}}\ \&position);}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDrawable_aba579f0300600cbfa004b5f89ba8903d}{set\_scale}}(\textcolor{keyword}{const}\ sf::Vector2f\ \&scale);}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDrawable_ad1c9d246eaac9a607b11167f75f238bc}{set\_texture}}(sf::Texture\ \&texture);}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00026}\mbox{\hyperlink{classDrawable_a3a8e89bebab845c78020799028d36930}{00026}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDrawable_a3a8e89bebab845c78020799028d36930}{draw}}(sf::RenderWindow\ \&window,\ \mbox{\hyperlink{classPosition}{Position}}\ \&pos)\ \{}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}}.setPosition(pos.\mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}},\ pos.\mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}});}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ window.draw(\mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}});}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00033}\mbox{\hyperlink{classDrawable_a1ea7e8e316211fa7b2a7bd8c180c4a01}{00033}}\ \ \ \ \ \ \ \ \ sf::Vector2f\ \mbox{\hyperlink{classDrawable_a1ea7e8e316211fa7b2a7bd8c180c4a01}{\_scale}}\ =\ \{1,\ 1\};}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00034}\mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{00034}}\ \ \ \ \ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{classDrawable_a66862b659af4d75c1755694da4bb85db}{\_sprite}}\ =\ sf::Sprite();}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00035}00035\ \};}
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Drawable_8hpp_source_l00037}00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !DRAWABLE\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

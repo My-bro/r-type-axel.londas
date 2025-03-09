@@ -1,0 +1,26 @@
+# Doxyfile 1.12.0
+
+# Project-related settings
+PROJECT_NAME           = "Neural-Network"
+PROJECT_NUMBER         = "1.0"
+OUTPUT_DIRECTORY       = "docs"
+
+
+# Input settings
+INPUT                  = ../src/ ../README.md add_features.md coding_guidelines.md protocol.md configuration.md
+FILE_PATTERNS          = *.cpp *.hpp *.h
+RECURSIVE              = YES
+USE_MDFILE_AS_MAINPAGE = ../README.md
+ENABLED_SECTIONS = "md"
+
+
+# Extract all symbols, including private and protected ones
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+
+# Source browser configuration
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+

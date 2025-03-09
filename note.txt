@@ -1,0 +1,2 @@
+## comannd to see the ip on macos
+ipconfig getifaddr en0

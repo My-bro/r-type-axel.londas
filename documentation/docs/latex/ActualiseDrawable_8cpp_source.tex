@@ -1,0 +1,31 @@
+\doxysection{Actualise\+Drawable.\+cpp}
+\hypertarget{ActualiseDrawable_8cpp_source}{}\label{ActualiseDrawable_8cpp_source}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/ActualiseDrawable.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/ActualiseDrawable.cpp}}
+\mbox{\hyperlink{ActualiseDrawable_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00002}00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00003}00003\ \textcolor{comment}{**\ B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00004}00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00005}00005\ \textcolor{comment}{**\ ActualiseDrawable}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Registry_8hpp}{Registry.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Position_8hpp}{Position.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Drawable_8hpp}{Drawable.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Controllable_8hpp}{Controllable.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Entity_8hpp}{Entity.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00015}\mbox{\hyperlink{ActualiseDrawable_8cpp_ac1507dea69a2c91f207f6858326cce2c}{00015}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ActualiseDrawable_8cpp_ac1507dea69a2c91f207f6858326cce2c}{ActualiseDrawable}}(\mbox{\hyperlink{classRegistry}{Registry}}\ \&reg,\ \mbox{\hyperlink{classEntity}{Entity}}\ \&e,\ sf::RenderWindow\ \&window)}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{classDrawable}{Drawable}}\ \&drawable\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classDrawable}{Drawable}}>(e);}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{classPosition}{Position}}\ \&position\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classPosition}{Position}}>(e);}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Velocity\ \&velocity\ =\ reg.get\_component<Velocity>(e);}}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{classControllable}{Controllable}}\ \&controllable\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classControllable}{Controllable}}>(e);}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00022}00022\ \ \ \ \ controllable.\mbox{\hyperlink{classControllable_a7d5578bb578655725ac00ebf42dbf907}{check\_input}}();}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00023}00023\ \ \ \ \ position.move(controllable);}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00024}00024\ \ \ \ \ drawable.\mbox{\hyperlink{classDrawable_abf326782344db26ff4448fa375ecbc40}{display}}(window,\ position);}
+\DoxyCodeLine{\Hypertarget{ActualiseDrawable_8cpp_source_l00025}00025\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,65 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/\+Error/\+Error.cpp File Reference}
+\hypertarget{server_2src_2Error_2Error_8cpp}{}\label{server_2src_2Error_2Error_8cpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/Error/Error.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/Error/Error.cpp}}
+
+
+Implementation of the \doxylink{classError}{Error} hierarchy for managing exceptions in the server.  
+
+
+{\ttfamily \#include "{}Error.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{server_2src_2Error_2Error_8cpp_a0acc6113c172eded4c0d97d1093447dd}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classError}{Error}} \&error)
+\begin{DoxyCompactList}\small\item\em Overloaded stream insertion operator for \doxylink{classError}{Error} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{classError}{Error} hierarchy for managing exceptions in the server. 
+
+
+
+Definition in file \mbox{\hyperlink{server_2src_2Error_2Error_8cpp_source}{Error.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{server_2src_2Error_2Error_8cpp_a0acc6113c172eded4c0d97d1093447dd}\index{Error.cpp@{Error.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Error.cpp@{Error.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{server_2src_2Error_2Error_8cpp_a0acc6113c172eded4c0d97d1093447dd} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{classError}{Error}} \&}]{error}{}\end{DoxyParamCaption})}
+
+
+
+Overloaded stream insertion operator for \doxylink{classError}{Error} objects. 
+
+Overload of the stream insertion operator for \doxylink{classError}{Error}.
+
+Writes the error message to the provided output stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream to write to. \\
+\hline
+{\em error} & The \doxylink{classError}{Error} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the output stream. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{server_2src_2Error_2Error_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{server_2src_2Error_2Error_8cpp_source}{Error.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ os\ <<\ error.\mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{what}}();}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{Error\+::what()}}.
+

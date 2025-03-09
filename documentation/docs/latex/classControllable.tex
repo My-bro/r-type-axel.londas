@@ -1,0 +1,152 @@
+\doxysection{Controllable Class Reference}
+\hypertarget{classControllable}{}\label{classControllable}\index{Controllable@{Controllable}}
+
+
+{\ttfamily \#include $<$Controllable.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classControllable_ab7a9b4a6eecd25280b6984d533945747}{Controllable}} ()=default
+\item 
+void \mbox{\hyperlink{classControllable_a7d5578bb578655725ac00ebf42dbf907}{check\+\_\+input}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classControllable_ac16f125a02e72b4ecd0ad9776b7a482a}{\+\_\+up}} = false
+\item 
+bool \mbox{\hyperlink{classControllable_ae2ad45f9411636750c6bbe493064bd43}{\+\_\+down}} = false
+\item 
+bool \mbox{\hyperlink{classControllable_acff48bafa897ef211248587f418a6323}{\+\_\+left}} = false
+\item 
+bool \mbox{\hyperlink{classControllable_a67a6fe5ce927743de494e615f54574f9}{\+\_\+right}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Controllable_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{Controllable_8hpp_source}{Controllable.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classControllable_ab7a9b4a6eecd25280b6984d533945747}\index{Controllable@{Controllable}!Controllable@{Controllable}}
+\index{Controllable@{Controllable}!Controllable@{Controllable}}
+\doxysubsubsection{\texorpdfstring{Controllable()}{Controllable()}}
+{\footnotesize\ttfamily \label{classControllable_ab7a9b4a6eecd25280b6984d533945747} 
+Controllable\+::\+Controllable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classControllable_a7d5578bb578655725ac00ebf42dbf907}\index{Controllable@{Controllable}!check\_input@{check\_input}}
+\index{check\_input@{check\_input}!Controllable@{Controllable}}
+\doxysubsubsection{\texorpdfstring{check\_input()}{check\_input()}}
+{\footnotesize\ttfamily \label{classControllable_a7d5578bb578655725ac00ebf42dbf907} 
+void Controllable\+::check\+\_\+input (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Controllable_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{Controllable_8cpp_source}{Controllable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable_ac16f125a02e72b4ecd0ad9776b7a482a}{\_up}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00015\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable_ac16f125a02e72b4ecd0ad9776b7a482a}{\_up}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (sf::Keyboard::isKeyPressed(sf::Keyboard::S))\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable_ae2ad45f9411636750c6bbe493064bd43}{\_down}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00020\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable_ae2ad45f9411636750c6bbe493064bd43}{\_down}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable_acff48bafa897ef211248587f418a6323}{\_left}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00025\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable_acff48bafa897ef211248587f418a6323}{\_left}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (sf::Keyboard::isKeyPressed(sf::Keyboard::D))\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable_a67a6fe5ce927743de494e615f54574f9}{\_right}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00030\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable_a67a6fe5ce927743de494e615f54574f9}{\_right}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Controllable_8hpp_source_l00019}{\+\_\+down}}, \mbox{\hyperlink{Controllable_8hpp_source_l00020}{\+\_\+left}}, \mbox{\hyperlink{Controllable_8hpp_source_l00021}{\+\_\+right}}, and \mbox{\hyperlink{Controllable_8hpp_source_l00018}{\+\_\+up}}.
+
+
+
+Referenced by \mbox{\hyperlink{ActualiseDrawable_8cpp_source_l00015}{Actualise\+Drawable()}}, and \mbox{\hyperlink{control__system_8cpp_source_l00011}{control\+\_\+system()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classControllable_ae2ad45f9411636750c6bbe493064bd43}\index{Controllable@{Controllable}!\_down@{\_down}}
+\index{\_down@{\_down}!Controllable@{Controllable}}
+\doxysubsubsection{\texorpdfstring{\_down}{\_down}}
+{\footnotesize\ttfamily \label{classControllable_ae2ad45f9411636750c6bbe493064bd43} 
+bool Controllable\+::\+\_\+down = false}
+
+
+
+Definition at line \mbox{\hyperlink{Controllable_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{Controllable_8hpp_source}{Controllable.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Controllable_8cpp_source_l00011}{check\+\_\+input()}}, and \mbox{\hyperlink{Position_8hpp_source_l00019}{Position\+::move()}}.
+
+\Hypertarget{classControllable_acff48bafa897ef211248587f418a6323}\index{Controllable@{Controllable}!\_left@{\_left}}
+\index{\_left@{\_left}!Controllable@{Controllable}}
+\doxysubsubsection{\texorpdfstring{\_left}{\_left}}
+{\footnotesize\ttfamily \label{classControllable_acff48bafa897ef211248587f418a6323} 
+bool Controllable\+::\+\_\+left = false}
+
+
+
+Definition at line \mbox{\hyperlink{Controllable_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{Controllable_8hpp_source}{Controllable.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Controllable_8cpp_source_l00011}{check\+\_\+input()}}, and \mbox{\hyperlink{Position_8hpp_source_l00019}{Position\+::move()}}.
+
+\Hypertarget{classControllable_a67a6fe5ce927743de494e615f54574f9}\index{Controllable@{Controllable}!\_right@{\_right}}
+\index{\_right@{\_right}!Controllable@{Controllable}}
+\doxysubsubsection{\texorpdfstring{\_right}{\_right}}
+{\footnotesize\ttfamily \label{classControllable_a67a6fe5ce927743de494e615f54574f9} 
+bool Controllable\+::\+\_\+right = false}
+
+
+
+Definition at line \mbox{\hyperlink{Controllable_8hpp_source_l00021}{21}} of file \mbox{\hyperlink{Controllable_8hpp_source}{Controllable.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Controllable_8cpp_source_l00011}{check\+\_\+input()}}, and \mbox{\hyperlink{Position_8hpp_source_l00019}{Position\+::move()}}.
+
+\Hypertarget{classControllable_ac16f125a02e72b4ecd0ad9776b7a482a}\index{Controllable@{Controllable}!\_up@{\_up}}
+\index{\_up@{\_up}!Controllable@{Controllable}}
+\doxysubsubsection{\texorpdfstring{\_up}{\_up}}
+{\footnotesize\ttfamily \label{classControllable_ac16f125a02e72b4ecd0ad9776b7a482a} 
+bool Controllable\+::\+\_\+up = false}
+
+
+
+Definition at line \mbox{\hyperlink{Controllable_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{Controllable_8hpp_source}{Controllable.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Controllable_8cpp_source_l00011}{check\+\_\+input()}}, and \mbox{\hyperlink{Position_8hpp_source_l00019}{Position\+::move()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+ECS/src/\+Data/\mbox{\hyperlink{Controllable_8hpp}{Controllable.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+ECS/src/\+Data/\mbox{\hyperlink{Controllable_8cpp}{Controllable.\+cpp}}\end{DoxyCompactItemize}

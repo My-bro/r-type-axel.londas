@@ -1,0 +1,59 @@
+\doxysection{Error.\+cpp}
+\hypertarget{server_2src_2Error_2Error_8cpp_source}{}\label{server_2src_2Error_2Error_8cpp_source}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/Error/Error.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/Error/Error.cpp}}
+\mbox{\hyperlink{server_2src_2Error_2Error_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00001}00001\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00002}00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00003}00003\ \textcolor{comment}{\ *\ EPITECH\ PROJECT\ -\/\ Thu,\ Nov,\ 2024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00004}00004\ \textcolor{comment}{\ *\ Title\ \ \ \ \ \ \ \ \ \ \ -\/\ R-\/type\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00005}00005\ \textcolor{comment}{\ *\ Description\ \ \ \ \ -\/\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00006}00006\ \textcolor{comment}{\ *\ \ \ \ \ Error\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00007}00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00008}00008\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00009}00009\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00010}00010\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ ███████╗██████╗\ ██╗████████╗███████╗\ ██████╗██╗\ \ ██╗\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00011}00011\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ ██╔════╝██╔══██╗██║╚══██╔══╝██╔════╝██╔════╝██║\ \ ██║\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00012}00012\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ █████╗\ \ ██████╔╝██║\ \ \ ██║\ \ \ █████╗\ \ ██║\ \ \ \ \ ███████║\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00013}00013\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ ██╔══╝\ \ ██╔═══╝\ ██║\ \ \ ██║\ \ \ ██╔══╝\ \ ██║\ \ \ \ \ ██╔══██║\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00014}00014\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ ███████╗██║\ \ \ \ \ ██║\ \ \ ██║\ \ \ ███████╗╚██████╗██║\ \ ██║\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00015}00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ ╚══════╝╚═╝\ \ \ \ \ ╚═╝\ \ \ ╚═╝\ \ \ ╚══════╝\ ╚═════╝╚═╝\ \ ╚═╝\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00017}00017\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{server_2src_2Error_2Error_8hpp}{Error.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00029}00029\ \mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error::Error}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00034}00034\ \mbox{\hyperlink{classError_a1a45d42a3a035d510333cdfeb36a0e93}{Error::\string~Error}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00041}\mbox{\hyperlink{classServerWrongSocket_a4c8d5b4d92688b98dfd27b22b955de6b}{00041}}\ \mbox{\hyperlink{classServerWrongSocket_a4c8d5b4d92688b98dfd27b22b955de6b}{ServerWrongSocket::ServerWrongSocket}}()\ :\ \mbox{\hyperlink{classError}{Error}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00046}00046\ \mbox{\hyperlink{classServerWrongSocket_ac1602fe0f98be1b9f548d3e1de96b7db}{ServerWrongSocket::\string~ServerWrongSocket}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00053}\mbox{\hyperlink{classServerWrongSocket_a289276698691544bfd538a6d8205ca95}{00053}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classServerWrongSocket_a289276698691544bfd538a6d8205ca95}{ServerWrongSocket::what}}()\ const\ noexcept\ \{}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Couldn't\ connect\ to\ the\ socket."{}};}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00062}\mbox{\hyperlink{classServerWrongSend_a4cf5e4aab4ee7e03cf7490573f07c099}{00062}}\ \mbox{\hyperlink{classServerWrongSend_a4cf5e4aab4ee7e03cf7490573f07c099}{ServerWrongSend::ServerWrongSend}}()\ :\ \mbox{\hyperlink{classError}{Error}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00067}00067\ \mbox{\hyperlink{classServerWrongSend_a1cbe7a364ca598d0b6952df69027b0ba}{ServerWrongSend::\string~ServerWrongSend}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00074}\mbox{\hyperlink{classServerWrongSend_a32f3730230dc5adbff41f816878a7c2e}{00074}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classServerWrongSend_a32f3730230dc5adbff41f816878a7c2e}{ServerWrongSend::what}}()\ const\ noexcept\ \{}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Couldn't\ send\ a\ message\ to\ the\ client."{}};}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00076}00076\ \}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00083}\mbox{\hyperlink{classServerWrongReceive_a740c60d8ee6cb029c4aed551b075a16e}{00083}}\ \mbox{\hyperlink{classServerWrongReceive_a740c60d8ee6cb029c4aed551b075a16e}{ServerWrongReceive::ServerWrongReceive}}()\ :\ \mbox{\hyperlink{classError}{Error}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00088}00088\ \mbox{\hyperlink{classServerWrongReceive_ab7fbdd194c988c72e080929067e36f16}{ServerWrongReceive::\string~ServerWrongReceive}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00095}\mbox{\hyperlink{classServerWrongReceive_a1be1323d93ef0713d23255fb7a6f2f47}{00095}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classServerWrongReceive_a1be1323d93ef0713d23255fb7a6f2f47}{ServerWrongReceive::what}}()\ const\ noexcept\ \{}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Couldn't\ receive\ a\ message\ from\ the\ client."{}};}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00108}\mbox{\hyperlink{server_2src_2Error_2Error_8cpp_a0acc6113c172eded4c0d97d1093447dd}{00108}}\ std::ostream\&\ \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_a0acc6113c172eded4c0d97d1093447dd}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classError}{Error}}\&\ error)}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00109}00109\ \{}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00110}00110\ \ \ \ \ os\ <<\ error.\mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{what}}();}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{\Hypertarget{server_2src_2Error_2Error_8cpp_source_l00112}00112\ \}}
+
+\end{DoxyCode}

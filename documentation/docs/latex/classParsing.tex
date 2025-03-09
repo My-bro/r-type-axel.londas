@@ -1,0 +1,359 @@
+\doxysection{Parsing Class Reference}
+\hypertarget{classParsing}{}\label{classParsing}\index{Parsing@{Parsing}}
+
+
+A class to handle parsing of configuration files and command-\/line arguments.  
+
+
+
+
+{\ttfamily \#include $<$Parsing.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParsing_a937b0f6c51358dfc7ad87d7a01056929}{Parsing}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classParsing_a672463c0914f4a62fa18d8aeb669df06}{Parsing}} (int ac, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}av)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the \doxylink{classParsing}{Parsing} class with command-\/line arguments. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classParsing_a7aca0b960cb1e745e6842f8c7f01d476}{\texorpdfstring{$\sim$}{\string~}\+Parsing}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classParsing_a321768c2063ac7f6d80549987625578c}{get\+Server\+Settings}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the server settings. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classParsing_a3d0a30cfc019a8a994baea9defef1076}{get\+Client\+Settings}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the client settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classParsing_a99b0f8582a835de214c1df1a83f37475}{get\+Args}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}av)
+\begin{DoxyCompactList}\small\item\em Parses command-\/line arguments to extract server or client settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParsing_a89b0c2843dc90a3e2c88778612630f28}{get\+File\+Infos}} (std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Parses a configuration file to extract settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classParsing_a159e3ac54644da43c0587228d6a5ae24}{server\+Settings}}
+\begin{DoxyCompactList}\small\item\em Stores server settings as key-\/value pairs. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classParsing_a4c79995ce82cdc10f54ecf501113f3c3}{client\+Settings}}
+\begin{DoxyCompactList}\small\item\em Stores client settings as key-\/value pairs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to handle parsing of configuration files and command-\/line arguments. 
+
+This class parses and stores server and client settings from a configuration file or command-\/line arguments. 
+
+Definition at line \mbox{\hyperlink{Parsing_8hpp_source_l00032}{32}} of file \mbox{\hyperlink{Parsing_8hpp_source}{Parsing.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classParsing_a937b0f6c51358dfc7ad87d7a01056929}\index{Parsing@{Parsing}!Parsing@{Parsing}}
+\index{Parsing@{Parsing}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{Parsing()}{Parsing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classParsing_a937b0f6c51358dfc7ad87d7a01056929} 
+Parsing\+::\+Parsing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Default constructor implementation. 
+
+Definition at line \mbox{\hyperlink{Parsing_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{Parsing_8cpp_source}{Parsing.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classParsing_a672463c0914f4a62fa18d8aeb669df06}\index{Parsing@{Parsing}!Parsing@{Parsing}}
+\index{Parsing@{Parsing}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{Parsing()}{Parsing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classParsing_a672463c0914f4a62fa18d8aeb669df06} 
+Parsing\+::\+Parsing (\begin{DoxyParamCaption}\item[{int}]{ac}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{av}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes the \doxylink{classParsing}{Parsing} class with command-\/line arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ac} & Argument count. \\
+\hline
+{\em av} & Argument values. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Parsing_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{Parsing_8cpp_source}{Parsing.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (ac\ ==\ 1)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::string\ filename\ =\ \textcolor{stringliteral}{"{}configuration\_files/info.ini"{}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classParsing_a89b0c2843dc90a3e2c88778612630f28}{getFileInfos}}(filename);}
+\DoxyCodeLine{00040\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ac\ ==\ 2)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::string\ filename\ =\ std::string(av[1]);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classParsing_a89b0c2843dc90a3e2c88778612630f28}{getFileInfos}}(filename);}
+\DoxyCodeLine{00043\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classParsing_a99b0f8582a835de214c1df1a83f37475}{getArgs}}(av);}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Parsing_8cpp_source_l00052}{get\+Args()}}, and \mbox{\hyperlink{Parsing_8cpp_source_l00085}{get\+File\+Infos()}}.
+
+\Hypertarget{classParsing_a7aca0b960cb1e745e6842f8c7f01d476}\index{Parsing@{Parsing}!````~Parsing@{\texorpdfstring{$\sim$}{\string~}Parsing}}
+\index{````~Parsing@{\texorpdfstring{$\sim$}{\string~}Parsing}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Parsing()}{\string~Parsing()}}
+{\footnotesize\ttfamily \label{classParsing_a7aca0b960cb1e745e6842f8c7f01d476} 
+Parsing\+::\texorpdfstring{$\sim$}{\string~}\+Parsing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classParsing_a99b0f8582a835de214c1df1a83f37475}\index{Parsing@{Parsing}!getArgs@{getArgs}}
+\index{getArgs@{getArgs}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{getArgs()}{getArgs()}}
+{\footnotesize\ttfamily \label{classParsing_a99b0f8582a835de214c1df1a83f37475} 
+void Parsing\+::get\+Args (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{av}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses command-\/line arguments to extract server or client settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em av} & Command-\/line arguments. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Parsing_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{Parsing_8cpp_source}{Parsing.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ std::size\_t\ cpt\ =\ 1;}
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ current\_argument\ =\ std::string(av[0]);}
+\DoxyCodeLine{00056\ \ \ \ \ std::string\ next\_argument;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (current\_argument\ ==\ \textcolor{stringliteral}{"{}r-\/type\_server"{}})\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (av[cpt])\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ current\_argument\ =\ std::string(av[cpt]);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!av[cpt\ +\ 1])\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ next\_argument\ =\ std::string(av[cpt\ +\ 1]);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classParsing_a159e3ac54644da43c0587228d6a5ae24}{serverSettings}}[current\_argument.substr(2)]\ =\ next\_argument;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ cpt\ +=\ 2;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (av[cpt])\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ current\_argument\ =\ std::string(av[cpt]);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!av[cpt\ +\ 1])\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ next\_argument\ =\ std::string(av[cpt\ +\ 1]);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classParsing_a4c79995ce82cdc10f54ecf501113f3c3}{clientSettings}}[current\_argument.substr(2)]\ =\ next\_argument;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ cpt\ +=\ 2;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Parsing_8hpp_source_l00043}{client\+Settings}}, and \mbox{\hyperlink{Parsing_8hpp_source_l00038}{server\+Settings}}.
+
+
+
+Referenced by \mbox{\hyperlink{Parsing_8cpp_source_l00035}{Parsing()}}.
+
+\Hypertarget{classParsing_a3d0a30cfc019a8a994baea9defef1076}\index{Parsing@{Parsing}!getClientSettings@{getClientSettings}}
+\index{getClientSettings@{getClientSettings}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{getClientSettings()}{getClientSettings()}}
+{\footnotesize\ttfamily \label{classParsing_a3d0a30cfc019a8a994baea9defef1076} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ Parsing\+::get\+Client\+Settings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the client settings. 
+
+\begin{DoxyReturn}{Returns}
+A map containing client settings as key-\/value pairs. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Parsing_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{Parsing_8cpp_source}{Parsing.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classParsing_a4c79995ce82cdc10f54ecf501113f3c3}{clientSettings}};}
+\DoxyCodeLine{00142\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Parsing_8hpp_source_l00043}{client\+Settings}}.
+
+
+
+Referenced by \mbox{\hyperlink{client_2main_8cpp_source_l00022}{main()}}.
+
+\Hypertarget{classParsing_a89b0c2843dc90a3e2c88778612630f28}\index{Parsing@{Parsing}!getFileInfos@{getFileInfos}}
+\index{getFileInfos@{getFileInfos}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{getFileInfos()}{getFileInfos()}}
+{\footnotesize\ttfamily \label{classParsing_a89b0c2843dc90a3e2c88778612630f28} 
+void Parsing\+::get\+File\+Infos (\begin{DoxyParamCaption}\item[{std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parses a configuration file to extract settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the configuration file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{Parsing_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{Parsing_8cpp_source}{Parsing.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception();}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{00093\ \ \ \ \ std::string\ currentSection;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ line.erase(0,\ line.find\_first\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t"{}}));}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ line.erase(line.find\_last\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t"{}})\ +\ 1);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.empty()\ ||\ line[0]\ ==\ \textcolor{charliteral}{';'}\ ||\ line[0]\ ==\ \textcolor{charliteral}{'\#'})\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (line.front()\ ==\ \textcolor{charliteral}{'['}\ \&\&\ line.back()\ ==\ \textcolor{charliteral}{']'})\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ currentSection\ =\ line.substr(1,\ line.size()\ -\/\ 2);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ delimiterPos\ =\ line.find(\textcolor{charliteral}{'='});}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (delimiterPos\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ commentPos\ =\ line.find\_first\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t\(\backslash\)n;\#"{}});}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (commentPos\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ line\ =\ line.substr(0,\ commentPos);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ key\ =\ line.substr(0,\ delimiterPos);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ value\ =\ line.substr(delimiterPos\ +\ 1);}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ key.erase(0,\ key.find\_first\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t"{}}));}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ key.erase(key.find\_last\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t"{}})\ +\ 1);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value.erase(0,\ value.find\_first\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t"{}}));}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value.erase(value.find\_last\_not\_of(\textcolor{stringliteral}{"{}\ \(\backslash\)t"{}})\ +\ 1);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentSection\ ==\ \textcolor{stringliteral}{"{}server"{}})\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classParsing_a159e3ac54644da43c0587228d6a5ae24}{serverSettings}}[key]\ =\ value;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (currentSection\ ==\ \textcolor{stringliteral}{"{}Client"{}})\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classParsing_a4c79995ce82cdc10f54ecf501113f3c3}{clientSettings}}[key]\ =\ value;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Parsing_8hpp_source_l00043}{client\+Settings}}, and \mbox{\hyperlink{Parsing_8hpp_source_l00038}{server\+Settings}}.
+
+
+
+Referenced by \mbox{\hyperlink{Parsing_8cpp_source_l00035}{Parsing()}}.
+
+\Hypertarget{classParsing_a321768c2063ac7f6d80549987625578c}\index{Parsing@{Parsing}!getServerSettings@{getServerSettings}}
+\index{getServerSettings@{getServerSettings}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{getServerSettings()}{getServerSettings()}}
+{\footnotesize\ttfamily \label{classParsing_a321768c2063ac7f6d80549987625578c} 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ Parsing\+::get\+Server\+Settings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the server settings. 
+
+\begin{DoxyReturn}{Returns}
+A map containing server settings as key-\/value pairs. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Parsing_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{Parsing_8cpp_source}{Parsing.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classParsing_a159e3ac54644da43c0587228d6a5ae24}{serverSettings}};}
+\DoxyCodeLine{00133\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Parsing_8hpp_source_l00038}{server\+Settings}}.
+
+
+
+Referenced by \mbox{\hyperlink{server_2main_8cpp_source_l00033}{main()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classParsing_a4c79995ce82cdc10f54ecf501113f3c3}\index{Parsing@{Parsing}!clientSettings@{clientSettings}}
+\index{clientSettings@{clientSettings}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{clientSettings}{clientSettings}}
+{\footnotesize\ttfamily \label{classParsing_a4c79995ce82cdc10f54ecf501113f3c3} 
+std\+::unordered\+\_\+map$<$std\+::string, std\+::string$>$ Parsing\+::client\+Settings\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores client settings as key-\/value pairs. 
+
+
+
+Definition at line \mbox{\hyperlink{Parsing_8hpp_source_l00043}{43}} of file \mbox{\hyperlink{Parsing_8hpp_source}{Parsing.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Parsing_8cpp_source_l00052}{get\+Args()}}, \mbox{\hyperlink{Parsing_8cpp_source_l00139}{get\+Client\+Settings()}}, and \mbox{\hyperlink{Parsing_8cpp_source_l00085}{get\+File\+Infos()}}.
+
+\Hypertarget{classParsing_a159e3ac54644da43c0587228d6a5ae24}\index{Parsing@{Parsing}!serverSettings@{serverSettings}}
+\index{serverSettings@{serverSettings}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{serverSettings}{serverSettings}}
+{\footnotesize\ttfamily \label{classParsing_a159e3ac54644da43c0587228d6a5ae24} 
+std\+::unordered\+\_\+map$<$std\+::string, std\+::string$>$ Parsing\+::server\+Settings\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores server settings as key-\/value pairs. 
+
+
+
+Definition at line \mbox{\hyperlink{Parsing_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{Parsing_8hpp_source}{Parsing.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Parsing_8cpp_source_l00052}{get\+Args()}}, \mbox{\hyperlink{Parsing_8cpp_source_l00085}{get\+File\+Infos()}}, and \mbox{\hyperlink{Parsing_8cpp_source_l00130}{get\+Server\+Settings()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/\+Parsing/\mbox{\hyperlink{Parsing_8hpp}{Parsing.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/\+Parsing/\mbox{\hyperlink{Parsing_8cpp}{Parsing.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,309 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/\+ECS/src/\+Test\+Code/\+Test\+ECSsfml.cpp File Reference}
+\hypertarget{TestECSsfml_8cpp}{}\label{TestECSsfml_8cpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/TestCode/TestECSsfml.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/TestCode/TestECSsfml.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}Registry.\+hpp"{}}\newline
+{\ttfamily \#include "{}Position.\+hpp"{}}\newline
+{\ttfamily \#include "{}Velocity.\+hpp"{}}\newline
+{\ttfamily \#include "{}Drawable.\+hpp"{}}\newline
+{\ttfamily \#include "{}Controllable.\+hpp"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{TestECSsfml_8cpp_af9d575eaa365df5aaaedd8e470e99ea2}{logging\+\_\+system}} (\mbox{\hyperlink{classRegistry}{Registry}} \&r)
+\item 
+void \mbox{\hyperlink{TestECSsfml_8cpp_ac1507dea69a2c91f207f6858326cce2c}{Actualise\+Drawable}} (\mbox{\hyperlink{classRegistry}{Registry}} \&reg, \mbox{\hyperlink{classEntity}{Entity}} \&e, sf\+::\+Render\+Window \&window)
+\item 
+\mbox{\hyperlink{classEntity}{Entity}} \mbox{\hyperlink{TestECSsfml_8cpp_a90b3a752aa47bbc6943103d03222f310}{Make\+Vinicius}} (\mbox{\hyperlink{classRegistry}{Registry}} \&r, sf\+::\+Vector2f \&position, sf\+::\+Vector2f \&size, sf\+::\+Vector2f \&velocity, sf\+::\+Texture \&texture)
+\item 
+void \mbox{\hyperlink{TestECSsfml_8cpp_ab8e0e36019e7db3ea344c6c2c2dac23d}{draw\+\_\+system}} (\mbox{\hyperlink{classRegistry}{Registry}} \&r, sf\+::\+Render\+Window \&window)
+\item 
+void \mbox{\hyperlink{TestECSsfml_8cpp_a2ac429af1096da2fd34586a055aa68f7}{control\+\_\+system}} (\mbox{\hyperlink{classRegistry}{Registry}} \&r)
+\item 
+std\+::string \mbox{\hyperlink{TestECSsfml_8cpp_af706a2204cd536ebe6325a6a69c36363}{get\+\_\+current\+\_\+working\+\_\+dir}} ()
+\item 
+void \mbox{\hyperlink{TestECSsfml_8cpp_a1cc774727c3782a74c82d5abb8744624}{Test\+ECSsfml}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{TestECSsfml_8cpp_ac1507dea69a2c91f207f6858326cce2c}\index{TestECSsfml.cpp@{TestECSsfml.cpp}!ActualiseDrawable@{ActualiseDrawable}}
+\index{ActualiseDrawable@{ActualiseDrawable}!TestECSsfml.cpp@{TestECSsfml.cpp}}
+\doxysubsubsection{\texorpdfstring{ActualiseDrawable()}{ActualiseDrawable()}}
+{\footnotesize\ttfamily \label{TestECSsfml_8cpp_ac1507dea69a2c91f207f6858326cce2c} 
+void Actualise\+Drawable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{reg}{, }\item[{\mbox{\hyperlink{classEntity}{Entity}} \&}]{e}{, }\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ActualiseDrawable_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{ActualiseDrawable_8cpp_source}{Actualise\+Drawable.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classDrawable}{Drawable}}\ \&drawable\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classDrawable}{Drawable}}>(e);}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classPosition}{Position}}\ \&position\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classPosition}{Position}}>(e);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//\ Velocity\ \&velocity\ =\ reg.get\_component<Velocity>(e);}}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classControllable}{Controllable}}\ \&controllable\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classControllable}{Controllable}}>(e);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ controllable.\mbox{\hyperlink{classControllable_a7d5578bb578655725ac00ebf42dbf907}{check\_input}}();}
+\DoxyCodeLine{00023\ \ \ \ \ position.move(controllable);}
+\DoxyCodeLine{00024\ \ \ \ \ drawable.\mbox{\hyperlink{classDrawable_abf326782344db26ff4448fa375ecbc40}{display}}(window,\ position);}
+\DoxyCodeLine{00025\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Controllable_8cpp_source_l00011}{Controllable\+::check\+\_\+input()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00031}{Drawable\+::display()}}, and \mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{Registry\+::get\+\_\+component()}}.
+
+\Hypertarget{TestECSsfml_8cpp_a2ac429af1096da2fd34586a055aa68f7}\index{TestECSsfml.cpp@{TestECSsfml.cpp}!control\_system@{control\_system}}
+\index{control\_system@{control\_system}!TestECSsfml.cpp@{TestECSsfml.cpp}}
+\doxysubsubsection{\texorpdfstring{control\_system()}{control\_system()}}
+{\footnotesize\ttfamily \label{TestECSsfml_8cpp_a2ac429af1096da2fd34586a055aa68f7} 
+void control\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{control__system_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{control__system_8cpp_source}{control\+\_\+system.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{auto}\ \&controllables\ =\ r.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classControllable}{Controllable}}>();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ controllables.size();\ ++i)\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable}{Controllable}}\ \&controllable\ =\ controllables[i];}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ controllable.\mbox{\hyperlink{classControllable_a7d5578bb578655725ac00ebf42dbf907}{check\_input}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Controllable_8cpp_source_l00011}{Controllable\+::check\+\_\+input()}}, and \mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{Registry\+::get\+\_\+component()}}.
+
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+
+\Hypertarget{TestECSsfml_8cpp_ab8e0e36019e7db3ea344c6c2c2dac23d}\index{TestECSsfml.cpp@{TestECSsfml.cpp}!draw\_system@{draw\_system}}
+\index{draw\_system@{draw\_system}!TestECSsfml.cpp@{TestECSsfml.cpp}}
+\doxysubsubsection{\texorpdfstring{draw\_system()}{draw\_system()}}
+{\footnotesize\ttfamily \label{TestECSsfml_8cpp_ab8e0e36019e7db3ea344c6c2c2dac23d} 
+void draw\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{r}{, }\item[{sf\+::\+Render\+Window \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{draw__system_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{draw__system_8cpp_source}{draw\+\_\+system.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{auto}\ \&positions\ =\ r.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classPosition}{Position}}>();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{auto}\ \&drawables\ =\ r.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classDrawable}{Drawable}}>();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{auto}\ \&controllables\ =\ r.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classControllable}{Controllable}}>();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ positions.size()\ \&\&\ i\ <\ drawables.size()\ \&\&\ i\ <\ drawables.size();\ ++i)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPosition}{Position}}\ \&pos\ =\ positions[i];}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDrawable}{Drawable}}\ \&drawable\ =\ drawables[i];}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable}{Controllable}}\ \&controllable\ =\ controllables[i];}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ pos.\mbox{\hyperlink{classPosition_a4f5d5a661c251f3efa72119f1a44aa0b}{move}}(controllable);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ drawable.\mbox{\hyperlink{classDrawable_a70ba5b5be076216a253868f67280cc84}{set\_position}}(pos);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ drawable.\mbox{\hyperlink{classDrawable_a3a8e89bebab845c78020799028d36930}{draw}}(window,\ pos);}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Drawable_8hpp_source_l00026}{Drawable\+::draw()}}, \mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{Registry\+::get\+\_\+component()}}, \mbox{\hyperlink{Position_8hpp_source_l00019}{Position\+::move()}}, and \mbox{\hyperlink{Drawable_8cpp_source_l00015}{Drawable\+::set\+\_\+position()}}.
+
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+
+\Hypertarget{TestECSsfml_8cpp_af706a2204cd536ebe6325a6a69c36363}\index{TestECSsfml.cpp@{TestECSsfml.cpp}!get\_current\_working\_dir@{get\_current\_working\_dir}}
+\index{get\_current\_working\_dir@{get\_current\_working\_dir}!TestECSsfml.cpp@{TestECSsfml.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_current\_working\_dir()}{get\_current\_working\_dir()}}
+{\footnotesize\ttfamily \label{TestECSsfml_8cpp_af706a2204cd536ebe6325a6a69c36363} 
+std\+::string get\+\_\+current\+\_\+working\+\_\+dir (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestECSsfml_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{TestECSsfml_8cpp_source}{Test\+ECSsfml.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ cwd[PATH\_MAX];}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (getcwd(cwd,\ \textcolor{keyword}{sizeof}(cwd))\ !=\ NULL)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(cwd);}
+\DoxyCodeLine{00023\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}getcwd()\ error"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+
+\Hypertarget{TestECSsfml_8cpp_af9d575eaa365df5aaaedd8e470e99ea2}\index{TestECSsfml.cpp@{TestECSsfml.cpp}!logging\_system@{logging\_system}}
+\index{logging\_system@{logging\_system}!TestECSsfml.cpp@{TestECSsfml.cpp}}
+\doxysubsubsection{\texorpdfstring{logging\_system()}{logging\_system()}}
+{\footnotesize\ttfamily \label{TestECSsfml_8cpp_af9d575eaa365df5aaaedd8e470e99ea2} 
+void logging\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{logging__system_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{logging__system_8cpp_source}{logging\+\_\+system.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ std::vector<Position>\ positions\ =\ r.\mbox{\hyperlink{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f}{get\_component\_list}}<\mbox{\hyperlink{classPosition}{Position}}>();}
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<Velocity>\ velocities\ =\ r.\mbox{\hyperlink{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f}{get\_component\_list}}<\mbox{\hyperlink{classVelocity}{Velocity}}>();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ std::cout\ <<\ positions.size()\ <<\ \textcolor{stringliteral}{"{}\ positions\ and\ "{}}\ <<\ velocities.size()\ <<\ \textcolor{stringliteral}{"{}\ velocities."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ positions.size()\ \&\&\ i\ <\ velocities.size();\ ++i)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPosition}{Position}}\ pos\ =\ positions[i];}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVelocity}{Velocity}}\ vel\ =\ velocities[i];}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::cerr\ <<\ i\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ pos\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ vel\ <<\ std::endl;}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classRegistry_a5f85e2f1f1294da0ac0e7a16f82fc81f}{Registry\+::get\+\_\+component\+\_\+list()}}.
+
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+
+\Hypertarget{TestECSsfml_8cpp_a90b3a752aa47bbc6943103d03222f310}\index{TestECSsfml.cpp@{TestECSsfml.cpp}!MakeVinicius@{MakeVinicius}}
+\index{MakeVinicius@{MakeVinicius}!TestECSsfml.cpp@{TestECSsfml.cpp}}
+\doxysubsubsection{\texorpdfstring{MakeVinicius()}{MakeVinicius()}}
+{\footnotesize\ttfamily \label{TestECSsfml_8cpp_a90b3a752aa47bbc6943103d03222f310} 
+\mbox{\hyperlink{classEntity}{Entity}} Make\+Vinicius (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{r}{, }\item[{sf\+::\+Vector2f \&}]{position}{, }\item[{sf\+::\+Vector2f \&}]{size}{, }\item[{sf\+::\+Vector2f \&}]{velocity}{, }\item[{sf\+::\+Texture \&}]{texture}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{MakeVinicius_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{MakeVinicius_8cpp_source}{Make\+Vinicius.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classEntity}{Entity}}\ Vinicius\ =\ r.\mbox{\hyperlink{classRegistry_a3d6e1501dab60caa62a8511245f0b0b3}{spawn\_entity}}();}
+\DoxyCodeLine{00019\ \ \ \ \ r.\mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\_component}}(Vinicius,\ \mbox{\hyperlink{classDrawable}{Drawable}}(\{size.x,\ size.y\}));}
+\DoxyCodeLine{00020\ \ \ \ \ r.\mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\_component}}(Vinicius,\ \mbox{\hyperlink{classControllable}{Controllable}}());}
+\DoxyCodeLine{00021\ \ \ \ \ r.\mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\_component}}(Vinicius,\ \mbox{\hyperlink{classPosition}{Position}}(position.x,\ position.y));}
+\DoxyCodeLine{00022\ \ \ \ \ r.\mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\_component}}(Vinicius,\ \mbox{\hyperlink{classVelocity}{Velocity}}(velocity.x,\ velocity.y));}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classDrawable}{Drawable}}\ \&drawable\ =\ r.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classDrawable}{Drawable}}>(Vinicius);}
+\DoxyCodeLine{00025\ \ \ \ \ drawable.\mbox{\hyperlink{classDrawable_ad1c9d246eaac9a607b11167f75f238bc}{set\_texture}}(texture);}
+\DoxyCodeLine{00026\ \ \ \ \ drawable.\mbox{\hyperlink{classDrawable_aba579f0300600cbfa004b5f89ba8903d}{set\_scale}}(\{size.x,\ size.y\});}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{return}\ Vinicius;}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{Registry\+::add\+\_\+component()}}, \mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{Registry\+::get\+\_\+component()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00020}{Drawable\+::set\+\_\+scale()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00026}{Drawable\+::set\+\_\+texture()}}, and \mbox{\hyperlink{Registry_8cpp_source_l00010}{Registry\+::spawn\+\_\+entity()}}.
+
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+
+\Hypertarget{TestECSsfml_8cpp_a1cc774727c3782a74c82d5abb8744624}\index{TestECSsfml.cpp@{TestECSsfml.cpp}!TestECSsfml@{TestECSsfml}}
+\index{TestECSsfml@{TestECSsfml}!TestECSsfml.cpp@{TestECSsfml.cpp}}
+\doxysubsubsection{\texorpdfstring{TestECSsfml()}{TestECSsfml()}}
+{\footnotesize\ttfamily \label{TestECSsfml_8cpp_a1cc774727c3782a74c82d5abb8744624} 
+void Test\+ECSsfml (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{TestECSsfml_8cpp_source}{Test\+ECSsfml.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ sf::RenderWindow\ window(sf::VideoMode(800,\ 600),\ \textcolor{stringliteral}{"{}SFML\ Window"{}});}
+\DoxyCodeLine{00032\ \ \ \ \ window.setFramerateLimit(60);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ cwd\ =\ \mbox{\hyperlink{TestECSsfml_8cpp_af706a2204cd536ebe6325a6a69c36363}{get\_current\_working\_dir}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classRegistry}{Registry}}\ reg;}
+\DoxyCodeLine{00037\ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_a5397b38d1643c5dee4114d20190baf50}{register\_component}}<\mbox{\hyperlink{classDrawable}{Drawable}}>();}
+\DoxyCodeLine{00038\ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_a5397b38d1643c5dee4114d20190baf50}{register\_component}}<\mbox{\hyperlink{classPosition}{Position}}>();}
+\DoxyCodeLine{00039\ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_a5397b38d1643c5dee4114d20190baf50}{register\_component}}<\mbox{\hyperlink{classVelocity}{Velocity}}>();}
+\DoxyCodeLine{00040\ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_a5397b38d1643c5dee4114d20190baf50}{register\_component}}<\mbox{\hyperlink{classControllable}{Controllable}}>();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ sf::Texture\ texture;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (!texture.loadFromFile(cwd\ +\ \textcolor{stringliteral}{"{}/asset/Costume\_Rouge\_Vinicius.png"{}}))\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error:\ Could\ not\ load\ texture\ from\ file\ "{}}\ <<\ cwd\ +\ \textcolor{stringliteral}{"{}/asset/Costume\_Rouge\_Vinicius.png"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ sf::Vector2f\ position(150,\ 100);}
+\DoxyCodeLine{00048\ \ \ \ \ sf::Vector2f\ position2(300,\ 300);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ sf::Vector2f\ velocity(1,\ 1);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ sf::Vector2f\ size(1,\ 1);}
+\DoxyCodeLine{00053\ \ \ \ \ sf::Vector2f\ size2(0.5,\ 0.5);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classEntity}{Entity}}\ Vinicius\ =\ \mbox{\hyperlink{TestECSsfml_8cpp_a90b3a752aa47bbc6943103d03222f310}{MakeVinicius}}(reg,\ position,\ size,\ velocity,\ texture);}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classEntity}{Entity}}\ ViniciusJr\ =\ \mbox{\hyperlink{TestECSsfml_8cpp_a90b3a752aa47bbc6943103d03222f310}{MakeVinicius}}(reg,\ position2,\ size2,\ velocity,\ texture);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{TestECSsfml_8cpp_af9d575eaa365df5aaaedd8e470e99ea2}{logging\_system}}(reg);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_a9c58e66fce8160965de26356ef3a23e1}{add\_system}}<\mbox{\hyperlink{classPosition}{Position}},\ \mbox{\hyperlink{classVelocity}{Velocity}}>([](\textcolor{keyword}{auto}\ \&positions,\ \textcolor{keyword}{auto}\ \&velocities)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ positions.size();\ ++i)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPosition}{Position}}\ \&pos\ =\ positions[i];}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVelocity}{Velocity}}\ \&vel\ =\ velocities[i];}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos.\mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}\ +=\ vel.\mbox{\hyperlink{classVelocity_a1286d9d936730167034b2937f1c18b89}{x}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos.\mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}}\ +=\ vel.\mbox{\hyperlink{classVelocity_a4b1ae93762efafae20f9a5d8a769a9d4}{y}};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_a9c58e66fce8160965de26356ef3a23e1}{add\_system}}<\mbox{\hyperlink{classDrawable}{Drawable}},\ \mbox{\hyperlink{classPosition}{Position}}>([](\textcolor{keyword}{auto}\ \&drawables,\ \textcolor{keyword}{auto}\ \&positions)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ drawables.size();\ ++i)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDrawable}{Drawable}}\ \&drawable\ =\ drawables[i];}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPosition}{Position}}\ \&position\ =\ positions[i];}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ drawable.\mbox{\hyperlink{classDrawable_a70ba5b5be076216a253868f67280cc84}{set\_position}}(position);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{while}\ (window.isOpen())\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ sf::Event\ event;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (window.pollEvent(event))\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (event.type\ ==\ sf::Event::Closed)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ window.close();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_a15a6de78dc2259220850e60b540148aa}{run\_systems}}();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ window.clear(sf::Color::Black);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{TestECSsfml_8cpp_a2ac429af1096da2fd34586a055aa68f7}{control\_system}}(reg);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{TestECSsfml_8cpp_ab8e0e36019e7db3ea344c6c2c2dac23d}{draw\_system}}(reg,\ window);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ window.display();}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classRegistry_a9c58e66fce8160965de26356ef3a23e1}{Registry\+::add\+\_\+system()}}, \mbox{\hyperlink{control__system_8cpp_source_l00011}{control\+\_\+system()}}, \mbox{\hyperlink{draw__system_8cpp_source_l00014}{draw\+\_\+system()}}, \mbox{\hyperlink{TestECSsfml_8cpp_source_l00018}{get\+\_\+current\+\_\+working\+\_\+dir()}}, \mbox{\hyperlink{logging__system_8cpp_source_l00014}{logging\+\_\+system()}}, \mbox{\hyperlink{MakeVinicius_8cpp_source_l00016}{Make\+Vinicius()}}, \mbox{\hyperlink{classRegistry_a5397b38d1643c5dee4114d20190baf50}{Registry\+::register\+\_\+component()}}, \mbox{\hyperlink{Registry_8cpp_source_l00035}{Registry\+::run\+\_\+systems()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00015}{Drawable\+::set\+\_\+position()}}, \mbox{\hyperlink{Position_8hpp_source_l00039}{Position\+::x}}, \mbox{\hyperlink{Velocity_8hpp_source_l00016}{Velocity\+::x}}, \mbox{\hyperlink{Position_8hpp_source_l00040}{Position\+::y}}, and \mbox{\hyperlink{Velocity_8hpp_source_l00017}{Velocity\+::y}}.
+

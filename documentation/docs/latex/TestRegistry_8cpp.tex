@@ -1,0 +1,55 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/\+ECS/src/\+Test\+Code/\+Test\+Registry.cpp File Reference}
+\hypertarget{TestRegistry_8cpp}{}\label{TestRegistry_8cpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/TestCode/TestRegistry.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/TestCode/TestRegistry.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}Registry.\+hpp"{}}\newline
+{\ttfamily \#include "{}Position.\+hpp"{}}\newline
+{\ttfamily \#include "{}Velocity.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{TestRegistry_8cpp_a80a99ceaea895f3e21ba90c32813e9ea}{Test\+Registry}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{TestRegistry_8cpp_a80a99ceaea895f3e21ba90c32813e9ea}\index{TestRegistry.cpp@{TestRegistry.cpp}!TestRegistry@{TestRegistry}}
+\index{TestRegistry@{TestRegistry}!TestRegistry.cpp@{TestRegistry.cpp}}
+\doxysubsubsection{\texorpdfstring{TestRegistry()}{TestRegistry()}}
+{\footnotesize\ttfamily \label{TestRegistry_8cpp_a80a99ceaea895f3e21ba90c32813e9ea} 
+void Test\+Registry (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TestRegistry_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{TestRegistry_8cpp_source}{Test\+Registry.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classRegistry}{Registry}}\ reg;}
+\DoxyCodeLine{00016\ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_a5397b38d1643c5dee4114d20190baf50}{register\_component}}<\mbox{\hyperlink{classPosition}{Position}}>();}
+\DoxyCodeLine{00017\ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_a5397b38d1643c5dee4114d20190baf50}{register\_component}}<\mbox{\hyperlink{classVelocity}{Velocity}}>();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classEntity}{Entity}}\ e\ =\ reg.\mbox{\hyperlink{classRegistry_a3d6e1501dab60caa62a8511245f0b0b3}{spawn\_entity}}();}
+\DoxyCodeLine{00020\ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\_component}}(e,\ \mbox{\hyperlink{classPosition}{Position}}(40,\ 40));}
+\DoxyCodeLine{00021\ \ \ \ \ reg.\mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{add\_component}}(e,\ \mbox{\hyperlink{classVelocity}{Velocity}}(42,\ 42));}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ to\ understand\ kill\_entity\ uncomment\ the\ following\ line\ same\ for\ remove\_component}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ reg.kill\_entity(e);}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//reg.remove\_component<Position>(e);}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ reg.remove\_component<Velocity>(e);}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classPosition}{Position}}\ \&pos\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classPosition}{Position}}>(e);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classVelocity}{Velocity}}\ \&vel\ =\ reg.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classVelocity}{Velocity}}>(e);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::cout\ <<\ pos.\mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}\ <<\ std::endl;}
+\DoxyCodeLine{00033\ \ \ \ \ std::cout\ <<\ pos.\mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}}\ <<\ std::endl;}
+\DoxyCodeLine{00034\ \ \ \ \ std::cout\ <<\ vel.x\ <<\ std::endl;}
+\DoxyCodeLine{00035\ \ \ \ \ std::cout\ <<\ vel.y\ <<\ std::endl;}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classRegistry_adbfdfba30a1d93037e75c96ef417d652}{Registry\+::add\+\_\+component()}}, \mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{Registry\+::get\+\_\+component()}}, \mbox{\hyperlink{classRegistry_a5397b38d1643c5dee4114d20190baf50}{Registry\+::register\+\_\+component()}}, \mbox{\hyperlink{Registry_8cpp_source_l00010}{Registry\+::spawn\+\_\+entity()}}, \mbox{\hyperlink{Position_8hpp_source_l00039}{Position\+::x}}, and \mbox{\hyperlink{Position_8hpp_source_l00040}{Position\+::y}}.
+

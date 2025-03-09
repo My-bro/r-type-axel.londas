@@ -1,0 +1,319 @@
+\doxysection{Thread\+Pool Class Reference}
+\hypertarget{classThreadPool}{}\label{classThreadPool}\index{ThreadPool@{ThreadPool}}
+
+
+A class for managing a pool of threads to execute tasks concurrently.  
+
+
+
+
+{\ttfamily \#include $<$Thread\+Pool.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classThreadPool_ada70ed7e714ec23056dc8b8b7a24f983}{Thread\+Pool}} (size\+\_\+t thread\+Number)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the thread pool with a specified number of threads. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classThreadPool_a44d3d2ab618970605e684efc216655eb}{\texorpdfstring{$\sim$}{\string~}\+Thread\+Pool}} ()
+\begin{DoxyCompactList}\small\item\em Destructor that stops all threads and cleans up resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThreadPool_a7290a593e893111e2db6a6e226c471cb}{add\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Adds a new thread to the thread pool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThreadPool_a6171cb42d1c705ef840be91fda91c8bc}{enqueue}} (std\+::function$<$ void()$>$ task)
+\begin{DoxyCompactList}\small\item\em Enqueues a task to be executed by the thread pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::thread $>$ \mbox{\hyperlink{classThreadPool_a16781e84be1e9342e108299b318d2f75}{threads}}
+\begin{DoxyCompactList}\small\item\em A vector of threads managed by the thread pool. \end{DoxyCompactList}\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classThreadPool_a6dd0c005d9bc726e976def8d6ac2d2a7}{condition}}
+\begin{DoxyCompactList}\small\item\em Condition variable to synchronize task execution. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classThreadPool_a04e2cc4b3c979b4e054071436988d23d}{stop}}
+\begin{DoxyCompactList}\small\item\em Flag to indicate whether the thread pool should stop. \end{DoxyCompactList}\item 
+std\+::mutex \mbox{\hyperlink{classThreadPool_a52821fc465bce20edcc2c8744d504b70}{queue\+Mutex}}
+\begin{DoxyCompactList}\small\item\em Mutex to protect the task queue. \end{DoxyCompactList}\item 
+std\+::queue$<$ std\+::function$<$ void()$>$ $>$ \mbox{\hyperlink{classThreadPool_aecd2f98ff952b12bcd21102df80bdfe9}{tasks}}
+\begin{DoxyCompactList}\small\item\em Queue of tasks to be executed by the thread pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for managing a pool of threads to execute tasks concurrently. 
+
+Definition at line \mbox{\hyperlink{ThreadPool_8hpp_source_l00033}{33}} of file \mbox{\hyperlink{ThreadPool_8hpp_source}{Thread\+Pool.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classThreadPool_ada70ed7e714ec23056dc8b8b7a24f983}\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{ThreadPool()}{ThreadPool()}}
+{\footnotesize\ttfamily \label{classThreadPool_ada70ed7e714ec23056dc8b8b7a24f983} 
+Thread\+Pool\+::\+Thread\+Pool (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{thread\+Number}{}\end{DoxyParamCaption})}
+
+
+
+Constructor that initializes the thread pool with a specified number of threads. 
+
+Constructs a new \doxylink{classThreadPool}{Thread\+Pool} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread\+Number} & The number of threads in the pool.\\
+\hline
+\end{DoxyParams}
+Initializes the specified number of worker threads and starts them.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread\+Number} & The number of threads to create in the pool. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ThreadPool_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{ThreadPool_8cpp_source}{Thread\+Pool.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classThreadPool_a04e2cc4b3c979b4e054071436988d23d}{stop}}(\textcolor{keyword}{false})}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ threadNumber;\ ++i)\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classThreadPool_a16781e84be1e9342e108299b318d2f75}{threads}}.emplace\_back(\&\mbox{\hyperlink{classThreadPool_a7290a593e893111e2db6a6e226c471cb}{ThreadPool::addThread}},\ \textcolor{keyword}{this});}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ThreadPool_8cpp_source_l00058}{add\+Thread()}}, and \mbox{\hyperlink{ThreadPool_8hpp_source_l00039}{threads}}.
+
+\Hypertarget{classThreadPool_a44d3d2ab618970605e684efc216655eb}\index{ThreadPool@{ThreadPool}!````~ThreadPool@{\texorpdfstring{$\sim$}{\string~}ThreadPool}}
+\index{````~ThreadPool@{\texorpdfstring{$\sim$}{\string~}ThreadPool}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ThreadPool()}{\string~ThreadPool()}}
+{\footnotesize\ttfamily \label{classThreadPool_a44d3d2ab618970605e684efc216655eb} 
+Thread\+Pool\+::\texorpdfstring{$\sim$}{\string~}\+Thread\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor that stops all threads and cleans up resources. 
+
+Destroys the \doxylink{classThreadPool}{Thread\+Pool} object.
+
+Signals all threads to stop, waits for them to finish, and cleans up resources. 
+
+Definition at line \mbox{\hyperlink{ThreadPool_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{ThreadPool_8cpp_source}{Thread\+Pool.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ std::unique\_lock<std::mutex>\ lock(\mbox{\hyperlink{classThreadPool_a52821fc465bce20edcc2c8744d504b70}{queueMutex}});}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classThreadPool_a04e2cc4b3c979b4e054071436988d23d}{stop}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{classThreadPool_a6dd0c005d9bc726e976def8d6ac2d2a7}{condition}}.notify\_all();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::thread\&\ thread\ :\ \mbox{\hyperlink{classThreadPool_a16781e84be1e9342e108299b318d2f75}{threads}})\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ thread.join();}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ThreadPool_8hpp_source_l00044}{condition}}, \mbox{\hyperlink{ThreadPool_8hpp_source_l00054}{queue\+Mutex}}, \mbox{\hyperlink{ThreadPool_8hpp_source_l00049}{stop}}, and \mbox{\hyperlink{ThreadPool_8hpp_source_l00039}{threads}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classThreadPool_a7290a593e893111e2db6a6e226c471cb}\index{ThreadPool@{ThreadPool}!addThread@{addThread}}
+\index{addThread@{addThread}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{addThread()}{addThread()}}
+{\footnotesize\ttfamily \label{classThreadPool_a7290a593e893111e2db6a6e226c471cb} 
+void Thread\+Pool\+::add\+Thread (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Adds a new thread to the thread pool. 
+
+Worker thread function to execute tasks.
+
+Continuously retrieves and executes tasks from the task queue until the pool is stopped. 
+
+Definition at line \mbox{\hyperlink{ThreadPool_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{ThreadPool_8cpp_source}{Thread\+Pool.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::function<void()>\ task;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(\mbox{\hyperlink{classThreadPool_a52821fc465bce20edcc2c8744d504b70}{queueMutex}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classThreadPool_a6dd0c005d9bc726e976def8d6ac2d2a7}{condition}}.wait(lock,\ [\textcolor{keyword}{this}]()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classThreadPool_a04e2cc4b3c979b4e054071436988d23d}{stop}}\ ||\ !\mbox{\hyperlink{classThreadPool_aecd2f98ff952b12bcd21102df80bdfe9}{tasks}}.empty();\ \});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classThreadPool_a04e2cc4b3c979b4e054071436988d23d}{stop}}\ \&\&\ \mbox{\hyperlink{classThreadPool_aecd2f98ff952b12bcd21102df80bdfe9}{tasks}}.empty())\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ task\ =\ std::move(\mbox{\hyperlink{classThreadPool_aecd2f98ff952b12bcd21102df80bdfe9}{tasks}}.front());}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classThreadPool_aecd2f98ff952b12bcd21102df80bdfe9}{tasks}}.pop();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ task();}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ThreadPool_8hpp_source_l00044}{condition}}, \mbox{\hyperlink{ThreadPool_8hpp_source_l00054}{queue\+Mutex}}, \mbox{\hyperlink{ThreadPool_8hpp_source_l00049}{stop}}, and \mbox{\hyperlink{ThreadPool_8hpp_source_l00059}{tasks}}.
+
+
+
+Referenced by \mbox{\hyperlink{ThreadPool_8cpp_source_l00032}{Thread\+Pool()}}.
+
+\Hypertarget{classThreadPool_a6171cb42d1c705ef840be91fda91c8bc}\index{ThreadPool@{ThreadPool}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily \label{classThreadPool_a6171cb42d1c705ef840be91fda91c8bc} 
+void Thread\+Pool\+::enqueue (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{task}{}\end{DoxyParamCaption})}
+
+
+
+Enqueues a task to be executed by the thread pool. 
+
+Adds a new task to the task queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & The task function to enqueue.\\
+\hline
+\end{DoxyParams}
+Queues a task for execution by the worker threads.
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & A callable object (e.\+g., lambda, function) to be executed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & Thrown if the thread pool is stopped. \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{ThreadPool_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{ThreadPool_8cpp_source}{Thread\+Pool.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::unique\_lock<std::mutex>\ lock(\mbox{\hyperlink{classThreadPool_a52821fc465bce20edcc2c8744d504b70}{queueMutex}});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classThreadPool_a04e2cc4b3c979b4e054071436988d23d}{stop}})\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}ThreadPool\ is\ stopped,\ cannot\ enqueue\ tasks."{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classThreadPool_aecd2f98ff952b12bcd21102df80bdfe9}{tasks}}.emplace(task);}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{classThreadPool_a6dd0c005d9bc726e976def8d6ac2d2a7}{condition}}.notify\_one();}
+\DoxyCodeLine{00091\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{ThreadPool_8hpp_source_l00044}{condition}}, \mbox{\hyperlink{ThreadPool_8hpp_source_l00054}{queue\+Mutex}}, \mbox{\hyperlink{ThreadPool_8hpp_source_l00049}{stop}}, and \mbox{\hyperlink{ThreadPool_8hpp_source_l00059}{tasks}}.
+
+
+
+Referenced by \mbox{\hyperlink{server_2main_8cpp_source_l00025}{handle\+Received\+Message()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classThreadPool_a6dd0c005d9bc726e976def8d6ac2d2a7}\index{ThreadPool@{ThreadPool}!condition@{condition}}
+\index{condition@{condition}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{condition}{condition}}
+{\footnotesize\ttfamily \label{classThreadPool_a6dd0c005d9bc726e976def8d6ac2d2a7} 
+std\+::condition\+\_\+variable Thread\+Pool\+::condition\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Condition variable to synchronize task execution. 
+
+
+
+Definition at line \mbox{\hyperlink{ThreadPool_8hpp_source_l00044}{44}} of file \mbox{\hyperlink{ThreadPool_8hpp_source}{Thread\+Pool.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{ThreadPool_8cpp_source_l00058}{add\+Thread()}}, \mbox{\hyperlink{ThreadPool_8cpp_source_l00082}{enqueue()}}, and \mbox{\hyperlink{ThreadPool_8cpp_source_l00044}{\texorpdfstring{$\sim$}{\string~}\+Thread\+Pool()}}.
+
+\Hypertarget{classThreadPool_a52821fc465bce20edcc2c8744d504b70}\index{ThreadPool@{ThreadPool}!queueMutex@{queueMutex}}
+\index{queueMutex@{queueMutex}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{queueMutex}{queueMutex}}
+{\footnotesize\ttfamily \label{classThreadPool_a52821fc465bce20edcc2c8744d504b70} 
+std\+::mutex Thread\+Pool\+::queue\+Mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mutex to protect the task queue. 
+
+
+
+Definition at line \mbox{\hyperlink{ThreadPool_8hpp_source_l00054}{54}} of file \mbox{\hyperlink{ThreadPool_8hpp_source}{Thread\+Pool.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{ThreadPool_8cpp_source_l00058}{add\+Thread()}}, \mbox{\hyperlink{ThreadPool_8cpp_source_l00082}{enqueue()}}, and \mbox{\hyperlink{ThreadPool_8cpp_source_l00044}{\texorpdfstring{$\sim$}{\string~}\+Thread\+Pool()}}.
+
+\Hypertarget{classThreadPool_a04e2cc4b3c979b4e054071436988d23d}\index{ThreadPool@{ThreadPool}!stop@{stop}}
+\index{stop@{stop}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{stop}{stop}}
+{\footnotesize\ttfamily \label{classThreadPool_a04e2cc4b3c979b4e054071436988d23d} 
+bool Thread\+Pool\+::stop\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag to indicate whether the thread pool should stop. 
+
+
+
+Definition at line \mbox{\hyperlink{ThreadPool_8hpp_source_l00049}{49}} of file \mbox{\hyperlink{ThreadPool_8hpp_source}{Thread\+Pool.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{ThreadPool_8cpp_source_l00058}{add\+Thread()}}, \mbox{\hyperlink{ThreadPool_8cpp_source_l00082}{enqueue()}}, and \mbox{\hyperlink{ThreadPool_8cpp_source_l00044}{\texorpdfstring{$\sim$}{\string~}\+Thread\+Pool()}}.
+
+\Hypertarget{classThreadPool_aecd2f98ff952b12bcd21102df80bdfe9}\index{ThreadPool@{ThreadPool}!tasks@{tasks}}
+\index{tasks@{tasks}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{tasks}{tasks}}
+{\footnotesize\ttfamily \label{classThreadPool_aecd2f98ff952b12bcd21102df80bdfe9} 
+std\+::queue$<$std\+::function$<$void()$>$ $>$ Thread\+Pool\+::tasks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Queue of tasks to be executed by the thread pool. 
+
+
+
+Definition at line \mbox{\hyperlink{ThreadPool_8hpp_source_l00059}{59}} of file \mbox{\hyperlink{ThreadPool_8hpp_source}{Thread\+Pool.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{ThreadPool_8cpp_source_l00058}{add\+Thread()}}, and \mbox{\hyperlink{ThreadPool_8cpp_source_l00082}{enqueue()}}.
+
+\Hypertarget{classThreadPool_a16781e84be1e9342e108299b318d2f75}\index{ThreadPool@{ThreadPool}!threads@{threads}}
+\index{threads@{threads}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{threads}{threads}}
+{\footnotesize\ttfamily \label{classThreadPool_a16781e84be1e9342e108299b318d2f75} 
+std\+::vector$<$std\+::thread$>$ Thread\+Pool\+::threads\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A vector of threads managed by the thread pool. 
+
+
+
+Definition at line \mbox{\hyperlink{ThreadPool_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{ThreadPool_8hpp_source}{Thread\+Pool.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{ThreadPool_8cpp_source_l00032}{Thread\+Pool()}}, and \mbox{\hyperlink{ThreadPool_8cpp_source_l00044}{\texorpdfstring{$\sim$}{\string~}\+Thread\+Pool()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/thread/\mbox{\hyperlink{ThreadPool_8hpp}{Thread\+Pool.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/thread/\mbox{\hyperlink{ThreadPool_8cpp}{Thread\+Pool.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,45 @@
+\doxysection{/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/\+ECS/src/\+System/control\+\_\+system.cpp File Reference}
+\hypertarget{control__system_8cpp}{}\label{control__system_8cpp}\index{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/control\_system.cpp@{/home/ben/B-\/CPP-\/500-\/PAR-\/5-\/2-\/rtype-\/axel.londas/src/server/src/ECS/src/System/control\_system.cpp}}
+{\ttfamily \#include "{}Registry.\+hpp"{}}\newline
+{\ttfamily \#include "{}Drawable.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{control__system_8cpp_a2ac429af1096da2fd34586a055aa68f7}{control\+\_\+system}} (\mbox{\hyperlink{classRegistry}{Registry}} \&r)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{control__system_8cpp_a2ac429af1096da2fd34586a055aa68f7}\index{control\_system.cpp@{control\_system.cpp}!control\_system@{control\_system}}
+\index{control\_system@{control\_system}!control\_system.cpp@{control\_system.cpp}}
+\doxysubsubsection{\texorpdfstring{control\_system()}{control\_system()}}
+{\footnotesize\ttfamily \label{control__system_8cpp_a2ac429af1096da2fd34586a055aa68f7} 
+void control\+\_\+system (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{control__system_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{control__system_8cpp_source}{control\+\_\+system.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{auto}\ \&controllables\ =\ r.\mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{get\_component}}<\mbox{\hyperlink{classControllable}{Controllable}}>();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::size\_t\ i\ =\ 0;\ i\ <\ controllables.size();\ ++i)\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControllable}{Controllable}}\ \&controllable\ =\ controllables[i];}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ controllable.\mbox{\hyperlink{classControllable_a7d5578bb578655725ac00ebf42dbf907}{check\_input}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Controllable_8cpp_source_l00011}{Controllable\+::check\+\_\+input()}}, and \mbox{\hyperlink{classRegistry_acbfca8e8100ffb01bac1b504c21be8d8}{Registry\+::get\+\_\+component()}}.
+
+
+
+Referenced by \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}.
+

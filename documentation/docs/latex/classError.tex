@@ -1,0 +1,133 @@
+\doxysection{Error Class Reference}
+\hypertarget{classError}{}\label{classError}\index{Error@{Error}}
+
+
+Base class for custom exception handling.  
+
+
+
+
+{\ttfamily \#include $<$Error.\+hpp$>$}
+
+Inheritance diagram for Error\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.971831cm]{classError}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classError_a1a45d42a3a035d510333cdfeb36a0e93}{\texorpdfstring{$\sim$}{\string~}\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{what}} () const noexcept override=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to return the error message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classError_aca339d00ad8481fb4c184f0ece42698b}{Error}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classError_aadd4b7cb712e1322ec3da4a4d9af6460}{\texorpdfstring{$\sim$}{\string~}\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{what}} () const noexcept override=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method to return the error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for custom exception handling. 
+
+This class serves as a base for specific error types. It inherits from std\+::exception and requires derived classes to implement the \doxylink{classError_a9e09deb110ba18bda3b5c2db283fe36b}{what()} method. 
+
+Definition at line \mbox{\hyperlink{client_2src_2Error_2Error_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{client_2src_2Error_2Error_8hpp_source}{Error.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classError_aca339d00ad8481fb4c184f0ece42698b}\index{Error@{Error}!Error@{Error}}
+\index{Error@{Error}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classError_aca339d00ad8481fb4c184f0ece42698b} 
+Error\+::\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+Default constructor for the base \doxylink{classError}{Error} class. \Hypertarget{classError_a1a45d42a3a035d510333cdfeb36a0e93}\index{Error@{Error}!````~Error@{\texorpdfstring{$\sim$}{\string~}Error}}
+\index{````~Error@{\texorpdfstring{$\sim$}{\string~}Error}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Error()}{\string~Error()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classError_a1a45d42a3a035d510333cdfeb36a0e93} 
+Error\+::\texorpdfstring{$\sim$}{\string~}\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+Default destructor for the base \doxylink{classError}{Error} class. \Hypertarget{classError_aca339d00ad8481fb4c184f0ece42698b}\index{Error@{Error}!Error@{Error}}
+\index{Error@{Error}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classError_aca339d00ad8481fb4c184f0ece42698b} 
+Error\+::\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\Hypertarget{classError_aadd4b7cb712e1322ec3da4a4d9af6460}\index{Error@{Error}!````~Error@{\texorpdfstring{$\sim$}{\string~}Error}}
+\index{````~Error@{\texorpdfstring{$\sim$}{\string~}Error}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Error()}{\string~Error()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classError_aadd4b7cb712e1322ec3da4a4d9af6460} 
+virtual Error\+::\texorpdfstring{$\sim$}{\string~}\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classError_a9e09deb110ba18bda3b5c2db283fe36b}\index{Error@{Error}!what@{what}}
+\index{what@{what}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classError_a9e09deb110ba18bda3b5c2db283fe36b} 
+virtual const char \texorpdfstring{$\ast$}{*} Error\+::what (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Pure virtual method to return the error message. 
+
+\begin{DoxyReturn}{Returns}
+A C-\/style string describing the error. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classClientWrongReceive_a46c3c075ec885a93fa0450372f22d401}{Client\+Wrong\+Receive}}, \mbox{\hyperlink{classClientWrongSend_aa5682ead1b444fce043bcfd2003ceceb}{Client\+Wrong\+Send}}, \mbox{\hyperlink{classClientWrongSocket_aeecf78c5b736cd38432ac0fa585299fa}{Client\+Wrong\+Socket}}, \mbox{\hyperlink{classServerWrongReceive_a1be1323d93ef0713d23255fb7a6f2f47}{Server\+Wrong\+Receive}}, \mbox{\hyperlink{classServerWrongSend_a32f3730230dc5adbff41f816878a7c2e}{Server\+Wrong\+Send}}, and \mbox{\hyperlink{classServerWrongSocket_a289276698691544bfd538a6d8205ca95}{Server\+Wrong\+Socket}}.
+
+
+
+Referenced by \mbox{\hyperlink{client_2src_2Error_2Error_8cpp_source_l00108}{operator$<$$<$()}}.
+
+\Hypertarget{classError_a9e09deb110ba18bda3b5c2db283fe36b}\index{Error@{Error}!what@{what}}
+\index{what@{what}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classError_a9e09deb110ba18bda3b5c2db283fe36b} 
+virtual const char \texorpdfstring{$\ast$}{*} Error\+::what (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Pure virtual method to return the error message. 
+
+\begin{DoxyReturn}{Returns}
+A C-\/style string describing the error. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classClientWrongReceive_a46c3c075ec885a93fa0450372f22d401}{Client\+Wrong\+Receive}}, \mbox{\hyperlink{classClientWrongSend_aa5682ead1b444fce043bcfd2003ceceb}{Client\+Wrong\+Send}}, \mbox{\hyperlink{classClientWrongSocket_aeecf78c5b736cd38432ac0fa585299fa}{Client\+Wrong\+Socket}}, \mbox{\hyperlink{classServerWrongReceive_a1be1323d93ef0713d23255fb7a6f2f47}{Server\+Wrong\+Receive}}, \mbox{\hyperlink{classServerWrongSend_a32f3730230dc5adbff41f816878a7c2e}{Server\+Wrong\+Send}}, and \mbox{\hyperlink{classServerWrongSocket_a289276698691544bfd538a6d8205ca95}{Server\+Wrong\+Socket}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/client/src/\+Error/\mbox{\hyperlink{client_2src_2Error_2Error_8hpp}{Error.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+Error/\mbox{\hyperlink{server_2src_2Error_2Error_8hpp}{Error.\+hpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/client/src/\+Error/\mbox{\hyperlink{client_2src_2Error_2Error_8cpp}{Error.\+cpp}}\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+Error/\mbox{\hyperlink{server_2src_2Error_2Error_8cpp}{Error.\+cpp}}\end{DoxyCompactItemize}

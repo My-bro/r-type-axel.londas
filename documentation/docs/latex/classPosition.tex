@@ -1,0 +1,182 @@
+\doxysection{Position Class Reference}
+\hypertarget{classPosition}{}\label{classPosition}\index{Position@{Position}}
+
+
+{\ttfamily \#include $<$Position.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPosition_a369a577425f8ba02e8750d04b6a088db}{Position}} ()
+\item 
+\mbox{\hyperlink{classPosition_a6e36cf0fee251e74cfedb86f4e99558d}{Position}} (int \mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}, int \mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}})
+\item 
+void \mbox{\hyperlink{classPosition_a4f5d5a661c251f3efa72119f1a44aa0b}{move}} (\mbox{\hyperlink{classControllable}{Controllable}} \&controllable)
+\item 
+bool \mbox{\hyperlink{classPosition_acf13e7e45c7c07a67c2adf2f7e1dcc5f}{operator==}} (const \mbox{\hyperlink{classPosition}{Position}} \&other) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}
+\item 
+int \mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classPosition_ab7ab267bcecdb85160da8e5a7069a98e}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classPosition}{Position}} \&pos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Position_8hpp_source_l00015}{15}} of file \mbox{\hyperlink{Position_8hpp_source}{Position.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPosition_a369a577425f8ba02e8750d04b6a088db}\index{Position@{Position}!Position@{Position}}
+\index{Position@{Position}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{Position()}{Position()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classPosition_a369a577425f8ba02e8750d04b6a088db} 
+Position\+::\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Position_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{Position_8hpp_source}{Position.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ :\ \mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}(0),\ \mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}}(0)\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{classPosition_a6e36cf0fee251e74cfedb86f4e99558d}\index{Position@{Position}!Position@{Position}}
+\index{Position@{Position}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{Position()}{Position()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classPosition_a6e36cf0fee251e74cfedb86f4e99558d} 
+Position\+::\+Position (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Position_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{Position_8hpp_source}{Position.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ :\ \mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}(\mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}),\ \mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}}(\mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}})\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPosition_a4f5d5a661c251f3efa72119f1a44aa0b}\index{Position@{Position}!move@{move}}
+\index{move@{move}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \label{classPosition_a4f5d5a661c251f3efa72119f1a44aa0b} 
+void Position\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classControllable}{Controllable}} \&}]{controllable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Position_8hpp_source_l00019}{19}} of file \mbox{\hyperlink{Position_8hpp_source}{Position.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (controllable.\mbox{\hyperlink{classControllable_ac16f125a02e72b4ecd0ad9776b7a482a}{\_up}})}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}}\ -\/=\ 10;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (controllable.\mbox{\hyperlink{classControllable_ae2ad45f9411636750c6bbe493064bd43}{\_down}})}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}}\ +=\ 10;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (controllable.\mbox{\hyperlink{classControllable_acff48bafa897ef211248587f418a6323}{\_left}})}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}\ -\/=\ 10;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (controllable.\mbox{\hyperlink{classControllable_a67a6fe5ce927743de494e615f54574f9}{\_right}})}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}\ +=\ 10;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Controllable_8hpp_source_l00019}{Controllable\+::\+\_\+down}}, \mbox{\hyperlink{Controllable_8hpp_source_l00020}{Controllable\+::\+\_\+left}}, \mbox{\hyperlink{Controllable_8hpp_source_l00021}{Controllable\+::\+\_\+right}}, \mbox{\hyperlink{Controllable_8hpp_source_l00018}{Controllable\+::\+\_\+up}}, \mbox{\hyperlink{Position_8hpp_source_l00039}{x}}, and \mbox{\hyperlink{Position_8hpp_source_l00040}{y}}.
+
+
+
+Referenced by \mbox{\hyperlink{draw__system_8cpp_source_l00014}{draw\+\_\+system()}}.
+
+\Hypertarget{classPosition_acf13e7e45c7c07a67c2adf2f7e1dcc5f}\index{Position@{Position}!operator==@{operator==}}
+\index{operator==@{operator==}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classPosition_acf13e7e45c7c07a67c2adf2f7e1dcc5f} 
+bool Position\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPosition}{Position}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Position_8hpp_source_l00030}{30}} of file \mbox{\hyperlink{Position_8hpp_source}{Position.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}\ ==\ other.\mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}\ \&\&\ \mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}}\ ==\ other.\mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}};}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{Position_8hpp_source_l00039}{x}}, and \mbox{\hyperlink{Position_8hpp_source_l00040}{y}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classPosition_ab7ab267bcecdb85160da8e5a7069a98e}\index{Position@{Position}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{classPosition_ab7ab267bcecdb85160da8e5a7069a98e} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{classPosition}{Position}} \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{Position_8hpp_source_l00034}{34}} of file \mbox{\hyperlink{Position_8hpp_source}{Position.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}Position\ =\ \{"{}}\ <<\ pos.\mbox{\hyperlink{classPosition_aeda152ffeee17ae5be9c02327b2408d8}{x}}\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ pos.\mbox{\hyperlink{classPosition_a3c08e9213d4726b21caba3073192c4a3}{y}}\ <<\ \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPosition_aeda152ffeee17ae5be9c02327b2408d8}\index{Position@{Position}!x@{x}}
+\index{x@{x}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \label{classPosition_aeda152ffeee17ae5be9c02327b2408d8} 
+int Position\+::x}
+
+
+
+Definition at line \mbox{\hyperlink{Position_8hpp_source_l00039}{39}} of file \mbox{\hyperlink{Position_8hpp_source}{Position.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Drawable_8cpp_source_l00031}{Drawable\+::display()}}, \mbox{\hyperlink{Drawable_8hpp_source_l00026}{Drawable\+::draw()}}, \mbox{\hyperlink{Position_8hpp_source_l00019}{move()}}, \mbox{\hyperlink{Position_8hpp_source_l00030}{operator==()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00015}{Drawable\+::set\+\_\+position()}}, \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}, and \mbox{\hyperlink{TestRegistry_8cpp_source_l00013}{Test\+Registry()}}.
+
+\Hypertarget{classPosition_a3c08e9213d4726b21caba3073192c4a3}\index{Position@{Position}!y@{y}}
+\index{y@{y}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \label{classPosition_a3c08e9213d4726b21caba3073192c4a3} 
+int Position\+::y}
+
+
+
+Definition at line \mbox{\hyperlink{Position_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{Position_8hpp_source}{Position.\+hpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{Drawable_8cpp_source_l00031}{Drawable\+::display()}}, \mbox{\hyperlink{Drawable_8hpp_source_l00026}{Drawable\+::draw()}}, \mbox{\hyperlink{Position_8hpp_source_l00019}{move()}}, \mbox{\hyperlink{Position_8hpp_source_l00030}{operator==()}}, \mbox{\hyperlink{Drawable_8cpp_source_l00015}{Drawable\+::set\+\_\+position()}}, \mbox{\hyperlink{TestECSsfml_8cpp_source_l00029}{Test\+ECSsfml()}}, and \mbox{\hyperlink{TestRegistry_8cpp_source_l00013}{Test\+Registry()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ben/\+B-\/\+CPP-\/500-\/\+PAR-\/5-\/2-\/rtype-\/axel.\+londas/src/server/src/\+ECS/src/\+Data/\mbox{\hyperlink{Position_8hpp}{Position.\+hpp}}\end{DoxyCompactItemize}

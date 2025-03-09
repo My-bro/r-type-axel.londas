@@ -1,0 +1,132 @@
+add_executable(r-type_server
+    Main.cpp
+    Timer.cpp
+    GameState.cpp
+    Server.cpp
+    Error/Error.cpp
+    network/CRoomServer.cpp
+    network/ParsingTcp.cpp
+    network/NetworkServer.cpp
+    network/Lobby.cpp
+    protocol/ProtocolServer.cpp
+    Parsing/Parsing.cpp
+    systems/network_packet_system.cpp
+    systems/boss_bullets_packet_system.cpp
+    systems/boss_data_packages_system.cpp
+    systems/collectables_data_packet_system.cpp
+    systems/boulders_data_package_system.cpp
+    systems/turrets_mobs_bullets_data_package_system.cpp
+    systems/turrets_mobs_data_packet_system.cpp
+    systems/boss_mob_ai_system.cpp
+    systems/utils.cpp
+    systems/mobs_bullets_data_packet_system.cpp
+    systems/mobs_data_packet_system.cpp
+    systems/players_lasers_data_packet_system.cpp
+    systems/players_data_packet_system.cpp
+    systems/players_bullets_data_packet_system.cpp
+    systems/spawn_turrets_mobs_level_3_system.cpp
+    systems/level_1_end_detection_system.cpp
+    systems/level_2_end_detection_system.cpp
+    systems/spawn_turrets_mobs_level_2_system.cpp
+    systems/spawn_mobs_level_1_system.cpp
+    systems/spawn_mobs_level_2_system.cpp
+    systems/spawn_mobs_level_3_system.cpp
+    systems/boss_mob_bullets_mouvement_system.cpp
+    systems/players_bullets_boss_mob_bullets_collisions_system.cpp
+    systems/death_boss_mob_bullets_system.cpp
+    systems/boss_mobs_bullets_render_system.cpp
+    systems/player_lasers_boss_mobs_bullets_collision.cpp
+    systems/boss_mobs_bullets_players_collision.cpp
+    systems/death_boss_mob_system.cpp
+    systems/players_bullets_boss_mob_collisions_system.cpp
+    systems/players_lasers_boss_mob_collisions_system.cpp
+    systems/boss_mob_render_system.cpp
+    systems/spawn_boss_mob_system.cpp
+    systems/turrets_mobs_render_system.cpp
+    systems/turrets_mobs_bullets_mouvement_system.cpp
+    systems/spawn_turrets_mobs_system.cpp
+    systems/turrets_mobs_ai_system.cpp
+    systems/turrets_mobs_bullets_players_collisions_system.cpp
+    systems/turrets_mobs_bullets_render_system
+    systems/spawn_health_collectables_system.cpp
+    systems/health_collectables_players_collisions_system.cpp
+    systems/health_collectables_render_system.cpp
+    systems/players_healths_render_system.cpp
+    systems/laser_canons_collectables_players_collisions_system.cpp
+    systems/laser_canons_collectables_render_system.cpp
+    systems/spawn_laser_canons_collectables_system.cpp
+    systems/players_lasers_render_system.cpp
+    systems/players_laser_canon_shooting_system.cpp
+    systems/players_lasers_mobs_collisions_system.cpp
+    systems/players_lasers_mouvement_system.cpp
+    systems/boulders_players_collisions_system.cpp
+    systems/players_bullets_mobs_collisions_system.cpp
+    systems/mobs_bullets_players_collisions_system.cpp
+    systems/deaths_mobs_system.cpp
+    systems/deaths_players_system.cpp
+    systems/local_player_input_system.cpp
+    systems/mobs_bullets_mouvement_system.cpp
+    systems/players_bullets_mouvement_system.cpp
+    systems/players_mouvement_system.cpp
+    systems/players_basic_canon_shooting_system.cpp
+    systems/mobs_ai_system.cpp
+    systems/spawn_mobs_system.cpp
+    systems/spawn_boulders_system.cpp
+    systems/clear_render_system.cpp
+    systems/display_render_system.cpp
+    systems/boulders_render_system.cpp
+    systems/boulders_mouvement_system.cpp
+    systems/players_render_system.cpp
+    systems/players_bullets_render_system.cpp
+    systems/mobs_render_system.cpp
+    systems/mobs_bullets_render_system.cpp
+    systems/win_detection_system.cpp
+    systems/lose_detection_system.cpp
+    systems/spawn_players_system.cpp
+    systems/network_players_inputs_system.cpp
+    components/Controllable.cpp
+    components/Damage.cpp
+    components/Drawable.cpp
+    components/Health.cpp
+    components/HitBox.cpp
+    components/NetworkPlayer.cpp
+    components/Position.cpp
+    components/ShootCooldown.cpp
+    components/Velocity.cpp
+    game_config/Abilities.cpp
+    game_config/Boss.cpp
+    game_config/Mobs.cpp
+    game_config/Stage.cpp
+)
+
+set_target_properties(r-type_server PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+
+message(CPM_SOURCE_CACHE="${CPM_SOURCE_CACHE}")
+
+target_include_directories(r-type_server PRIVATE
+    ${CPM_SOURCE_CACHE}/asio/*/asio/include
+    ${CPM_SOURCE_CACHE}/sfml/*/src/SFML/*
+    ${CPM_SOURCE_CACHE}/yaml-cpp/*/include
+)
+
+target_link_libraries(r-type_server
+    PRIVATE
+        rtype_ecs
+        sfml-graphics
+        sfml-window
+        sfml-system
+        asio
+        yaml-cpp
+)
+
+if(WIN32)
+    add_custom_command(TARGET r-type_server POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            $<TARGET_FILE:rtype_ecs>
+            $<TARGET_FILE:sfml-graphics>
+            $<TARGET_FILE:sfml-window>
+            $<TARGET_FILE:sfml-system>
+            $<TARGET_FILE:yaml-cpp>
+            ${CMAKE_SOURCE_DIR}
+    )
+endif()
